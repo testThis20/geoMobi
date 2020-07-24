@@ -155,10 +155,10 @@ PageModule.prototype.deleteAllOfflineData = function(arg1) {
 
     }
     var beartoken ="eyJ4NXQjUzI1NiI6Im5kUDhwak5jN0dIU2QtVXM5SUkyMXhEdHNOV05sQWItbWstRms0Z3Y0VU0iLCJ4NXQiOiJ4TTJTMlNfdUNqcFlELWF4Z3c3UzRRRWswQ3MiLCJraWQiOiJTSUdOSU5HX0tFWSIsImFsZyI6IlJTMjU2In0.eyJ1c2VyX3R6IjoiQW1lcmljYVwvQ2hpY2FnbyIsInN1YiI6InNhdHlhbSIsInVzZXJfbG9jYWxlIjoiZW4iLCJpZHBfbmFtZSI6ImxvY2FsSURQIiwidXNlci50ZW5hbnQubmFtZSI6ImlkY3MtOWMxNGU3YmZhZDc1NDhlYzljMjAwODBjODJlYjNjZWQiLCJpZHBfZ3VpZCI6ImxvY2FsSURQIiwiYW1yIjpbIlVTRVJOQU1FX1BBU1NXT1JEIl0sImlzcyI6Imh0dHBzOlwvXC9pZGVudGl0eS5vcmFjbGVjbG91ZC5jb21cLyIsInVzZXJfdGVuYW50bmFtZSI6ImlkY3MtOWMxNGU3YmZhZDc1NDhlYzljMjAwODBjODJlYjNjZWQiLCJjbGllbnRfaWQiOiJCM0NDNjFBRjVCM0U0MUYzOTEwMDRBNTNFMEY0QzQ0MF9BUFBJRCIsInNpZCI6IjJhMjFhOGU0LTRjYzAtNGY1OS04ZTYwLTIwODMzYTBhYTMwZCIsInN1Yl90eXBlIjoidXNlciIsInNjb3BlIjoidXJuOm9wYzpyZXNvdXJjZTpjb25zdW1lcjo6YWxsIiwiY2xpZW50X3RlbmFudG5hbWUiOiJpZGNzLTljMTRlN2JmYWQ3NTQ4ZWM5YzIwMDgwYzgyZWIzY2VkIiwidXNlcl9sYW5nIjoiZW4iLCJleHAiOjE1OTQ3OTA5MTcsImlhdCI6MTU5NDc4NzMxNywiY2xpZW50X2d1aWQiOiI5YmJlZWI1MWU3YmI0OTQ2OGQ3NjU4MDNhZmZkZGVmMSIsImNsaWVudF9uYW1lIjoiT0lDSU5TVF9JbnRlZ3JhdGlvbjIyNzk5MiIsImlkcF90eXBlIjoiTE9DQUwiLCJ0ZW5hbnQiOiJpZGNzLTljMTRlN2JmYWQ3NTQ4ZWM5YzIwMDgwYzgyZWIzY2VkIiwianRpIjoiYmQ2ZDI1Y2ItNTVmMS00OGMzLWJkYWUtMGZkZGM1MWZmODk3IiwidXNlcl9kaXNwbGF5bmFtZSI6InNhdHlhbSBzaGl2YW0iLCJzdWJfbWFwcGluZ2F0dHIiOiJ1c2VyTmFtZSIsInByaW1UZW5hbnQiOnRydWUsInRva190eXBlIjoiQVQiLCJjYV9ndWlkIjoiY2FjY3QtZWVlYjg3MzU0MDYzNGQ1MmEwZGVlNmQ2NDE1OTU0YTIiLCJhdWQiOlsiaHR0cHM6XC9cL0IzQ0M2MUFGNUIzRTQxRjM5MTAwNEE1M0UwRjRDNDQwLmludGVncmF0aW9uLm9jcC5vcmFjbGVjbG91ZC5jb206NDQzIiwidXJuOm9wYzpsYmFhczpsb2dpY2FsZ3VpZD1CM0NDNjFBRjVCM0U0MUYzOTEwMDRBNTNFMEY0QzQ0MCJdLCJ1c2VyX2lkIjoiNmQ0ZTdlOTRmYmNkNGEwNmIyYmE0NDk0NDM5YTkwMTEiLCJ0ZW5hbnRfaXNzIjoiaHR0cHM6XC9cL2lkY3MtOWMxNGU3YmZhZDc1NDhlYzljMjAwODBjODJlYjNjZWQuaWRlbnRpdHkub3JhY2xlY2xvdWQuY29tIn0.BVdz4EmUaJh4xPrDYcaUpQ0MlNbw48eQylNYf69ZAX7BbstFlZX9RlfE0NBjM5u3TQgMCMpihpYBV8bSauMpQzY9f9hLIwJuTpIPKDcSFu-IPQZwMSBg9qlzkfAW_T0SfZNPkztLwboIgnM7jatmJkufisCbXaGSUPGrJJJahH0YJKttlbiqdYwrKUDMKlMF8d70p0FFsQW3jB1TU0kmxAAiHnWbSYvvXqH5g6W5D6QgNhxGlkV3DlD7VZ3vpNh2izGeasaVALZzZCRqXMOrMuES2k7VizJS62lt6ECZ8qZ-pDLPTKrWVj1Ypj-4hEXyv8ePlTDSOrcMu-ZrMvt16g";
-    httpRequest.open('POST', url);
-    httpRequest.setRequestHeader('Authorization', 'Bearer ' + beartoken);
-    httpRequest.setRequestHeader('content-type',
-      'application/vnd.oracle.adf.action+json');
+    httpRequest.open("POST", url);
+    httpRequest.setRequestHeader("Authorization", "Bearer " + beartoken);
+    httpRequest.setRequestHeader("content-type",
+      "application/vnd.oracle.adf.action+json");
     httpRequest.send(JSON.stringify(datatosend));
 
   }
@@ -198,17 +198,29 @@ PageModule.prototype.deleteAllOfflineData = function(arg1) {
     var ImageCategory;
     
     if (fileName.includes("StickerNumber"))
-      ImageCategory = "S";
+      {
+        ImageCategory = "S";
+        }
     else if (fileName.includes("PhotoDwelling"))
-      ImageCategory = "D";
+      {
+        ImageCategory = "D";
+        }
     else if (fileName.includes("documentHH"))
-      ImageCategory = "H";
+      {
+        ImageCategory = "H";
+        }
     else if (fileName.includes("BirthCertificate"))
-      ImageCategory = "B";
+      {
+        ImageCategory = "B";
+        }
     else if (fileName.includes("SpouseIdDocument"))
-      ImageCategory = "I";
+      {
+        ImageCategory = "I";
+        }
     else if (fileName.includes("MarriageCertificate"))
-      ImageCategory = "M";
+      {
+        ImageCategory = "M";
+        }
     return ImageCategory;
   };
 
@@ -312,8 +324,8 @@ PageModule.prototype.deleteAllOfflineData = function(arg1) {
   PageModule.prototype.hideLoaderCompleted = function(arg1) {
       $("#loaderid").css('display', 'block');
     setTimeout(function(){ 
-    $("#loaderid").css('display', 'none'); }, 2000);
-    setTimeout(() => {     window.location.reload(); }, 1000);
+    $("#loaderid").css('display', 'none'); }, 4000);
+  //  setTimeout(() => {     window.location.reload(); }, 1000);
 
     
 
