@@ -302,7 +302,7 @@ Z  : Control digit calculated in the following section:
         if (isValue) {
           return true;
         } else {
-          throw new Error('Please select an option');
+          throw new Error("Please select an option");
         }
       }
     }];
@@ -373,22 +373,21 @@ Z  : Control digit calculated in the following section:
     function displayFileData(data) {}
 
     function onErrorReadFile() {
-      alert("Create file fail...");
+      console.log("Create file fail...");
     }
 
     function onErrorLoadFs() {
-      alert("File system fail...");
+      console.log("File system fail...");
     }
   }
 
   function displayImage(blob) {
-    var elem = document.getElementById('imageFile');
+    var elem = document.getElementById("imageFile");
     elem.src = window.URL.createObjectURL(blob);
   }
 
   function displayImageByFileURL(fileEntry) {
-    // var elem = document.getElementById("photoOfDwelling");
-    //elem.src = fileEntry.toURL();
+
   }
 
 
@@ -538,11 +537,11 @@ Z  : Control digit calculated in the following section:
     function displayFileData(data) {}
 
     function onErrorReadFile() {
-      console.log("Create file fail...");
+      alert("Create file fail...");
     }
 
     function onErrorLoadFs() {
-      console.log("File system fail...");
+      alert("File system fail...");
     }
 
   }
@@ -636,8 +635,6 @@ Z  : Control digit calculated in the following section:
   }
 
   function displayImageByFileURLds(fileEntry) {
-    //var elem = document.getElementById('MarriageCertificate');
-    //elem.src = fileEntry.toURL();
 
   }
 
@@ -719,9 +716,6 @@ Z  : Control digit calculated in the following section:
 
   function displayImageByFileURLPhoto(fileEntry, num) {
 
-
-    //var elem = document.getElementById("dependantPhoto"+num);
-    //elem.src = fileEntry.toURL();
   }
 
 
@@ -824,19 +818,22 @@ Z  : Control digit calculated in the following section:
   PageModule.prototype.TownDurationMoreThanDwellingDurationValidator=
     function(dwellingYear, dwellingMonth, townYear, townMonth) {
       
-      if(isNaN(dwellingYear)) {
+      if((isNaN(dwellingYear))||(isNaN(townYear))) {
         return false;
       }
-      else if(isNaN(townYear)) {
+      else if ((dwellingYear==0)&&(dwellingMonth==0)){
+        alert("Dwelling duration cannot be zero!"); 
+        return false;
+      }
+      else if ((townYear==0)&&(townMonth==0)){
+        alert("current town duration cannot be zero!");
         return false;
       }
       else if (townYear == dwellingYear) {
-        if (isNaN(dwellingMonth)) {
+      
+        if (isNaN(dwellingMonth)||isNaN(townMonth)) {
                 return false;
-        } 
-        else if (isNaN(townMonth)) {
-                return false;
-        } 
+        }
         else if (dwellingMonth > townMonth) {
                 return false;
         }
@@ -844,6 +841,8 @@ Z  : Control digit calculated in the following section:
                 return true;
         }
       }
+      
+       
       else if(townYear < dwellingYear){
         return false;
         }
