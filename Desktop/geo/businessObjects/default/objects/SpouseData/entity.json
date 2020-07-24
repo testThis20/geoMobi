@@ -1,0 +1,323 @@
+{
+    "displayLabel": "Data_Spouse",
+    "name": "SpouseData",
+    "oid": "31b20c66-a18d-4a8d-9142-96a33ab533b3",
+    "fields": [
+        {
+            "displayLabel": "Id",
+            "internal": true,
+            "key": true,
+            "name": "id",
+            "oid": "eabc7be0-1794-4b9d-9f6a-c8b8af1d757e",
+            "required": true,
+            "type": "number",
+            "unique": true
+        },
+        {
+            "displayLabel": "Created",
+            "internal": true,
+            "name": "creationDate",
+            "oid": "774fc642-3ca2-454d-bdfa-c1f26bcc8679",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Last Updated",
+            "internal": true,
+            "name": "lastUpdateDate",
+            "oid": "dad6d67d-f136-4e1f-aa34-9e596071fcda",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Created By",
+            "internal": true,
+            "name": "createdBy",
+            "oid": "890b3977-7d8c-4829-866b-aaf859e82c23",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Last Updated By",
+            "internal": true,
+            "name": "lastUpdatedBy",
+            "oid": "8d76873f-b64f-4ae6-a963-7736f6baea9b",
+            "type": "string"
+        },
+        {
+            "displayLabel": "<internal>",
+            "hidden": true,
+            "internal": true,
+            "name": "abcsChangeNumber",
+            "oid": "d1bc80e7-86ac-4e28-a0d0-9133dd6f9712",
+            "type": "number"
+        },
+        {
+            "name": "SpouseFirstName",
+            "oid": "7c0e8cad-d1dc-4f8a-a050-fe1732e63284",
+            "displayLabel": "SpouseFirstName",
+            "type": "string"
+        },
+        {
+            "name": "SpouseSurname",
+            "oid": "6b301659-42fa-4f1a-aef0-b334014e4f2e",
+            "displayLabel": "SpouseSurname",
+            "type": "string"
+        },
+        {
+            "name": "SpouseGender",
+            "oid": "f196c930-5e9a-4c6c-b3a4-59251893dec5",
+            "displayLabel": "SpouseGender",
+            "type": "string"
+        },
+        {
+            "name": "SpouseAge",
+            "oid": "6b397f39-94b8-40c9-af47-2c27050491ed",
+            "displayLabel": "SpouseAge",
+            "type": "string"
+        },
+        {
+            "name": "SpouseCitizenship",
+            "oid": "dc82046a-ecae-4db9-861a-05f03bc8bb54",
+            "displayLabel": "SpouseCitizenship",
+            "type": "string"
+        },
+        {
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            },
+            "name": "SpouseCitizenshipOther",
+            "oid": "edb71fa2-bd9c-4578-8076-ebbaa92c6b96",
+            "displayLabel": "SpouseCitizenshipOther",
+            "type": "string"
+        },
+        {
+            "name": "SpousePopGroup",
+            "oid": "1ed5f6e1-c226-4053-a37e-41c0d21628fa",
+            "displayLabel": "SpousePopGroup",
+            "type": "string"
+        },
+        {
+            "name": "SpouseDisability",
+            "oid": "a40ff3d4-be1c-44fc-8aeb-118dd0fc0a19",
+            "displayLabel": "SpouseDisability",
+            "type": "string"
+        },
+        {
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            },
+            "name": "SpouseDisabilityType",
+            "oid": "31e5cfc2-2651-465c-8af7-425bbe8b21d8",
+            "displayLabel": "SpouseDisabilityType",
+            "type": "string"
+        },
+        {
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            },
+            "name": "SpouseDisabilityOther",
+            "oid": "d7596677-bb8d-46d4-9b59-612e238f556b",
+            "displayLabel": "SpouseDisabilityOther",
+            "type": "string"
+        },
+        {
+            "name": "SpouseHouseholdGrants",
+            "oid": "5d6691f1-5d44-4e07-a73a-eae2a6a5d436",
+            "displayLabel": "SpouseHouseholdGrants",
+            "type": "string"
+        },
+        {
+            "name": "SpouseContactDetails",
+            "oid": "0c22cf8e-59d6-4fb8-b8c7-5fea77a66e6e",
+            "displayLabel": "SpouseContactDetails",
+            "type": "string"
+        },
+        {
+            "name": "SpouseHiEducation",
+            "oid": "302c630d-c209-4fcd-a798-25f47f7ca706",
+            "displayLabel": "SpouseHiEducation",
+            "type": "string"
+        },
+        {
+            "name": "SpouseEmpStatus",
+            "oid": "ac8e728f-ec8f-4558-a871-9b23786b93c7",
+            "displayLabel": "SpouseEmpStatus",
+            "type": "string"
+        },
+        {
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            },
+            "name": "SpouseStateOldAgeWarVet",
+            "oid": "ce24d1e1-2df2-4e5b-829d-975b9bb337ce",
+            "displayLabel": "SpouseStateOldAgeWarVet",
+            "type": "string"
+        },
+        {
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            },
+            "name": "SpouseDisabilityGrant",
+            "oid": "25b8b574-a862-49d4-b4c6-8cfa3147c4b6",
+            "displayLabel": "SpouseDisabilityGrant",
+            "type": "string"
+        },
+        {
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            },
+            "name": "SpouseChildSupportGrant",
+            "oid": "1ff9f460-5e6b-4457-ad1d-2d80a10a3a87",
+            "displayLabel": "SpouseChildSupportGrant",
+            "type": "string"
+        },
+        {
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            },
+            "name": "SpouseChildFosterCareGr",
+            "oid": "0bd72cb5-1c15-4db2-9fe2-e4083cedc824",
+            "displayLabel": "SpouseChildFosterCareGr",
+            "type": "string"
+        },
+        {
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            },
+            "name": "SpouseGrantInAid",
+            "oid": "eaf47a07-95de-45ff-8609-dd3b252057d7",
+            "displayLabel": "SpouseGrantInAid",
+            "type": "string"
+        },
+        {
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            },
+            "name": "SpouseCareDependencyGra",
+            "oid": "12a07488-0365-44d3-8372-fc39f21ecb93",
+            "displayLabel": "SpouseCareDependencyGra",
+            "type": "string"
+        },
+        {
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            },
+            "name": "SpouseSocialReliefGrant",
+            "oid": "3ab94853-31b3-4000-abe7-bfa67f270919",
+            "displayLabel": "SpouseSocialReliefGrant",
+            "type": "string"
+        },
+        {
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            },
+            "name": "SpouseUnemploymentInsur",
+            "oid": "512fa5c2-7c64-4b63-95ae-4cd6ae2b8a6b",
+            "displayLabel": "SpouseUnemploymentInsur",
+            "type": "string"
+        },
+        {
+            "name": "SpouseIdNumber",
+            "oid": "261a1ad3-7091-494e-bfed-df22cb3f2589",
+            "displayLabel": "SpouseIdNumber",
+            "type": "string"
+        },
+        {
+            "name": "PhotoSpouseID",
+            "oid": "9381ab2a-b51b-4fb0-aa15-3b0f4ca68599",
+            "displayLabel": "PhotoSpouseID",
+            "type": "string"
+        },
+        {
+            "name": "governmentSubsidyStatusSpouse",
+            "oid": "88e34875-7a30-48c3-867e-7a30d2cf7a45",
+            "displayLabel": "governmentSubsidyStatusSpouse",
+            "type": "string"
+        },
+        {
+            "name": "surveyID",
+            "oid": "90ce692a-bf6b-4d2c-a486-7b5452b3b8d1",
+            "displayLabel": "surveyID",
+            "type": "string"
+        }
+    ],
+    "pluralLabel": "Data_Spouse",
+    "security": {
+        "type": "local",
+        "acl": [
+            {
+                "roleId": "approle.anonymous.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "roleId": "approle.authenticated.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            }
+        ]
+    }
+}

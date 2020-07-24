@@ -1,0 +1,128 @@
+{
+    "displayLabel": "MarriageCertiBO",
+    "name": "MarriageCertiBO",
+    "oid": "7e37f8ae-358e-4743-be23-59522d82df07",
+    "fields": [
+        {
+            "displayLabel": "Id",
+            "internal": true,
+            "key": true,
+            "name": "id",
+            "oid": "c36489ea-bf34-4285-adf0-1da6241ecc07",
+            "required": true,
+            "type": "number",
+            "unique": true
+        },
+        {
+            "displayLabel": "Created",
+            "internal": true,
+            "name": "creationDate",
+            "oid": "47dc381d-e842-4686-abfe-b4b0673934e5",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Last Updated",
+            "internal": true,
+            "name": "lastUpdateDate",
+            "oid": "8357cd46-bc82-4e55-a7d4-a54fdf0f2870",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Created By",
+            "internal": true,
+            "name": "createdBy",
+            "oid": "4f504e53-cc3b-4010-a68b-951f214639c4",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Last Updated By",
+            "internal": true,
+            "name": "lastUpdatedBy",
+            "oid": "e6250081-80f3-467c-a2ca-072b1d02de2f",
+            "type": "string"
+        },
+        {
+            "displayLabel": "<internal>",
+            "hidden": true,
+            "internal": true,
+            "name": "abcsChangeNumber",
+            "oid": "3cca0968-8887-444a-9319-3de14d09e260",
+            "type": "number"
+        },
+        {
+            "name": "name",
+            "oid": "fa1c91dd-97cb-4dbb-85c7-d1e40654f15c",
+            "displayLabel": "name",
+            "type": "string"
+        }
+    ],
+    "objectFunctions": [
+        {
+            "definition": "def vo = newView('PersonalData')\nvo.appendViewCriteria(\"surveyID = '\"+uniqueSurveyID+\"'\")\nvo.executeQuery()\nif (!vo.hasNext()){\n  r = vo.createRow()\n  r.PhotoMarriageCertificate=photoMarriageCertificate;\n  r.surveyID = uniqueSurveyID;\n\n  vo.insertRow(r);\n}\nwhile (vo.hasNext()) {\n  def r = vo.next();\n  r.PhotoMarriageCertificate=photoMarriageCertificate;\n}\n",
+            "name": "updateMarriageCerti",
+            "refId": "43947bb3-d779-46aa-b2b3-ddc0a7203f39",
+            "parameters": [
+                {
+                    "name": "uniqueSurveyID",
+                    "type": "String"
+                },
+                {
+                    "name": "photoMarriageCertificate",
+                    "type": "String"
+                }
+            ],
+            "returnType": "void",
+            "visibility": [
+                "external"
+            ]
+        }
+    ],
+    "security": {
+        "type": "local",
+        "acl": [
+            {
+                "roleId": "approle.anonymous.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "roleId": "approle.authenticated.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            }
+        ]
+    },
+    "setupData": true
+}

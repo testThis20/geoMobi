@@ -1,0 +1,189 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Ords Test Gallery",
+        "version": "1.0.0",
+        "x-vb": {
+        }
+    },
+    "servers": [
+        {
+            "url": "https://sv1jzpkwobsfa0y-geomobidb.adb.eu-frankfurt-1.oraclecloudapps.com/ords/test/gallery",
+            "x-vb": {
+                "anonymousAccess": true
+            }
+        }
+    ],
+    "paths": {
+        "/images/": {
+            "post": {
+                "operationId": "postImages",
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "x-vb": {
+                            "defaultValue": "test13"
+                        }
+                    },
+                    {
+                        "name": "content_type",
+                        "in": "header",
+                        "required": true,
+                        "x-vb": {
+                            "defaultValue": "image/png"
+                        },
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "The content returned by the server.",
+                        "content": {
+                            "image/png": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PostImagesResponse"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "externalValue": "./examples/postImages/response_default_image_png_vb.json"
+                                    }
+                                }
+                        }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PostImagesRequest"
+                            },
+                            "examples": {
+                                "vb": {
+                                    "summary": "Example stored by VB User",
+                                    "externalValue": "./examples/postImages/request_application_x-www-form-urlencoded_vb.json"
+                                }
+                            }
+                     },
+                        "*/*": {},
+                        "multipart/form-data": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PostImagesRequest"
+                            },
+                            "examples": {
+                                "vb": {
+                                    "externalValue": "./examples/postImages/request_multipart_form-data_vb.json"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "create"
+                }
+            },
+            "get": {
+                "operationId": "getImages",
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetImages"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getImages/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Getimage": {
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "array",
+                        "items": {}
+                    },
+                    "first": {
+                        "$ref": "#/components/schemas/First"
+                    }
+                }
+            },
+            "First": {
+                "type": "object",
+                "properties": {
+                    "$ref": {
+                        "type": "string"
+                    }
+                }
+            },
+            "GetImages": {
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "array",
+                        "items": {}
+                    },
+                    "first": {
+                        "type": "object",
+                        "properties": {
+                            "$ref": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "PostImagesResponse": {
+                "type": "object",
+                "properties": {
+                    "uri": {
+                        "type": "object",
+                        "properties": {
+                            "$ref": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "id": {
+                        "type": "integer"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "content_type": {
+                        "type": "string"
+                    }
+                }
+            },
+            "PostImagesRequest": {
+                "type": "object",
+                "properties": {
+                    "        {\n            \"uri\": {\n                \"$ref\": \"https://sv1jzpkwobsfa0y-geomobidb.adb.eu-frankfurt-1.oraclecloudapps.com/ords/test/gallery/images/5016\"\n            },\n            \"id\": 5016,\n            \"title\": \"20200331_1585683618729_HHPhotoIdDocument.jpg\",\n            \"content_type\": \"image/png\"\n        }": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,128 @@
+{
+    "displayLabel": "StickerPhotoBO",
+    "name": "StickerPhotoBO",
+    "oid": "464149f3-cb07-4c94-ad12-cd71ffd1c5e5",
+    "fields": [
+        {
+            "displayLabel": "Id",
+            "internal": true,
+            "key": true,
+            "name": "id",
+            "oid": "3dfbf98c-71d8-4003-8af8-d52dd0b559df",
+            "required": true,
+            "type": "number",
+            "unique": true
+        },
+        {
+            "displayLabel": "Created",
+            "internal": true,
+            "name": "creationDate",
+            "oid": "4adf29cd-8d3c-4f50-91bc-18fb26acb3a8",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Last Updated",
+            "internal": true,
+            "name": "lastUpdateDate",
+            "oid": "159f218b-5608-4d2e-b749-3f1327dd4bd4",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Created By",
+            "internal": true,
+            "name": "createdBy",
+            "oid": "bef3d494-f1ab-4daf-ae4d-bda4b8fcc52e",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Last Updated By",
+            "internal": true,
+            "name": "lastUpdatedBy",
+            "oid": "3c70da23-d8f0-4b59-9d9a-5ece34c6e3c1",
+            "type": "string"
+        },
+        {
+            "displayLabel": "<internal>",
+            "hidden": true,
+            "internal": true,
+            "name": "abcsChangeNumber",
+            "oid": "a4e2da06-e45e-428b-927b-be02e60ad581",
+            "type": "number"
+        },
+        {
+            "name": "name",
+            "oid": "2114de78-0d0c-49da-925f-bc0b86dc9e92",
+            "displayLabel": "name",
+            "type": "string"
+        }
+    ],
+    "objectFunctions": [
+        {
+            "definition": "def vo = newView('GeneralField')\nvo.appendViewCriteria(\"surveyID = '\"+surveyIDVar+\"'\")\nvo.executeQuery()\nif (!vo.hasNext()){\n  r = vo.createRow()\n  r.surveyID = surveyIDVar;\n\n  r.StickerPhoto=stickerPhotoPath;\n  vo.insertRow(r);\n}\nwhile (vo.hasNext()) {\n  def r = vo.next();\n  r.StickerPhoto=stickerPhotoPath;\n}\n",
+            "name": "updateStickerPhoto",
+            "refId": "222cab92-729b-43b6-a53c-6156bda44fbf",
+            "parameters": [
+                {
+                    "name": "stickerPhotoPath",
+                    "type": "String"
+                },
+                {
+                    "name": "surveyIDVar",
+                    "type": "String"
+                }
+            ],
+            "returnType": "void",
+            "visibility": [
+                "external"
+            ]
+        }
+    ],
+    "security": {
+        "type": "local",
+        "acl": [
+            {
+                "roleId": "approle.anonymous.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "roleId": "approle.authenticated.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            }
+        ]
+    },
+    "setupData": true
+}

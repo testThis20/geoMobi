@@ -1,0 +1,134 @@
+{
+    "fieldValidators": [],
+    "objectFunctions": [
+        {
+            "active": "active",
+            "functionBody": "def vo = newView('PersonalData')\nvo.appendViewCriteria(\"surveyID = '\"+surveyIDVar+\"'\")\nvo.executeQuery()\nif (!vo.hasNext()){\n  r = vo.createRow()\n  r.surveyID = surveyIDVar;\n\n  r.IDNumber=idNumberHH;\n  r.Name=nameHH;\n  r.Surname=surnameHH;  \n  r.Gender=genderHH;\n  r.AgeHH=ageOfHH;\n  r.Nationality=nationalityHH;\n  r.NationalityOther=nationalityOtherHH;\n\n  r.PopGroup=popGroupHH;\n  r.Disability=disabilityHH;\n  r.DisabilityType=disabilityTypeHH;\n  r.DisabilityTypeOther=disabilityOtherHH;\n  r.ContactDetails=contactHH;\n  r.HiEducation=eduHH;\n  r.Employment=empStatusHH;\n  r.MarStatus=marStatusHH;\n  r.Grants=grantsHH;\n\n  r.StateOldAgeWarVetPensio = stateOldVetHH;\n  r.DisabilityGrant\t= disabilityGrantHH;\n  r.ChildSupportGrant = childSupGrantHH;\n  r.ChildFosterCareGrant = childFosterGrantHH;\n  r.GrantInAid = grantInAidHH;\n  r.CareDependencyGrant = careDepGrantHH;\n  r.SocialReliefGrant = socialRefGrantHH;\n  r.UnemploymentInsuranceFu = unemploymetInsHH;\n  r.NumberOfDependants=numOfDependants;\n\n  r.governmentSubsidyStatusHead=governmentSubsidyStatusHead;\n\n  vo.insertRow(r)\n}\nwhile (vo.hasNext()) {\n  def r = vo.next();\n\n  r.IDNumber=idNumberHH;\n  r.Name=nameHH;\n  r.Surname=surnameHH;\n  r.Gender=genderHH;\n  r.AgeHH=ageOfHH;\n  r.Nationality=nationalityHH;\n  r.NationalityOther=nationalityOtherHH;\n\n  r.PopGroup=popGroupHH;\n  r.Disability=disabilityHH;\n  r.DisabilityType=disabilityTypeHH;\n  r.DisabilityTypeOther=disabilityOtherHH;\n  r.ContactDetails=contactHH;\n  r.HiEducation=eduHH;\n  r.Employment=empStatusHH;\n  r.MarStatus=marStatusHH;\n  r.Grants=grantsHH;\n\n\n  r.StateOldAgeWarVetPensio = stateOldVetHH;\n  r.DisabilityGrant\t= disabilityGrantHH;\n  r.ChildSupportGrant = childSupGrantHH;\n  r.ChildFosterCareGrant = childFosterGrantHH;\n  r.GrantInAid = grantInAidHH;\n  r.CareDependencyGrant = careDepGrantHH;\n  r.SocialReliefGrant = socialRefGrantHH;\n  r.UnemploymentInsuranceFu = unemploymetInsHH;\n  r.NumberOfDependants=numOfDependants;\n  \n  r.governmentSubsidyStatusHead=governmentSubsidyStatusHead;\n\n}\n\ndef vo1 = newView('GeneralField')\nvo1.appendViewCriteria(\"surveyID = '\"+surveyIDVar+\"'\")\nvo1.executeQuery()\nif (!vo1.hasNext()){\n  r = vo1.createRow()\n  r.surveyID = surveyIDVar;  \n  r.Comments=comments;\n  vo1.insertRow(r)\n}\nwhile (vo1.hasNext()) {\n  def r = vo1.next();\n  r.Comments=comments;\n}",
+            "functionName": "updateDetailsHH",
+            "lastUpdate": "2020-03-21T05:09:55",
+            "oid": "0c20cebd-f72d-412f-91c3-427b159ecb5f",
+            "parameters": [
+                {
+                    "parameterName": "nameHH",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "surnameHH",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "genderHH",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "ageOfHH",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "nationalityHH",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "nationalityOtherHH",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "popGroupHH",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "disabilityHH",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "disabilityTypeHH",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "disabilityOtherHH",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "contactHH",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "eduHH",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "empStatusHH",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "marStatusHH",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "grantsHH",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "stateOldVetHH",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "disabilityGrantHH",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "childSupGrantHH",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "childFosterGrantHH",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "grantInAidHH",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "careDepGrantHH",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "socialRefGrantHH",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "unemploymetInsHH",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "idNumberHH",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "numOfDependants",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "surveyIDVar",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "comments",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "governmentSubsidyStatusHead",
+                    "parameterType": "String"
+                }
+            ],
+            "returnType": "void",
+            "scriptMimeType": "application/x-adf-groovy",
+            "visibility": [
+                "external"
+            ]
+        }
+      ],
+    "objectValidators": [],
+    "triggers": [],
+    "fieldTriggers": []
+}

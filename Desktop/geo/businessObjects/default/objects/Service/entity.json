@@ -1,0 +1,191 @@
+{
+    "displayLabel": "Data_Service",
+    "name": "Service",
+    "oid": "0d90f87e-b171-4bbe-be68-aa9fb0580d79",
+    "fields": [
+        {
+            "displayLabel": "Id",
+            "internal": true,
+            "key": true,
+            "name": "id",
+            "oid": "dbf29710-b8a0-423e-87aa-d8be8868212f",
+            "required": true,
+            "type": "number",
+            "unique": true
+        },
+        {
+            "displayLabel": "Created",
+            "internal": true,
+            "name": "creationDate",
+            "oid": "605181bc-0f85-4f68-98a7-55b45da7eb6c",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Last Updated",
+            "internal": true,
+            "name": "lastUpdateDate",
+            "oid": "c4e26c89-8ac1-41ec-9d9b-b5b233a40234",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Created By",
+            "internal": true,
+            "name": "createdBy",
+            "oid": "d8bfa0ef-5914-4cc4-b15c-00a53131ea85",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Last Updated By",
+            "internal": true,
+            "name": "lastUpdatedBy",
+            "oid": "7edc5382-2105-4be3-a152-c88fbac11bea",
+            "type": "string"
+        },
+        {
+            "displayLabel": "<internal>",
+            "hidden": true,
+            "internal": true,
+            "name": "abcsChangeNumber",
+            "oid": "674dbcbd-3bc3-45fa-a65c-6a525819b09c",
+            "type": "number"
+        },
+        {
+            "name": "ToiletType",
+            "oid": "818b5729-127d-432f-9bc5-6bc8d07c9f8f",
+            "displayLabel": "ToiletType",
+            "type": "string"
+        },
+        {
+            "name": "WaterType",
+            "oid": "6d8774d1-2d5f-40c4-864e-0056b6c461c9",
+            "displayLabel": "WaterType",
+            "type": "string"
+        },
+        {
+            "name": "WaterLitres",
+            "oid": "b88ca3f5-7487-4f97-adb5-3bd5dc4e802c",
+            "displayLabel": "WaterLitres",
+            "type": "string"
+        },
+        {
+            "name": "WasteType",
+            "oid": "32fe744c-d59b-4a92-a5e8-d3ad1e4de2b0",
+            "displayLabel": "WasteType",
+            "type": "string"
+        },
+        {
+            "name": "HealthAccess",
+            "oid": "6f564737-6d66-4b89-ac22-9fa8b60e917a",
+            "displayLabel": "HealthAccess",
+            "type": "string"
+        },
+        {
+            "name": "TransportType",
+            "oid": "c41a421f-038a-4a55-ac84-7e7c2fc0043e",
+            "displayLabel": "TransportType",
+            "type": "string"
+        },
+        {
+            "name": "CommType",
+            "oid": "8cff1524-a9b4-4933-91f2-e71ea3782d7f",
+            "displayLabel": "CommType",
+            "type": "string"
+        },
+        {
+            "name": "CrimeVictim",
+            "oid": "09cf0dad-7ad1-4935-bb9e-1fa6c2b72172",
+            "displayLabel": "CrimeVictim",
+            "type": "string"
+        },
+        {
+            "name": "CrimeDetails",
+            "oid": "3d77cafb-37e7-4242-85e5-4a7b8e24687e",
+            "displayLabel": "CrimeDetails",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            }
+        },
+        {
+            "name": "PECooking",
+            "oid": "4852b79b-ed9e-48f9-b7e7-44de1f1150a8",
+            "displayLabel": "PECooking",
+            "type": "string"
+        },
+        {
+            "name": "PELighting",
+            "oid": "45ed8624-b297-430f-adb6-987c50d179db",
+            "displayLabel": "PELighting",
+            "type": "string"
+        },
+        {
+            "name": "PEHeating",
+            "oid": "c8c51ada-de88-422d-a391-2a069df8a364",
+            "displayLabel": "PEHeating",
+            "type": "string"
+        },
+        {
+            "name": "surveyID",
+            "oid": "cc33ac71-dde8-4377-bac2-1a1babfdb1ba",
+            "displayLabel": "surveyID",
+            "type": "string"
+        },
+        {
+            "name": "wasteCollectionFrequenc",
+            "oid": "05dc4a24-e080-4f78-b09d-788415fdc777",
+            "displayLabel": "wasteCollectionFrequency",
+            "type": "string"
+        }
+    ],
+    "security": {
+        "type": "local",
+        "acl": [
+            {
+                "roleId": "approle.anonymous.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "roleId": "approle.authenticated.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            }
+        ]
+    },
+    "pluralLabel": "Data_Service"
+}

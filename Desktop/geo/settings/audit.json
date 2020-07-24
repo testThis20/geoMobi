@@ -1,0 +1,15 @@
+{
+    "paths": {},
+    "rules": {
+        "translations.audit.propertyNotTranslated": {
+            "disabled": true
+        },
+        "jshint#W033": {
+            "disabled": true
+        },
+        "json#unused_import": {
+            "disabled": true
+        }
+    },
+    "auditors": {}
+}

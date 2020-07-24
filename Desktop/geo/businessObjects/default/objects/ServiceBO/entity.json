@@ -1,0 +1,176 @@
+{
+    "displayLabel": "ServiceBO",
+    "name": "ServiceBO",
+    "oid": "15bc9716-973c-494e-bcef-10c625a66c9b",
+    "fields": [
+        {
+            "displayLabel": "Id",
+            "internal": true,
+            "key": true,
+            "name": "id",
+            "oid": "557fb941-8325-4ee0-ba26-7462ef068e54",
+            "required": true,
+            "type": "number",
+            "unique": true
+        },
+        {
+            "displayLabel": "Created",
+            "internal": true,
+            "name": "creationDate",
+            "oid": "4df7c09d-f88f-45ab-91e3-dd07cd5ea707",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Last Updated",
+            "internal": true,
+            "name": "lastUpdateDate",
+            "oid": "68ae8e99-2ef4-4d3f-97d6-06ea1914dee0",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Created By",
+            "internal": true,
+            "name": "createdBy",
+            "oid": "c74601e2-a88d-4be7-ab2a-7f3f2eae64c1",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Last Updated By",
+            "internal": true,
+            "name": "lastUpdatedBy",
+            "oid": "06dcaa78-0973-4cd9-b1fc-181d5cfd014c",
+            "type": "string"
+        },
+        {
+            "displayLabel": "<internal>",
+            "hidden": true,
+            "internal": true,
+            "name": "abcsChangeNumber",
+            "oid": "fa2a5426-2ebd-45ed-b05c-2c3566363a90",
+            "type": "number"
+        },
+        {
+            "name": "name",
+            "oid": "adf1465a-7231-4eb6-82b4-1dad2abeba0e",
+            "displayLabel": "name",
+            "type": "string"
+        }
+    ],
+    "objectFunctions": [
+        {
+            "definition": "def vo = newView('Service')\nvo.appendViewCriteria(\"surveyID = '\"+surveyIDVar+\"'\")\nvo.executeQuery()\nif (!vo.hasNext()){\n  r = vo.createRow()\n  r.surveyID = surveyIDVar;\n\n  r.CrimeDetails=crimeDetails;\n  r.WaterLitres=waterLitres;\n  r.WaterType=waterType;\n  r.ToiletType=toiletType;\n  r.WasteType=wasteType;\n  r.HealthAccess=healthType;\n  r.CommType=commType;\n  r.CrimeVictim=crimeVictim;\n  r.PECooking=primaryEnergyCooking;\n  r.PELighting=primaryEnergyLighting;\n  r.PEHeating=primaryEnergyHeating;\n  r.TransportType=transport;\n  r.wasteCollectionFrequenc = wasteCollection;\n  vo.insertRow(r);\n}\nwhile (vo.hasNext()) {\n  def r = vo.next();\n  r.CrimeDetails=crimeDetails;\n  r.WaterLitres=waterLitres;\n  r.WaterType=waterType;\n  r.ToiletType=toiletType;\n  r.WasteType=wasteType;\n  r.HealthAccess=healthType;\n  r.CommType=commType;\n  r.CrimeVictim=crimeVictim;\n  r.PECooking=primaryEnergyCooking;\n  r.PELighting=primaryEnergyLighting;\n  r.PEHeating=primaryEnergyHeating;\n  r.TransportType=transport;\n  r.wasteCollectionFrequenc = wasteCollection; \n}\n",
+            "name": "UpdateServices",
+            "refId": "af0e103c-f05f-4c90-97e2-9780e1260561",
+            "parameters": [
+                {
+                    "name": "crimeDetails",
+                    "type": "String"
+                },
+                {
+                    "name": "waterType",
+                    "type": "String"
+                },
+                {
+                    "name": "waterLitres",
+                    "type": "String"
+                },
+                {
+                    "name": "wasteType",
+                    "type": "String"
+                },
+                {
+                    "name": "healthType",
+                    "type": "String"
+                },
+                {
+                    "name": "toiletType",
+                    "type": "String"
+                },
+                {
+                    "name": "commType",
+                    "type": "String"
+                },
+                {
+                    "name": "crimeVictim",
+                    "type": "String"
+                },
+                {
+                    "name": "primaryEnergyCooking",
+                    "type": "String"
+                },
+                {
+                    "name": "primaryEnergyLighting",
+                    "type": "String"
+                },
+                {
+                    "name": "primaryEnergyHeating",
+                    "type": "String"
+                },
+                {
+                    "name": "transport",
+                    "type": "String"
+                },
+                {
+                    "name": "surveyIDVar",
+                    "type": "String"
+                },
+                {
+                    "name": "wasteCollection",
+                    "type": "String"
+                }
+            ],
+            "returnType": "void",
+            "visibility": [
+                "external"
+            ]
+        }
+    ],
+    "security": {
+        "type": "local",
+        "acl": [
+            {
+                "roleId": "approle.anonymous.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "roleId": "approle.authenticated.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            }
+        ]
+    },
+    "setupData": true
+}

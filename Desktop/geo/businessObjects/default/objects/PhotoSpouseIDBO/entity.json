@@ -1,0 +1,128 @@
+{
+    "displayLabel": "PhotoSpouseIDBO",
+    "name": "PhotoSpouseIDBO",
+    "oid": "4ec918ee-8108-4b12-bf05-0d63af4c1926",
+    "fields": [
+        {
+            "displayLabel": "Id",
+            "internal": true,
+            "key": true,
+            "name": "id",
+            "oid": "f20632fe-566e-4b45-a681-9c49f8e6f435",
+            "required": true,
+            "type": "number",
+            "unique": true
+        },
+        {
+            "displayLabel": "Created",
+            "internal": true,
+            "name": "creationDate",
+            "oid": "fe001a70-8126-42f0-810d-795db3b76f47",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Last Updated",
+            "internal": true,
+            "name": "lastUpdateDate",
+            "oid": "f904de4f-6ef1-4be2-858a-b88bcb2c5518",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Created By",
+            "internal": true,
+            "name": "createdBy",
+            "oid": "ab625e52-ce0f-4227-ac5c-6f5119866cdd",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Last Updated By",
+            "internal": true,
+            "name": "lastUpdatedBy",
+            "oid": "25efc932-993c-4cf0-ae26-ee8e30355716",
+            "type": "string"
+        },
+        {
+            "displayLabel": "<internal>",
+            "hidden": true,
+            "internal": true,
+            "name": "abcsChangeNumber",
+            "oid": "0d782921-0075-4172-86ca-7f1ea30b6e81",
+            "type": "number"
+        },
+        {
+            "name": "name",
+            "oid": "fb9d1ce5-eeab-488b-bc05-ea90299ada0f",
+            "displayLabel": "name",
+            "type": "string"
+        }
+    ],
+    "objectFunctions": [
+        {
+            "definition": "def vo = newView('SpouseData')\nvo.appendViewCriteria(\"surveyID = '\"+uniqueSurveyID+\"'\")\nvo.executeQuery()\nif (!vo.hasNext()){\n  r = vo.createRow()\n  r.PhotoSpouseID=idPhotoSpouse;\n  r.surveyID = uniqueSurveyID;\n\n  vo.insertRow(r);\n}\nwhile (vo.hasNext()) {\n  def r = vo.next();\n  r.PhotoSpouseID=idPhotoSpouse;\n\n}\n",
+            "name": "updatePhotoSpouseID",
+            "refId": "df1c194d-5887-48d3-b85f-6e02c63844b2",
+            "parameters": [
+                {
+                    "name": "idPhotoSpouse",
+                    "type": "String"
+                },
+                {
+                    "name": "uniqueSurveyID",
+                    "type": "String"
+                }
+            ],
+            "returnType": "void",
+            "visibility": [
+                "external"
+            ]
+        }
+    ],
+    "setupData": true,
+    "security": {
+        "type": "local",
+        "acl": [
+            {
+                "roleId": "approle.anonymous.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "roleId": "approle.authenticated.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            }
+        ]
+    }
+}

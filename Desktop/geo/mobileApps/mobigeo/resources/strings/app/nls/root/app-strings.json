@@ -1,0 +1,574 @@
+{
+  "take_photo": {
+    "camera": "Camera",
+    "cancel": "Cancel"
+  },
+  "toggle_drawer_label": "Navigation Drawer",
+  "@toggle_drawer_label": {
+    "description": "The label used by assistive technologies for the Navigation Drawer"
+  },
+  "label__text_1986": "Dwelling Type",
+  "@label__text_1986": {
+    "description": ""
+  },
+  "label__text_7ff5": "House number",
+  "@label__text_7ff5": {
+    "description": ""
+  },
+  "label__text_e1be": "Sticker Number",
+  "@label__text_e1be": {
+    "description": ""
+  },
+  "button__text_cf2b": "Start Survey",
+  "@button__text_cf2b": {
+    "description": ""
+  },
+  "label__text_2ac7": "Capture Status",
+  "@label__text_2ac7": {
+    "description": ""
+  },
+  "button__text_56f3": "No Survey",
+  "@button__text_56f3": {
+    "description": ""
+  },
+  "button__text_a9c5": "Take Photo",
+  "@button__text_a9c5": {
+    "description": ""
+  },
+  "stickerNumPhoto_alt_e18f": "Sticker Photo",
+  "@stickerNumPhoto_alt_e18f": {
+    "description": ""
+  },
+  "fireNotification3_summary_d4d8": "Please fill the required fields!",
+  "@fireNotification3_summary_d4d8": {
+    "description": ""
+  },
+  "fireNotification7_summary_b3e1": "Sticker photo is required!",
+  "@fireNotification7_summary_b3e1": {
+    "description": ""
+  },
+  "fireNotification1_message_e1b6": "Please select dwelling type!",
+  "@fireNotification1_message_e1b6": {
+    "description": ""
+  },
+  "fireNotification1_summary_913d": "Dwelling type is required!",
+  "@fireNotification1_summary_913d": {
+    "description": ""
+  },
+  "fireNotification4_summary_fa7c": "Capture status is required!",
+  "@fireNotification4_summary_fa7c": {
+    "description": ""
+  },
+  "fireNotification4_message_83c8": "Please select capture status!",
+  "@fireNotification4_message_83c8": {
+    "description": ""
+  },
+  "fireNotification2_summary_0067": "Could not upload dashboard details to database!",
+  "@fireNotification2_summary_0067": {
+    "description": ""
+  },
+  "fireNotification2_message_9746": "Please retry!",
+  "@fireNotification2_message_9746": {
+    "description": ""
+  },
+  "fireNotification3_summary_decc": "All fields are required!",
+  "@fireNotification3_summary_decc": {
+    "description": ""
+  },
+  "fireNotification3_message_696e": "Please fill in all fields!",
+  "@fireNotification3_message_696e": {
+    "description": ""
+  },
+  "fireNotification7_message_8b5d": "Please upload sticker photo!",
+  "@fireNotification7_message_8b5d": {
+    "description": ""
+  },
+  "fireNotification5_summary_0be4": "Could not detect GPS co-ordinates!",
+  "@fireNotification5_summary_0be4": {
+    "description": ""
+  },
+  "fireNotification5_message_d6aa": "Please restart the app!",
+  "@fireNotification5_message_d6aa": {
+    "description": ""
+  },
+  "fireNotification8_message_f5d0": "Please retry!",
+  "@fireNotification8_message_f5d0": {
+    "description": ""
+  },
+  "fireNotification8_summary_3bea": "Failed to upload sticker photo to gallery!",
+  "@fireNotification8_summary_3bea": {
+    "description": ""
+  },
+  "fireNotification1_summary_f9e3": "Failed to update sticker photo to database!",
+  "@fireNotification1_summary_f9e3": {
+    "description": ""
+  },
+  "fireNotification1_message_99ca": "Please retry!",
+  "@fireNotification1_message_99ca": {
+    "description": ""
+  },
+  "fireNotification1_summary_b982": "Details Saved!",
+  "@fireNotification1_summary_b982": {
+    "description": ""
+  },
+  "fireNotification1_message_d9b5": "You can continue with next survey!",
+  "@fireNotification1_message_d9b5": {
+    "description": ""
+  },
+  "fireNotification1_summary_22bb": "Invalid Username!",
+  "@fireNotification1_summary_22bb": {
+    "description": ""
+  },
+  "fireNotification1_message_7b7d": "Please enter correct username!",
+  "@fireNotification1_message_7b7d": {
+    "description": ""
+  },
+  "fireNotification1_summary_494d": "Incorrect username or password!",
+  "@fireNotification1_summary_494d": {
+    "description": ""
+  },
+  "fireNotification1_message_fd76": "Please retry!",
+  "@fireNotification1_message_fd76": {
+    "description": ""
+  },
+  "fireNotification3_summary_9c9c": "App is Offline!",
+  "@fireNotification3_summary_9c9c": {
+    "description": ""
+  },
+  "fireNotification3_message_c905": "You can still continue with the survey!",
+  "@fireNotification3_message_c905": {
+    "description": ""
+  },
+  "fireNotification4_summary_3c99": "Either the username or the password is incorrect!",
+  "@fireNotification4_summary_3c99": {
+    "description": ""
+  },
+  "fireNotification4_message_a15a": "Please retry!",
+  "@fireNotification4_message_a15a": {
+    "description": ""
+  },
+  "fireNotification2_message_05e6": "Please fill in both the fields!",
+  "@fireNotification2_message_05e6": {
+    "description": ""
+  },
+  "fireNotification2_summary_d3a0": "Both Username and Password are mandatory!",
+  "@fireNotification2_summary_d3a0": {
+    "description": ""
+  },
+  "fireNotification5_summary_6a31": "Could not get the list of users from online database!",
+  "@fireNotification5_summary_6a31": {
+    "description": ""
+  },
+  "fireNotification5_message_cc3e": "Please retry!",
+  "@fireNotification5_message_cc3e": {
+    "description": ""
+  },
+  "fireNotification6_summary_e43f": "The app is online!",
+  "@fireNotification6_summary_e43f": {
+    "description": ""
+  },
+  "fireNotification2_summary_2a16": "No offline Images to be uploaded.",
+  "@fireNotification2_summary_2a16": {
+    "description": ""
+  },
+  "fireNotification6_summary_36b2": "Could not upload marriage certificate offline photo to database!",
+  "@fireNotification6_summary_36b2": {
+    "description": ""
+  },
+  "fireNotification6_message_3b46": "Please retry!",
+  "@fireNotification6_message_3b46": {
+    "description": ""
+  },
+  "fireNotification5_summary_c0ae": "Could not upload sticker offline photo to database!",
+  "@fireNotification5_summary_c0ae": {
+    "description": ""
+  },
+  "fireNotification5_message_b265": "Please retry!",
+  "@fireNotification5_message_b265": {
+    "description": ""
+  },
+  "fireNotification3_message_bae4": "Please bring the device online and retry.",
+  "@fireNotification3_message_bae4": {
+    "description": ""
+  },
+  "fireNotification3_summary_f0d7": "Device is offline. ",
+  "@fireNotification3_summary_f0d7": {
+    "description": ""
+  },
+  "fireNotification7_summary_6c05": "Could not upload spouse offline photo to database!",
+  "@fireNotification7_summary_6c05": {
+    "description": ""
+  },
+  "fireNotification7_message_0b41": "Please retry!",
+  "@fireNotification7_message_0b41": {
+    "description": ""
+  },
+  "fireNotification8_summary_dad2": "Could not upload head of household ID offline photo to database!",
+  "@fireNotification8_summary_dad2": {
+    "description": ""
+  },
+  "fireNotification8_message_bd8f": "Please retry!",
+  "@fireNotification8_message_bd8f": {
+    "description": ""
+  },
+  "fireNotification9_summary_89ea": "Could not upload dwelling offline photo to database!",
+  "@fireNotification9_summary_89ea": {
+    "description": ""
+  },
+  "fireNotification9_message_1b4f": "Please retry!",
+  "@fireNotification9_message_1b4f": {
+    "description": ""
+  },
+  "fireNotification10_summary_0990": "Could not upload dependent birth certificate offline photo to database!",
+  "@fireNotification10_summary_0990": {
+    "description": ""
+  },
+  "fireNotification10_message_8b7c": "Please retry!",
+  "@fireNotification10_message_8b7c": {
+    "description": ""
+  },
+  "fireNotification12_summary_9471": "Offline Image upload completed!",
+  "@fireNotification12_summary_9471": {
+    "description": ""
+  },
+  "fireNotification13_summary_059a": "Offline Image upload could not be completed!",
+  "@fireNotification13_summary_059a": {
+    "description": ""
+  },
+  "fireNotification1_summary_1d33": "Could not upload offline photo to database!",
+  "@fireNotification1_summary_1d33": {
+    "description": ""
+  },
+  "fireNotification1_summary_3ecc": "App is offline!",
+  "@fireNotification1_summary_3ecc": {
+    "description": ""
+  },
+  "fireNotification1_message_53cd": "Please connect to internet and try again!",
+  "@fireNotification1_message_53cd": {
+    "description": ""
+  },
+  "fireNotification2_summary_fd64": "Could not upload offline dashboard data to database!",
+  "@fireNotification2_summary_fd64": {
+    "description": ""
+  },
+  "fireNotification2_message_2807": "Please retry!",
+  "@fireNotification2_message_2807": {
+    "description": ""
+  },
+  "fireNotification4_summary_5e3b": "Could not upload offline household data to database!",
+  "@fireNotification4_summary_5e3b": {
+    "description": ""
+  },
+  "fireNotification4_message_cc12": "Please retry!",
+  "@fireNotification4_message_cc12": {
+    "description": ""
+  },
+  "fireNotification5_summary_ee7d": "No offline data to be uploaded!",
+  "@fireNotification5_summary_ee7d": {
+    "description": ""
+  },
+  "fireNotification6_summary_2842": "Could not upload offline head of household data to database!",
+  "@fireNotification6_summary_2842": {
+    "description": ""
+  },
+  "fireNotification6_message_1566": "Please retry!",
+  "@fireNotification6_message_1566": {
+    "description": ""
+  },
+  "fireNotification7_summary_b4c3": "Could not upload offline service data to database!",
+  "@fireNotification7_summary_b4c3": {
+    "description": ""
+  },
+  "fireNotification7_message_a64e": "Please retry!",
+  "@fireNotification7_message_a64e": {
+    "description": ""
+  },
+  "fireNotification8_summary_e358": "Could not upload offline spouse data to database!",
+  "@fireNotification8_summary_e358": {
+    "description": ""
+  },
+  "fireNotification8_message_fffc": "Please retry!",
+  "@fireNotification8_message_fffc": {
+    "description": ""
+  },
+  "fireNotification9_summary_5de1": "Offline Data upload completed!",
+  "@fireNotification9_summary_5de1": {
+    "description": ""
+  },
+  "fireNotification10_summary_6a81": "Offline Data upload could not be completed!",
+  "@fireNotification10_summary_6a81": {
+    "description": ""
+  },
+  "fireNotification10_message_18ba": "Please retry!",
+  "@fireNotification10_message_18ba": {
+    "description": ""
+  },
+  "fireNotification4_summary_7b17": "Dwelling Photo could not be saved to the gallery!",
+  "@fireNotification4_summary_7b17": {
+    "description": ""
+  },
+  "fireNotification4_message_64c9": "Please retry!",
+  "@fireNotification4_message_64c9": {
+    "description": ""
+  },
+  "fireNotification6_summary_a2c1": "Could not save dwelling photo to the database!",
+  "@fireNotification6_summary_a2c1": {
+    "description": ""
+  },
+  "fireNotification6_message_3e65": "Please retry!",
+  "@fireNotification6_message_3e65": {
+    "description": ""
+  },
+  "fireNotification1_summary_dff0": "yes",
+  "@fireNotification1_summary_dff0": {
+    "description": ""
+  },
+  "fireNotification2_summary_ec72": "no",
+  "@fireNotification2_summary_ec72": {
+    "description": ""
+  },
+  "fireNotification2_summary_6152": "Could not upload photo of ID of head of household to gallery!",
+  "@fireNotification2_summary_6152": {
+    "description": ""
+  },
+  "fireNotification2_message_1501": "Please retry!",
+  "@fireNotification2_message_1501": {
+    "description": ""
+  },
+  "fireNotification4_summary_4a3d": "Could not upload photo of ID of head of household to database!",
+  "@fireNotification4_summary_4a3d": {
+    "description": ""
+  },
+  "fireNotification4_message_c119": "Please retry !",
+  "@fireNotification4_message_c119": {
+    "description": ""
+  },
+  "fireNotification3_summary_f89d": "Could not upload spouse ID photo to gallery!",
+  "@fireNotification3_summary_f89d": {
+    "description": ""
+  },
+  "fireNotification3_message_9852": "Please retry!",
+  "@fireNotification3_message_9852": {
+    "description": ""
+  },
+  "fireNotification4_summary_04e4": "Could not upload spouse ID photo to database!",
+  "@fireNotification4_summary_04e4": {
+    "description": ""
+  },
+  "fireNotification4_message_a44f": "Please retry!",
+  "@fireNotification4_message_a44f": {
+    "description": ""
+  },
+  "fireNotification3_summary_ca29": "Could not upload marriage certificate to gallery!",
+  "@fireNotification3_summary_ca29": {
+    "description": ""
+  },
+  "fireNotification3_message_518e": "Please retry!",
+  "@fireNotification3_message_518e": {
+    "description": ""
+  },
+  "fireNotification5_summary_cf8c": "Could not upload marriage certificate to database!",
+  "@fireNotification5_summary_cf8c": {
+    "description": ""
+  },
+  "fireNotification5_message_681b": "Please retry!",
+  "@fireNotification5_message_681b": {
+    "description": ""
+  },
+  "fireNotification2_summary_1c25": "Could not upload head of household details to database!",
+  "@fireNotification2_summary_1c25": {
+    "description": ""
+  },
+  "fireNotification2_message_bc7e": "Please retry!",
+  "@fireNotification2_message_bc7e": {
+    "description": ""
+  },
+  "fireNotification4_summary_eb51": "Please select \"Yes\" for appropriate grants!",
+  "@fireNotification4_summary_eb51": {
+    "description": ""
+  },
+  "fireNotification2_summary_3253": "Failed to save Service details!",
+  "@fireNotification2_summary_3253": {
+    "description": ""
+  },
+  "fireNotification5_summary_b9be": "Head of household ID photo not taken!",
+  "@fireNotification5_summary_b9be": {
+    "description": ""
+  },
+  "fireNotification6_summary_b605": "Photo of Spouse ID not taken!",
+  "@fireNotification6_summary_b605": {
+    "description": ""
+  },
+  "fireNotification8_summary_c72a": "Please fill in all the details!",
+  "@fireNotification8_summary_c72a": {
+    "description": ""
+  },
+  "fireNotification9_summary_89a1": "Please fill in spouse details!",
+  "@fireNotification9_summary_89a1": {
+    "description": ""
+  },
+  "fireNotification11_summary_8c5e": "Please take photo of marriage certificate!",
+  "@fireNotification11_summary_8c5e": {
+    "description": ""
+  },
+  "fireNotification12_summary_4515": "Please check dependent photos!",
+  "@fireNotification12_summary_4515": {
+    "description": ""
+  },
+  "fireNotification14_summary_6f31": "Please check head of house details or retry!",
+  "@fireNotification14_summary_6f31": {
+    "description": ""
+  },
+  "fireNotification16_summary_6e61": "Check Household details!",
+  "@fireNotification16_summary_6e61": {
+    "description": ""
+  },
+  "fireNotification17_summary_6614": "Check Spouse details!",
+  "@fireNotification17_summary_6614": {
+    "description": ""
+  },
+  "fireNotification13_summary_f251": "Employment Status is required!",
+  "@fireNotification13_summary_f251": {
+    "description": ""
+  },
+  "fireNotification13_message_bb08": "Please Select Employment Status!",
+  "@fireNotification13_message_bb08": {
+    "description": ""
+  },
+  "fireNotification18_summary_3944": "Data saved offline!",
+  "@fireNotification18_summary_3944": {
+    "description": ""
+  },
+  "fireNotification18_message_935d": "Data saved offline!",
+  "@fireNotification18_message_935d": {
+    "description": ""
+  },
+  "fireNotification2_summary_1096": "Failed to upload spouse details!",
+  "@fireNotification2_summary_1096": {
+    "description": ""
+  },
+  "fireNotification1_summary_2cd3": "true",
+  "@fireNotification1_summary_2cd3": {
+    "description": ""
+  },
+  "fireNotification2_summary_e085": "false",
+  "@fireNotification2_summary_e085": {
+    "description": ""
+  },
+  "fireNotification1_summary_f3c9": "Survey saved",
+  "@fireNotification1_summary_f3c9": {
+    "description": ""
+  },
+  "fireNotification4_summary_f604": "Dwelling photo not taken!",
+  "@fireNotification4_summary_f604": {
+    "description": ""
+  },
+  "fireNotification7_summary_689d": "Please fill in all the fields!",
+  "@fireNotification7_summary_689d": {
+    "description": ""
+  },
+  "fireNotification3_summary_c086": "Could not upload dependent birth certificate to gallery!",
+  "@fireNotification3_summary_c086": {
+    "description": ""
+  },
+  "fireNotification3_message_11d4": "Please retry!",
+  "@fireNotification3_message_11d4": {
+    "description": ""
+  },
+  "fireNotification5_summary_0059": "Could not upload dependent birth certificate to database!",
+  "@fireNotification5_summary_0059": {
+    "description": ""
+  },
+  "fireNotification5_message_3dda": "Please retry!",
+  "@fireNotification5_message_3dda": {
+    "description": ""
+  },
+  "fireNotification1_summary_b899": "Invalid phone number!",
+  "@fireNotification1_summary_b899": {
+    "description": ""
+  },
+  "fireNotification1_message_0e1e": "Please enter again!",
+  "@fireNotification1_message_0e1e": {
+    "description": ""
+  },
+  "fireNotification1_message_61aa": "Please enter again!",
+  "@fireNotification1_message_61aa": {
+    "description": ""
+  },
+  "fireNotification1_summary_d566": "Error:  Invalid phone number!",
+  "@fireNotification1_summary_d566": {
+    "description": ""
+  },
+  "fireNotification1_summary_98a9": "Invalid SA number!",
+  "@fireNotification1_summary_98a9": {
+    "description": ""
+  },
+  "fireNotification2_summary_745a": "Failed to upload household details!",
+  "@fireNotification2_summary_745a": {
+    "description": ""
+  },
+  "fireNotification1_summary_9c64": "Dwelling duration cannot be more than current town duration!",
+  "@fireNotification1_summary_9c64": {
+    "description": ""
+  },
+  "fireNotification1_summary_f9d1": "called",
+  "@fireNotification1_summary_f9d1": {
+    "description": ""
+  },
+  "fireNotification1_summary_054c": "Invalid SA Number!",
+  "@fireNotification1_summary_054c": {
+    "description": ""
+  },
+  "fireNotification1_summary_ea61": "Photo of dependent 1 not uploaded!",
+  "@fireNotification1_summary_ea61": {
+    "description": ""
+  },
+  "fireNotification2_summary_9c04": "Photo of dependents not uploaded!",
+  "@fireNotification2_summary_9c04": {
+    "description": ""
+  },
+  "fireNotification3_summary_efb3": "Photo of dependents not uploaded!",
+  "@fireNotification3_summary_efb3": {
+    "description": ""
+  },
+  "fireNotification4_summary_0367": "Photo of dependents not uploaded!",
+  "@fireNotification4_summary_0367": {
+    "description": ""
+  },
+  "fireNotification5_summary_d8ba": "Photo of dependents not uploaded!",
+  "@fireNotification5_summary_d8ba": {
+    "description": ""
+  },
+  "fireNotification3_summary_fe25": "Failed to upload to the database!",
+  "@fireNotification3_summary_fe25": {
+    "description": ""
+  },
+  "fireNotification5_summary_24ee": "Failed to upload to BO!",
+  "@fireNotification5_summary_24ee": {
+    "description": ""
+  },
+  "fireNotification3_summary_36ad": "Failed to upload to the database!",
+  "@fireNotification3_summary_36ad": {
+    "description": ""
+  },
+  "fireNotification5_summary_3c88": "Failed to upload to BO!",
+  "@fireNotification5_summary_3c88": {
+    "description": ""
+  },
+  "fireNotification3_summary_0d3a": "Failed to upload to the database!",
+  "@fireNotification3_summary_0d3a": {
+    "description": ""
+  },
+  "fireNotification5_summary_2a4b": "Failed to upload to BO!",
+  "@fireNotification5_summary_2a4b": {
+    "description": ""
+  },
+  "fireNotification3_summary_e915": "Failed to upload to the database!",
+  "@fireNotification3_summary_e915": {
+    "description": ""
+  },
+  "fireNotification5_summary_035a": "Failed to upload to BO!",
+  "@fireNotification5_summary_035a": {
+    "description": ""
+  }
+}

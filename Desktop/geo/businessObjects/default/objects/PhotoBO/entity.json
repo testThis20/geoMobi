@@ -1,0 +1,128 @@
+{
+    "displayLabel": "PhotoBO",
+    "name": "PhotoBO",
+    "oid": "62669325-26fd-49f5-ab41-7666942e75d9",
+    "fields": [
+        {
+            "displayLabel": "Id",
+            "internal": true,
+            "key": true,
+            "name": "id",
+            "oid": "f65cd66f-c0be-489d-ba98-92d4339fad3f",
+            "required": true,
+            "type": "number",
+            "unique": true
+        },
+        {
+            "displayLabel": "Created",
+            "internal": true,
+            "name": "creationDate",
+            "oid": "943cfd1d-26e1-4d6e-9352-e3330ccc9280",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Last Updated",
+            "internal": true,
+            "name": "lastUpdateDate",
+            "oid": "87e98800-f6f3-4564-ae76-f855762e0dd8",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Created By",
+            "internal": true,
+            "name": "createdBy",
+            "oid": "46dc9c4c-3cac-49eb-a130-e17cca0bc0ce",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Last Updated By",
+            "internal": true,
+            "name": "lastUpdatedBy",
+            "oid": "3a668e80-077a-4b9e-a72f-9a4c2b4696db",
+            "type": "string"
+        },
+        {
+            "displayLabel": "<internal>",
+            "hidden": true,
+            "internal": true,
+            "name": "abcsChangeNumber",
+            "oid": "70e711ad-aad1-4f39-a72b-a030bd8881e5",
+            "type": "number"
+        },
+        {
+            "name": "name",
+            "oid": "1ade1b30-94e2-4224-91f9-70fd46c5ae7a",
+            "displayLabel": "name",
+            "type": "string"
+        }
+    ],
+    "objectFunctions": [
+        {
+            "definition": "def vo = newView('PersonalData')\nvo.appendViewCriteria(\"surveyID = '\"+surveyIDVar+\"'\")\nvo.executeQuery()\nif (!vo.hasNext()){\n  r = vo.createRow()\n  r.surveyID = surveyIDVar;\n  r.PhotoID=photoPath;\n  vo.insertRow(r);\n}\nwhile (vo.hasNext()) {\n  def r = vo.next();\n  r.PhotoID=photoPath;\n}\n",
+            "name": "updatePhoto",
+            "refId": "c756052d-e719-455e-9f2f-81e3ab2e0beb",
+            "parameters": [
+                {
+                    "name": "photoPath",
+                    "type": "String"
+                },
+                {
+                    "name": "surveyIDVar",
+                    "type": "String"
+                }
+            ],
+            "returnType": "void",
+            "visibility": [
+                "external"
+            ]
+        }
+    ],
+    "security": {
+        "type": "local",
+        "acl": [
+            {
+                "roleId": "approle.anonymous.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "roleId": "approle.authenticated.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            }
+        ]
+    },
+    "setupData": true
+}

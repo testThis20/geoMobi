@@ -1,0 +1,2 @@
+id,creationDate,lastUpdateDate,createdBy,lastUpdatedBy,Sticker,HouseNo,Comments,StickerPhoto,surveyID,userName,userId,DateCaptured,TypeDwelling,CaptureStatus,GPS_X,GPS_Y
+108,2020-07-21T06:26:37,2020-07-21T06:26:37.069,satyam,satyam,,,None,https://integration227992-pmmopc.integration.ocp.oraclecloud.com:443/ic/builder/design/GeoMobi/1.0;profile=base_configuration/services/auth/1.1/proxy/ordsTestGallery/uri/https/sv1jzpkwobsfa0y-geomobidb.adb.eu-frankfurt-1.oraclecloudapps.com/ords/test/gallery/images/5834,20200721_1595312767996,,,,,,,

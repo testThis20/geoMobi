@@ -1,0 +1,105 @@
+<oj-ext-mobile-page-template id="page-template" page-title="Dashboard" style="background-color:#1752a6;">
+ 
+ 
+  <div class="oj-flex-item oj-flex oj-sm-flex-direction-column oj-sm-flex-items-initial oj-sm-justify-content-space-around">
+  
+    <div class="oj-flex-item oj-flex oj-sm-flex-direction-column oj-sm-justify-content-center" style="padding: 10rem 2rem 2rem 2rem;">
+ 
+   
+    <oj-label id="oj-label-540092146-6" class="oj-flex-item oj-sm-align-self-flex-start" for="latitude">Latitude</oj-label>
+    <div class="oj-flex-item">
+      <oj-input-text id="latitude" value="Latitude" disabled="true"></oj-input-text>
+    </div>
+     <oj-label id="oj-label-540092146-5" class="oj-sm-align-self-flex-start oj-flex-item" for="longitude">Longitude</oj-label>
+    <div class="oj-flex-item">
+      <oj-input-text id="longitude" value="Longitude" disabled="true"></oj-input-text>
+    </div>
+    <hr id="hr-540092146-1" class="oj-flex-item">
+    
+    
+    
+    
+<oj-validation-group id="CreateForm" class="oj-flex-item">
+
+      
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label-540092146-2" for="houseNum" class="oj-flex-item">House Number
+      </oj-label>
+      <oj-input-text id="houseNum" class="oj-flex-item" placeholder="Please enter house number" value="{{ $variables.paramDashVar.houseNumber }}" required="true"></oj-input-text>
+      
+  
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label-540092146-4" for="dwellingType" class="oj-flex-item">Dwelling Type</oj-label>
+      <oj-select-one id="dwellingType" options-keys.value="id" options-keys.label="dwellingIn" style="font-size:1.2rem; color:#1752a6;" class="oj-flex-item oj-form-control-text-align-start" value="{{ $variables.paramDashVar.dwellingType }}" required="true" placeholder="Please Select" on-value-changed="[[$listeners.dwellingTypeValue]]">
+    <oj-option disabled="true" hidden="true">Select</oj-option>
+    <oj-option value="Informal dwelling/shack in backyard (including wendy house)">Informal dwelling/shack in backyard (including wendy house)</oj-option>
+    <oj-option value="Informal dwelling/shack in an informal settlement (not in backyard)">Informal dwelling/shack in an informal settlement (not in backyard)</oj-option>
+    <oj-option value="Formal structure in informal settlement">Formal structure in informal settlement</oj-option>
+    <oj-option value="Hostel">Hostel</oj-option>
+    <oj-option value="Others">Others</oj-option>
+      </oj-select-one>
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label-540092146-3" for="captureStat" class="oj-flex-item">
+    <oj-bind-text value="[[ $application.translations.app.label__text_2ac7 ]]"></oj-bind-text>
+      </oj-label>
+      <oj-select-one id="captureStat" class="oj-flex-item oj-form-control-text-align-start" options-keys.label="capturedBy" required="true" on-value-changed="[[$listeners.ojSelectOne5400921461Value]]" value="{{ $variables.paramDashVar.captureStatus }}" placeholder="Please Select">
+    <oj-option value="Contact/Interview">Contact/Interview</oj-option>
+    <oj-option value="Locked/No-contact">Locked/No-contact</oj-option>
+    <oj-option value="Refused">Refused</oj-option>
+    <oj-option value="Vacant House">Vacant House</oj-option>
+      </oj-select-one>
+      <div>
+    
+    <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label-540092146-1" for="stickerNumber" class="oj-flex-item">
+  <oj-bind-text value="[[ $application.translations.app.label__text_e1be ]]"></oj-bind-text>
+    </oj-label>
+    
+    
+    <div>
+       
+    <oj-input-text id="stickerNumber" class="oj-flex-item oj-form-control-text-align-start" placeholder="Please enter sticker number" value="{{ $variables.paramDashVar.stickerNumber }}" validators="{{$page.functions.testValidStickerNumber($variables.paramDashVar.stickerNumber )}}" required="true" virtual-keyboard="number"></oj-input-text>
+
+    </div>
+      </div>
+      
+      <center>
+      <div>
+    <img id="stickerNumPhoto" height="100" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" style="object-position: 80% 80%; object-fit: fill;" width="150">
+      </div>
+      <div>
+    <oj-button id="oj-button-540092146-3" chroming="full" disabled="[[ $variables.showStickerPhotoButton ]]" on-oj-action="[[$listeners.ojButton5400921463OjAction]]" class="">Take Sticker Photo</oj-button>
+      </div>
+      </center>
+</oj-validation-group>
+      
+           
+    </div> 
+    
+
+
+<div style="display:none">
+    <div class="oj-flex-item">
+    <oj-button id="oj-button-540092146-5" chroming="full">SAVE</oj-button>
+    </div>
+</div>
+    <div class="oj-flex-item oj-flex" style="padding: 6rem 1rem 1rem 1rem">
+      <div class="oj-panel oj-sm-margin-1x oj-flex-item oj-flex-bar">
+        <oj-button style="padding:0rem 4rem 0rem 0rem" id="oj-button-540092146-1" class="oj-flex-bar-start oj-button-confirm" chroming="full" disabled="[[ $variables.showNoSurveyBtn ]]" on-oj-action="[[$listeners.ojButton5400921461OjAction]]"><oj-bind-text value="[[ $application.translations.app.button__text_56f3 ]]"></oj-bind-text></oj-button>
+        
+        <oj-button id="oj-button-540092146-2" class="oj-flex-bar-end oj-button-confirm" on-oj-action="[[$listeners.ojButton5400921462OjAction]]" chroming="full" disabled="[[ $variables.showSurveyBtn ]]"><oj-bind-text value="[[ $application.translations.app.button__text_cf2b ]]"></oj-bind-text></oj-button>
+
+      </div>
+    </div>
+    <div class="oj-flex-item oj-sm-align-self-center">
+       <oj-button id="oj-button-540092146-9" on-oj-action="[[$listeners.ojButton5400921469OjAction]]" chroming="full">Offline Sync</oj-button>
+    </div>
+  <div style="display:none">
+
+        <div class="oj-flex-item">
+          <oj-button id="oj-button-540092146-4" chroming="full" disabled="[[ $variables.showSurveyBtn ]]">Start Survey</oj-button>
+        </div>
+
+       
+   </div>
+  </div>
+</oj-ext-mobile-page-template>
+<div class="loader-screen" id="loaderid">
+     <div class="loader"></div>
+</div>

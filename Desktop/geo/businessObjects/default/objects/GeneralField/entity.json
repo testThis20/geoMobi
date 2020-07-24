@@ -1,0 +1,180 @@
+{
+    "displayLabel": "Data_General",
+    "name": "GeneralField",
+    "oid": "dfc68a92-21f2-4aec-9f88-ba118fce71b5",
+    "fields": [
+        {
+            "displayLabel": "Id",
+            "internal": true,
+            "key": true,
+            "name": "id",
+            "oid": "3e900caa-5b4c-4b56-95f0-19bf11ea0161",
+            "required": true,
+            "type": "number",
+            "unique": true
+        },
+        {
+            "displayLabel": "Created",
+            "internal": true,
+            "name": "creationDate",
+            "oid": "4eaafc76-025c-4d19-ae01-c36ac3581798",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Last Updated",
+            "internal": true,
+            "name": "lastUpdateDate",
+            "oid": "e9d040d0-2bc1-42c3-b659-44ad63141c8c",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Created By",
+            "internal": true,
+            "name": "createdBy",
+            "oid": "4b290c0f-cc56-4093-b70a-958d9d0ebecc",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Last Updated By",
+            "internal": true,
+            "name": "lastUpdatedBy",
+            "oid": "c53b1887-0061-4099-90a5-55331b537d2d",
+            "type": "string"
+        },
+        {
+            "displayLabel": "<internal>",
+            "hidden": true,
+            "internal": true,
+            "name": "abcsChangeNumber",
+            "oid": "7ee37fb7-58c9-46dc-b163-65164018bb46",
+            "type": "number"
+        },
+        {
+            "name": "Sticker",
+            "oid": "eabcd96d-0bd8-4e72-9a94-f032a02edd10",
+            "displayLabel": "Sticker",
+            "type": "number"
+        },
+        {
+            "name": "HouseNo",
+            "oid": "ffa78caf-8b18-4df0-9476-91350095a745",
+            "displayLabel": "HouseNo",
+            "type": "string"
+        },
+        {
+            "name": "Comments",
+            "oid": "f6d80d9b-cff3-404d-914e-bcdf996a29df",
+            "displayLabel": "Comments",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "None"
+                }
+            }
+        },
+        {
+            "name": "StickerPhoto",
+            "oid": "22aeca49-973f-43df-b2ae-94efd59ef55a",
+            "displayLabel": "StickerPhoto",
+            "type": "string"
+        },
+        {
+            "name": "surveyID",
+            "oid": "2a50c5e9-7263-46fa-a888-3d67d2b7da74",
+            "displayLabel": "surveyID",
+            "type": "string"
+        },
+        {
+            "name": "userName",
+            "oid": "ad019b3a-4404-4788-9bdf-c97c9b998c3a",
+            "displayLabel": "userName",
+            "type": "string"
+        },
+        {
+            "name": "userId",
+            "oid": "009ce1b2-0001-4173-94ba-5d8b969b6833",
+            "displayLabel": "userId",
+            "type": "string"
+        },
+        {
+            "name": "DateCaptured",
+            "oid": "807c949c-aeee-478c-929a-6979444bab57",
+            "displayLabel": "DateCaptured",
+            "type": "string"
+        },
+        {
+            "name": "TypeDwelling",
+            "oid": "beb99364-32b2-45fc-a241-7069b4f0b0cf",
+            "displayLabel": "TypeDwelling",
+            "type": "string"
+        },
+        {
+            "name": "CaptureStatus",
+            "oid": "3ca92a78-8268-4f88-9058-98f845285653",
+            "displayLabel": "CaptureStatus",
+            "type": "string"
+        },
+        {
+            "name": "GPS_X",
+            "oid": "a858795c-0e4c-430e-b2b4-750bb071d0dd",
+            "displayLabel": "GPS_X",
+            "type": "string"
+        },
+        {
+            "name": "GPS_Y",
+            "oid": "dfb5ec4e-78e8-495f-82fa-5e5073220936",
+            "displayLabel": "GPS_Y",
+            "type": "string"
+        }
+    ],
+    "relationships": [ ],
+    "security": {
+        "type": "local",
+        "acl": [
+            {
+                "roleId": "approle.anonymous.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "roleId": "approle.authenticated.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            }
+        ]
+    },
+    "pluralLabel": "Data_General"
+}

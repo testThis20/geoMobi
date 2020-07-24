@@ -1,0 +1,160 @@
+{
+    "displayLabel": "DashBO",
+    "name": "DashBO",
+    "oid": "8f49bd0f-1d91-4d08-8d87-0ae0a417963a",
+    "fields": [
+        {
+            "displayLabel": "Id",
+            "internal": true,
+            "key": true,
+            "name": "id",
+            "oid": "5ed33c4a-0bb7-488a-b506-841d25c5d488",
+            "required": true,
+            "type": "number",
+            "unique": true
+        },
+        {
+            "displayLabel": "Created",
+            "internal": true,
+            "name": "creationDate",
+            "oid": "25beb117-f44e-4c9e-ab51-e56c93560cb8",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Last Updated",
+            "internal": true,
+            "name": "lastUpdateDate",
+            "oid": "a285e77e-1a28-4ba7-bfb5-27d1ce187739",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Created By",
+            "internal": true,
+            "name": "createdBy",
+            "oid": "db20552b-01c2-4042-b7b8-8a53780c582f",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Last Updated By",
+            "internal": true,
+            "name": "lastUpdatedBy",
+            "oid": "d4484809-73d5-4505-b5f9-85a598eed877",
+            "type": "string"
+        },
+        {
+            "displayLabel": "<internal>",
+            "hidden": true,
+            "internal": true,
+            "name": "abcsChangeNumber",
+            "oid": "787c03ab-abaa-470f-93cd-f65185347713",
+            "type": "number"
+        },
+        {
+            "name": "name",
+            "oid": "1ba21864-0a11-4f79-852a-687fc456bd64",
+            "displayLabel": "name",
+            "type": "string"
+        }
+    ],
+    "objectFunctions": [
+        {
+            "definition": "def vo = newView('GeneralField')\nvo.appendViewCriteria(\"surveyID = '\"+uniqueSurveyID+\"'\")\nvo.executeQuery()\nif (!vo.hasNext()){\n  r = vo.createRow()\n  r.Sticker = stickerNumber;\n  r.HouseNo = houseNumber;\n  r.surveyID = uniqueSurveyID;\n  r.userName = usernameVar;\n  r.userId = userIdVar;\n  r.DateCaptured = captureDate;\n  r.TypeDwelling = dwellingType;\n  r.CaptureStatus = captureStatus;\n  r.GPS_X = locationX;\n  r.GPS_Y = locationY;\n\n  vo.insertRow(r);\n}\nwhile (vo.hasNext()) {\n  def r = vo.next();\n  r.HouseNo = houseNumber;\n  r.Sticker = stickerNumber;\n  r.userName = usernameVar;\n  r.userId = userIdVar;\n  r.DateCaptured = captureDate;\n  r.TypeDwelling = dwellingType;\n  r.CaptureStatus = captureStatus;\n  r.GPS_X = locationX;\n  r.GPS_Y = locationY;\n\n}\n\n",
+            "name": "updateDashDetails",
+            "refId": "95e7aa1a-269a-4b8e-b805-e028d315214f",
+            "parameters": [
+                {
+                    "name": "houseNumber",
+                    "type": "String"
+                },
+                {
+                    "name": "stickerNumber",
+                    "type": "String"
+                },
+                {
+                    "name": "captureStatus",
+                    "type": "String"
+                },
+                {
+                    "name": "dwellingType",
+                    "type": "String"
+                },
+                {
+                    "name": "locationX",
+                    "type": "String"
+                },
+                {
+                    "name": "locationY",
+                    "type": "String"
+                },
+                {
+                    "name": "uniqueSurveyID",
+                    "type": "String"
+                },
+                {
+                    "name": "usernameVar",
+                    "type": "String"
+                },
+                {
+                    "name": "userIdVar",
+                    "type": "String"
+                },
+                {
+                    "name": "captureDate",
+                    "type": "String"
+                }
+            ],
+            "returnType": "void",
+            "visibility": [
+                "external"
+            ]
+        }
+    ],
+    "security": {
+        "type": "local",
+        "acl": [
+            {
+                "roleId": "approle.anonymous.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "roleId": "approle.authenticated.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            }
+        ]
+    },
+    "setupData": true
+}

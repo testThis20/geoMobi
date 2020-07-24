@@ -1,0 +1,30 @@
+{
+    "fieldValidators": [],
+    "objectFunctions": [
+        {
+            "active": "active",
+            "functionBody": "def vo = newView('SpouseData')\nvo.appendViewCriteria(\"surveyID = '\"+uniqueSurveyID+\"'\")\nvo.executeQuery()\nif (!vo.hasNext()){\n  r = vo.createRow()\n  r.PhotoSpouseID=idPhotoSpouse;\n  r.surveyID = uniqueSurveyID;\n\n  vo.insertRow(r);\n}\nwhile (vo.hasNext()) {\n  def r = vo.next();\n  r.PhotoSpouseID=idPhotoSpouse;\n\n}\n",
+            "functionName": "updatePhotoSpouseID",
+            "lastUpdate": "2020-03-21T06:20:50",
+            "oid": "df1c194d-5887-48d3-b85f-6e02c63844b2",
+            "parameters": [
+                {
+                    "parameterName": "idPhotoSpouse",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "uniqueSurveyID",
+                    "parameterType": "String"
+                }
+            ],
+            "returnType": "void",
+            "scriptMimeType": "application/x-adf-groovy",
+            "visibility": [
+                "external"
+            ]
+        }
+      ],
+    "objectValidators": [],
+    "triggers": [],
+    "fieldTriggers": []
+}

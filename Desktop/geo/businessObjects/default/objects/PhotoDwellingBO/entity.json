@@ -1,0 +1,128 @@
+{
+    "displayLabel": "PhotoDwellingBO",
+    "name": "PhotoDwellingBO",
+    "oid": "2f32265a-6856-4cf6-b409-f856b703777c",
+    "fields": [
+        {
+            "displayLabel": "Id",
+            "internal": true,
+            "key": true,
+            "name": "id",
+            "oid": "fe76fffc-8e33-4523-a7a1-b807b04aea9b",
+            "required": true,
+            "type": "number",
+            "unique": true
+        },
+        {
+            "displayLabel": "Created",
+            "internal": true,
+            "name": "creationDate",
+            "oid": "d9d255ec-9838-4fba-bb70-46d13ce387a5",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Last Updated",
+            "internal": true,
+            "name": "lastUpdateDate",
+            "oid": "74ffa1f8-3a34-4bdf-9ac3-c185fc396aff",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Created By",
+            "internal": true,
+            "name": "createdBy",
+            "oid": "14d36ffe-56c1-4de1-8f67-bae1aff9ca80",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Last Updated By",
+            "internal": true,
+            "name": "lastUpdatedBy",
+            "oid": "f18cd456-482f-4989-b7bd-10cf89ab73b7",
+            "type": "string"
+        },
+        {
+            "displayLabel": "<internal>",
+            "hidden": true,
+            "internal": true,
+            "name": "abcsChangeNumber",
+            "oid": "ca8fa9fc-18a2-44b1-8fe2-f39942af36e4",
+            "type": "number"
+        },
+        {
+            "name": "name",
+            "oid": "fced0c27-a644-4608-9c61-03c1ff592836",
+            "displayLabel": "name",
+            "type": "string"
+        }
+    ],
+    "objectFunctions": [
+        {
+            "definition": "def vo = newView('PersonalData')\nvo.appendViewCriteria(\"surveyID = '\"+surveyIDVar+\"'\")\nvo.executeQuery()\nif (!vo.hasNext()){\n  r = vo.createRow()\n  r.surveyID = surveyIDVar;\n  r.PhotoDwelling=dwellingPhoto;\n  vo.insertRow(r);\n}\nwhile (vo.hasNext()) {\n  def r = vo.next();\n    r.PhotoDwelling=dwellingPhoto;\n    \n}\n",
+            "name": "updateSurveyPhotos",
+            "refId": "09052a8e-67e8-4459-9868-9adb263e4691",
+            "parameters": [
+                {
+                    "name": "dwellingPhoto",
+                    "type": "String"
+                },
+                {
+                    "name": "surveyIDVar",
+                    "type": "String"
+                }
+            ],
+            "returnType": "void",
+            "visibility": [
+                "external"
+            ]
+        }
+    ],
+    "security": {
+        "type": "local",
+        "acl": [
+            {
+                "roleId": "approle.anonymous.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "roleId": "approle.authenticated.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            }
+        ]
+    },
+    "setupData": true
+}

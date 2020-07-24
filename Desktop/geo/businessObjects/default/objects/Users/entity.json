@@ -1,0 +1,117 @@
+{
+    "displayLabel": "Users",
+    "name": "Users",
+    "oid": "7816e67b-2fed-4191-a3a6-f49ba6c7a9d9",
+    "fields": [
+        {
+            "displayLabel": "Id",
+            "internal": true,
+            "key": true,
+            "name": "id",
+            "oid": "56388c9e-d52c-4d5a-b947-75f0a20b93be",
+            "required": true,
+            "type": "number",
+            "unique": true
+        },
+        {
+            "displayLabel": "Created",
+            "internal": true,
+            "name": "creationDate",
+            "oid": "8f4aea1e-751e-4816-bbd3-5b7101983551",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Last Updated",
+            "internal": true,
+            "name": "lastUpdateDate",
+            "oid": "3619a9e5-45dc-4826-9e0b-5079d74d4067",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Created By",
+            "internal": true,
+            "name": "createdBy",
+            "oid": "8a5f312e-fbf6-4947-b8a2-103711651bbd",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Last Updated By",
+            "internal": true,
+            "name": "lastUpdatedBy",
+            "oid": "679dc36d-36a2-4b04-85b9-05ac9775de0d",
+            "type": "string"
+        },
+        {
+            "displayLabel": "<internal>",
+            "hidden": true,
+            "internal": true,
+            "name": "abcsChangeNumber",
+            "oid": "c1b002fd-5400-4c59-b170-bc840b5e9cbc",
+            "type": "number"
+        },
+        {
+            "name": "password",
+            "oid": "19fafdb9-20cc-4611-961d-cc0307667011",
+            "displayLabel": "password",
+            "type": "string",
+            "required": true
+        },
+        {
+            "name": "username",
+            "oid": "d530db4c-ff30-434c-83e4-6001ee025d3a",
+            "displayLabel": "username",
+            "type": "string",
+            "required": true,
+            "unique": true
+        }
+    ],
+    "security": {
+        "type": "local",
+        "acl": [
+            {
+                "roleId": "approle.anonymous.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "roleId": "approle.authenticated.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            }
+        ]
+    },
+    "setupData": true,
+    "relationships": [ ]
+}

@@ -1,0 +1,112 @@
+{
+    "fields": [
+        {
+            "displayLabel": "Id",
+            "internal": true,
+            "key": true,
+            "name": "id",
+            "oid": "909061d8-7aa9-4711-add9-d45200b2a674",
+            "required": true,
+            "type": "number",
+            "unique": true
+        },
+        {
+            "displayLabel": "Created",
+            "internal": true,
+            "name": "creationDate",
+            "oid": "d9b3781b-cf32-4dfd-891c-7b98707da436",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Last Updated",
+            "internal": true,
+            "name": "lastUpdateDate",
+            "oid": "4bc840f3-8586-4e33-bd13-1b6ae9e852f3",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Created By",
+            "internal": true,
+            "name": "createdBy",
+            "oid": "9adcc8e2-af87-4b0a-a747-7040c661ec36",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Last Updated By",
+            "internal": true,
+            "name": "lastUpdatedBy",
+            "oid": "b1ea5e3a-ca76-4b76-bb65-34351110dd84",
+            "type": "string"
+        },
+        {
+            "displayLabel": "<internal>",
+            "hidden": true,
+            "internal": true,
+            "name": "abcsChangeNumber",
+            "oid": "54d9442a-c427-4da7-ae7c-4cca92ed956e",
+            "type": "number"
+        },
+        {
+            "name": "username",
+            "oid": "11ff3c66-71d6-43c3-9b07-de089d761b85",
+            "displayLabel": "username",
+            "type": "string"
+        },
+        {
+            "name": "password",
+            "oid": "583322b1-6676-41f0-af45-f196f132501e",
+            "displayLabel": "password",
+            "type": "string"
+        }
+    ],
+    "name": "UsersNew",
+    "oid": "e76eee86-1e47-492c-8cf7-026c793fd6fd",
+    "displayLabel": "usersNew",
+    "security": {
+        "type": "local",
+        "acl": [
+            {
+                "roleId": "approle.anonymous.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "roleId": "approle.authenticated.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,1744 @@
+{
+  "pageModelVersion": "19.3.1",
+  "title": "",
+  "description": "",
+  "variables": {
+    "isAppOnline": {
+      "type": "boolean",
+      "defaultValue": true
+    },
+    "imageCategory": {
+      "type": "string",
+      "defaultValue": "X"
+    },
+    "filename": {
+      "type": "string"
+    },
+    "SurveyID": {
+      "type": "string"
+    },
+    "paramStickerPhoto": {
+      "type": "do_updateStickerPhoto_StickerPhotoBO"
+    },
+    "paramPhotoIdVar": {
+      "type": "do_updatePhoto_PhotoBO"
+    },
+    "paramDependantBCPhoto": {
+      "type": "do_updateDependantPhoto_DependantPhotoBO"
+    },
+    "paramMarriage": {
+      "type": "do_updateMarriageCerti_MarriageCertiBO"
+    },
+    "paramPhotoIdSpouseVar": {
+      "type": "do_updatePhotoSpouseID_PhotoSpouseIDBO"
+    },
+    "ParamDwellingVar": {
+      "type": "do_updateSurveyPhotos_PhotoDwellingBO"
+    },
+    "img_counter": {
+      "type": "number",
+      "defaultValue": 0
+    },
+    "paramDashboardData": {
+      "type": "do_updateDashDetails_DashBO"
+    },
+    "paramHeadofhouseholdDetails": {
+      "type": "do_updateDetailsHH_HeadHouseholdBO"
+    },
+    "paramHouseholdDetails": {
+      "type": "do_updateHouseholdInfo_HouseholdInfoBO"
+    },
+    "paramSpouseDetails": {
+      "type": "do_UpdateSpouseDetails_SpouseDetailsBO"
+    },
+    "paramServiceDetails": {
+      "type": "do_UpdateServices_ServiceBO"
+    }
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.postImages": {
+      "endpoint": "postImages",
+      "service": "ordsTestGallery",
+      "path": ""
+    },
+    "postImages": [
+      {
+        "response": "array"
+      }
+    ],
+    "@decorators.do_updateStickerPhoto_StickerPhotoBO": {
+      "endpoint": "do_updateStickerPhoto_StickerPhotoBO",
+      "service": "businessObjects",
+      "path": "request"
+    },
+    "do_updateStickerPhoto_StickerPhotoBO": {
+      "stickerPhotoPath": "string",
+      "surveyIDVar": "string"
+    },
+    "@decorators.do_updateSurveyPhotos_PhotoDwellingBO": {
+      "endpoint": "do_updateSurveyPhotos_PhotoDwellingBO",
+      "service": "businessObjects",
+      "path": "request"
+    },
+    "do_updateSurveyPhotos_PhotoDwellingBO": {
+      "dwellingPhoto": "string",
+      "surveyIDVar": "string"
+    },
+    "@decorators.do_updateDependantPhoto_DependantPhotoBO": {
+      "endpoint": "do_updateDependantPhoto_DependantPhotoBO",
+      "service": "businessObjects",
+      "path": "request"
+    },
+    "do_updateDependantPhoto_DependantPhotoBO": {
+      "dependantBCPhoto": "string",
+      "surveyIDVar": "string"
+    },
+    "@decorators.do_updatePhotoSpouseID_PhotoSpouseIDBO": {
+      "endpoint": "do_updatePhotoSpouseID_PhotoSpouseIDBO",
+      "service": "businessObjects",
+      "path": "request"
+    },
+    "do_updatePhotoSpouseID_PhotoSpouseIDBO": {
+      "idPhotoSpouse": "string",
+      "uniqueSurveyID": "string"
+    },
+    "@decorators.do_updateMarriageCerti_MarriageCertiBO": {
+      "endpoint": "do_updateMarriageCerti_MarriageCertiBO",
+      "service": "businessObjects",
+      "path": "request"
+    },
+    "do_updateMarriageCerti_MarriageCertiBO": {
+      "photoMarriageCertificate": "string",
+      "uniqueSurveyID": "string"
+    },
+    "@decorators.do_updatePhoto_PhotoBO": {
+      "endpoint": "do_updatePhoto_PhotoBO",
+      "service": "businessObjects",
+      "path": "request"
+    },
+    "do_updatePhoto_PhotoBO": {
+      "photoPath": "string",
+      "surveyIDVar": "string"
+    },
+    "@decorators.do_updateDashDetails_DashBO": {
+      "endpoint": "do_updateDashDetails_DashBO",
+      "service": "businessObjects",
+      "path": "request"
+    },
+    "do_updateDashDetails_DashBO": {
+      "captureDate": "string",
+      "captureStatus": "string",
+      "dwellingType": "string",
+      "houseNumber": "string",
+      "locationX": "string",
+      "locationY": "string",
+      "stickerNumber": "string",
+      "uniqueSurveyID": "string",
+      "userIdVar": "string",
+      "usernameVar": "string"
+    },
+    "@decorators.do_updateDetailsHH_HeadHouseholdBO": {
+      "endpoint": "do_updateDetailsHH_HeadHouseholdBO",
+      "service": "businessObjects",
+      "path": "request"
+    },
+    "do_updateDetailsHH_HeadHouseholdBO": {
+      "ageOfHH": "string",
+      "careDepGrantHH": "string",
+      "childFosterGrantHH": "string",
+      "childSupGrantHH": "string",
+      "comments": "string",
+      "contactHH": "string",
+      "disabilityGrantHH": "string",
+      "disabilityHH": "string",
+      "disabilityOtherHH": "string",
+      "disabilityTypeHH": "string",
+      "eduHH": "string",
+      "empStatusHH": "string",
+      "genderHH": "string",
+      "governmentSubsidyStatusHead": "string",
+      "grantInAidHH": "string",
+      "grantsHH": "string",
+      "idNumberHH": "string",
+      "marStatusHH": "string",
+      "nameHH": "string",
+      "nationalityHH": "string",
+      "nationalityOtherHH": "string",
+      "numOfDependants": "string",
+      "popGroupHH": "string",
+      "socialRefGrantHH": "string",
+      "stateOldVetHH": "string",
+      "surnameHH": "string",
+      "surveyIDVar": "string",
+      "unemploymetInsHH": "string"
+    },
+    "@decorators.do_UpdateSpouseDetails_SpouseDetailsBO": {
+      "endpoint": "do_UpdateSpouseDetails_SpouseDetailsBO",
+      "service": "businessObjects",
+      "path": "request"
+    },
+    "do_UpdateSpouseDetails_SpouseDetailsBO": {
+      "ageSpouse": "string",
+      "careDependencyGraSpouse": "string",
+      "childFosterCareGrSpouse": "string",
+      "childSupportGrantSpouse": "string",
+      "citizenshipOtherSpouse": "string",
+      "citizenshipSpouse": "string",
+      "contactSpouse": "string",
+      "disabilityGrantSpouse": "string",
+      "disabilitySpouse": "string",
+      "disabilityTypeOtherSpouse": "string",
+      "disabilityTypeSpouse": "string",
+      "eduSpouse": "string",
+      "empStatusSpouse": "string",
+      "fullNameSpouse": "string",
+      "genderSpouse": "string",
+      "governmentSubsidyStatusSpouse": "string",
+      "grantInAidSpouse": "string",
+      "grantsSpouse": "string",
+      "idNumberSpouse": "string",
+      "popGroupSpouse": "string",
+      "socialReliefGrantSpouse": "string",
+      "stateOldAgeWarVetSpouse": "string",
+      "surnameSpouse": "string",
+      "surveyIDVar": "string",
+      "unemploymentInsurSpouse": "string"
+    },
+    "@decorators.do_updateHouseholdInfo_HouseholdInfoBO": {
+      "endpoint": "do_updateHouseholdInfo_HouseholdInfoBO",
+      "service": "businessObjects",
+      "path": "request"
+    },
+    "do_updateHouseholdInfo_HouseholdInfoBO": {
+      "currentTownDurationMonthsVar": "number",
+      "currentTownDurationYearsVar": "number",
+      "doorsWindowsDefectDetails": "string",
+      "doorsWindowsDefects": "string",
+      "dwellingDurationMonthsVar": "number",
+      "dwellingDurationYearsVar": "number",
+      "dwellingOwnershipVar": "string",
+      "floorDefectDetails": "string",
+      "floorDefects": "string",
+      "governmentPropertyDefects": "string",
+      "homeLangvar": "string",
+      "householdIncomevar": "string",
+      "noOfRoomsVar": "string",
+      "otherDefectDetails": "string",
+      "otherDefects": "string",
+      "permitExpiryDateVar": "string",
+      "permitNumberVar": "string",
+      "permitTypeVar": "string",
+      "plumbingDefectDetails": "string",
+      "plumbingDefects": "string",
+      "provinceVar": "string",
+      "reasonToMove": "string",
+      "rentGovernmentHousingLiVar": "string",
+      "rentMonthlyAmountVar": "number",
+      "rentReasonVar": "string",
+      "roofDefectDetails": "string",
+      "roofDefects": "string",
+      "surveyIDVar": "string",
+      "townVar": "string",
+      "wallDefectDetails": "string",
+      "wallDefects": "string"
+    },
+    "@decorators.do_UpdateServices_ServiceBO": {
+      "endpoint": "do_UpdateServices_ServiceBO",
+      "service": "businessObjects",
+      "path": "request"
+    },
+    "do_UpdateServices_ServiceBO": {
+      "commType": "string",
+      "crimeDetails": "string",
+      "crimeVictim": "string",
+      "healthType": "string",
+      "primaryEnergyCooking": "string",
+      "primaryEnergyHeating": "string",
+      "primaryEnergyLighting": "string",
+      "surveyIDVar": "string",
+      "toiletType": "string",
+      "transport": "string",
+      "wasteCollection": "string",
+      "wasteType": "string",
+      "waterLitres": "string",
+      "waterType": "string"
+    }
+  },
+  "chains": {
+    "CheckAppOnlineOfflineStatus": {
+      "root": "if1",
+      "description": "",
+      "actions": {
+        "if1": {
+          "module": "vb/action/builtin/ifAction",
+          "parameters": {
+            "condition": "[[ (navigator.onLine) ]]"
+          },
+          "outcomes": {
+            "true": "assignVariables1",
+            "false": "assignVariables2"
+          }
+        },
+        "assignVariables1": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$page.variables.isAppOnline": {
+              "source": true
+            }
+          }
+        },
+        "assignVariables2": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$page.variables.isAppOnline": {
+              "source": false
+            }
+          }
+        }
+      }
+    },
+    "UploadOfflineImages": {
+      "root": "if1",
+      "description": "",
+      "actions": {
+        "assignVariables1": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "outcomes": {
+            "success": "callModuleFunction17"
+          },
+          "parameters": {
+            "$page.variables.imageCategory": {
+              "source": "{{ $chain.results.callModuleFunction3 }}"
+            }
+          }
+        },
+        "callRestEndpoint1": {
+          "module": "vb/action/builtin/restAction",
+          "parameters": {
+            "endpoint": "ordsTestGallery/postImages",
+            "uriParams": {
+              "content_type": "image/png",
+              "title": "{{ $current.data }}"
+            },
+            "body": "{{ $chain.results.callModuleFunction6 }}",
+            "contentType": "image/png"
+          },
+          "outcomes": {
+            "success": "switch1",
+            "failure": "fireNotification1"
+          }
+        },
+        "callRestEndpoint2": {
+          "module": "vb/action/builtin/restAction",
+          "outcomes": {
+            "success": "callModuleFunction2",
+            "failure": "fireNotification5"
+          },
+          "parameters": {
+            "endpoint": "businessObjects/do_updateStickerPhoto_StickerPhotoBO",
+            "uriParams": {
+              "StickerPhotoBO_Id": "1"
+            },
+            "body": "{{ $page.variables.paramStickerPhoto }}"
+          }
+        },
+        "callModuleFunction2": {
+          "module": "vb/action/builtin/callModuleFunctionAction",
+          "parameters": {
+            "module": "[[ $page.functions ]]",
+            "functionName": "deleteFromTemp",
+            "params": [
+              "{{ $chain.variables.currentData }}"
+            ]
+          }
+        },
+        "switch1": {
+          "module": "vb/action/builtin/switchAction",
+          "parameters": {
+            "possibleValues": [
+              "S",
+              "D",
+              "H",
+              "I",
+              "M",
+              "B"
+            ],
+            "caseValue": "[[ $page.variables.imageCategory ]]"
+          },
+          "outcomes": {
+            "S": "assignVariables2",
+            "D": "assignVariables6",
+            "H": "assignVariables5",
+            "I": "assignVariables4",
+            "M": "assignVariables3",
+            "B": "assignVariables7"
+          }
+        },
+        "callModuleFunction3": {
+          "module": "vb/action/builtin/callModuleFunctionAction",
+          "outcomes": {
+            "success": "assignVariables1"
+          },
+          "parameters": {
+            "module": "[[ $page.functions ]]",
+            "functionName": "getImageCategory",
+            "params": [
+              "{{ $current.data }}"
+            ],
+            "returnType": "string"
+          }
+        },
+        "callRestEndpoint3": {
+          "module": "vb/action/builtin/restAction",
+          "parameters": {
+            "endpoint": "businessObjects/do_updateSurveyPhotos_PhotoDwellingBO",
+            "uriParams": {
+              "PhotoDwellingBO_Id": "1"
+            },
+            "body": "{{ $page.variables.ParamDwellingVar }}"
+          },
+          "outcomes": {
+            "success": "callModuleFunction10",
+            "failure": "fireNotification9"
+          }
+        },
+        "callRestEndpoint4": {
+          "module": "vb/action/builtin/restAction",
+          "parameters": {
+            "endpoint": "businessObjects/do_updatePhoto_PhotoBO",
+            "uriParams": {
+              "PhotoBO_Id": "1"
+            },
+            "body": "{{ $page.variables.paramPhotoIdVar }}"
+          },
+          "outcomes": {
+            "success": "callModuleFunction9",
+            "failure": "fireNotification8"
+          }
+        },
+        "callRestEndpoint5": {
+          "module": "vb/action/builtin/restAction",
+          "parameters": {
+            "endpoint": "businessObjects/do_updatePhotoSpouseID_PhotoSpouseIDBO",
+            "uriParams": {
+              "PhotoSpouseIDBO_Id": "1"
+            },
+            "body": "{{ $page.variables.paramPhotoIdSpouseVar }}"
+          },
+          "outcomes": {
+            "success": "callModuleFunction8",
+            "failure": "fireNotification7"
+          }
+        },
+        "callRestEndpoint6": {
+          "module": "vb/action/builtin/restAction",
+          "parameters": {
+            "endpoint": "businessObjects/do_updateMarriageCerti_MarriageCertiBO",
+            "uriParams": {
+              "MarriageCertiBO_Id": "1"
+            },
+            "body": "{{ $page.variables.paramMarriage }}"
+          },
+          "outcomes": {
+            "success": "callModuleFunction7",
+            "failure": "fireNotification6"
+          }
+        },
+        "callRestEndpoint7": {
+          "module": "vb/action/builtin/restAction",
+          "parameters": {
+            "endpoint": "businessObjects/do_updateDependantPhoto_DependantPhotoBO",
+            "uriParams": {
+              "DependantPhotoBO_Id": "1"
+            },
+            "body": "{{ $page.variables.paramDependantBCPhoto }}"
+          },
+          "outcomes": {
+            "success": "callModuleFunction11",
+            "failure": "fireNotification10"
+          }
+        },
+        "forEach1": {
+          "module": "vb/action/builtin/forEachAction",
+          "parameters": {
+            "actionId": "assignVariables9",
+            "items": "{{ $chain.results.callModuleFunction1 }}"
+          },
+          "outcomes": {
+            "success": "callModuleFunction12"
+          }
+        },
+        "if1": {
+          "module": "vb/action/builtin/ifAction",
+          "parameters": {
+            "condition": "[[(navigator.onLine)]]"
+          },
+          "outcomes": {
+            "true": "callModuleFunction15",
+            "false": "fireNotification3"
+          }
+        },
+        "callModuleFunction4": {
+          "module": "vb/action/builtin/callModuleFunctionAction",
+          "parameters": {
+            "module": "[[ $page.functions ]]",
+            "functionName": "getImageSurveyId",
+            "params": [
+              "{{$current.data }}"
+            ],
+            "returnType": "string"
+          },
+          "outcomes": {
+            "success": "assignVariables8"
+          }
+        },
+        "assignVariables2": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "outcomes": {
+            "success": "callRestEndpoint2"
+          },
+          "parameters": {
+            "$page.variables.paramStickerPhoto": {
+              "source": {
+                "stickerPhotoPath": "{{ $chain.results.callRestEndpoint1.headers.get('location') }}",
+                "surveyIDVar": "{{ $page.variables.SurveyID }}"
+              },
+              "auto": "always",
+              "reset": "none"
+            }
+          }
+        },
+        "assignVariables3": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "outcomes": {
+            "success": "callRestEndpoint6"
+          },
+          "parameters": {
+            "$page.variables.paramMarriage": {
+              "source": {
+                "uniqueSurveyID": "{{ $page.variables.SurveyID }}",
+                "photoMarriageCertificate": "{{$chain.results.callRestEndpoint1.headers.get('location')}}"
+              },
+              "auto": "always",
+              "reset": "none"
+            }
+          }
+        },
+        "assignVariables4": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "outcomes": {
+            "success": "callRestEndpoint5"
+          },
+          "parameters": {
+            "$page.variables.paramPhotoIdSpouseVar": {
+              "source": {
+                "uniqueSurveyID": "{{ $page.variables.SurveyID }}",
+                "idPhotoSpouse": "{{$chain.results.callRestEndpoint1.headers.get('location')}}"
+              },
+              "auto": "always",
+              "reset": "none"
+            }
+          }
+        },
+        "assignVariables5": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "outcomes": {
+            "success": "callRestEndpoint4"
+          },
+          "parameters": {
+            "$page.variables.paramPhotoIdVar": {
+              "source": {
+                "surveyIDVar": "{{ $page.variables.SurveyID }}",
+                "photoPath": "{{$chain.results.callRestEndpoint1.headers.get('location')}}"
+              },
+              "auto": "always"
+            }
+          }
+        },
+        "assignVariables6": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "outcomes": {
+            "success": "callRestEndpoint3"
+          },
+          "parameters": {
+            "$page.variables.ParamDwellingVar": {
+              "source": {
+                "surveyIDVar": "{{ $page.variables.SurveyID }}",
+                "dwellingPhoto": "{{$chain.results.callRestEndpoint1.headers.get('location')}}"
+              },
+              "auto": "always"
+            }
+          }
+        },
+        "assignVariables7": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "outcomes": {
+            "success": "callRestEndpoint7"
+          },
+          "parameters": {
+            "$page.variables.paramDependantBCPhoto": {
+              "source": {
+                "surveyIDVar": "{{ $page.variables.SurveyID }}",
+                "dependantBCPhoto": "{{$chain.results.callRestEndpoint1.headers.get('location')}}"
+              },
+              "auto": "always"
+            }
+          }
+        },
+        "assignVariables8": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$page.variables.SurveyID": {
+              "source": "{{ $chain.results.callModuleFunction4 }}"
+            }
+          },
+          "outcomes": {
+            "success": "callModuleFunction3"
+          }
+        },
+        "callModuleFunction1": {
+          "module": "vb/action/builtin/callModuleFunctionAction",
+          "parameters": {
+            "module": "[[ $page.functions ]]",
+            "functionName": "ReadFileEntries"
+          },
+          "outcomes": {
+            "success": "if2"
+          }
+        },
+        "callModuleFunction6": {
+          "module": "vb/action/builtin/callModuleFunctionAction",
+          "parameters": {
+            "module": "[[ $page.functions ]]",
+            "functionName": "ReadFileBlob",
+            "params": [
+            ]
+          },
+          "outcomes": {
+            "success": "assignVariables11"
+          }
+        },
+        "callModuleFunction7": {
+          "module": "vb/action/builtin/callModuleFunctionAction",
+          "parameters": {
+            "module": "[[ $page.functions ]]",
+            "functionName": "deleteFromTemp",
+            "params": [
+              "{{ $chain.variables.currentData }}"
+            ]
+          }
+        },
+        "callModuleFunction8": {
+          "module": "vb/action/builtin/callModuleFunctionAction",
+          "parameters": {
+            "module": "[[ $page.functions ]]",
+            "functionName": "deleteFromTemp",
+            "params": [
+              "{{ $chain.variables.currentData }}"
+            ]
+          }
+        },
+        "callModuleFunction9": {
+          "module": "vb/action/builtin/callModuleFunctionAction",
+          "parameters": {
+            "module": "[[ $page.functions ]]",
+            "functionName": "deleteFromTemp",
+            "params": [
+              "{{ $chain.variables.currentData }}"
+            ]
+          }
+        },
+        "callModuleFunction10": {
+          "module": "vb/action/builtin/callModuleFunctionAction",
+          "parameters": {
+            "module": "[[ $page.functions ]]",
+            "functionName": "deleteFromTemp",
+            "params": [
+              "{{ $chain.variables.currentData }}"
+            ]
+          }
+        },
+        "callModuleFunction11": {
+          "module": "vb/action/builtin/callModuleFunctionAction",
+          "parameters": {
+            "module": "[[ $page.functions ]]",
+            "functionName": "deleteFromTemp",
+            "params": [
+              "{{ $chain.variables.currentData }}"
+            ]
+          }
+        },
+        "callModuleFunction12": {
+          "module": "vb/action/builtin/callModuleFunctionAction",
+          "parameters": {
+            "module": "[[ $page.functions ]]",
+            "functionName": "resetBlobImg"
+          },
+          "outcomes": {
+            "success": "if3"
+          }
+        },
+        "if2": {
+          "module": "vb/action/builtin/ifAction",
+          "parameters": {
+            "condition": "[[ $chain.results.callModuleFunction1.length>0 ]]"
+          },
+          "outcomes": {
+            "true": "callModuleFunction13",
+            "false": "fireNotification2"
+          }
+        },
+        "fireNotification2": {
+          "module": "vb/action/builtin/fireNotificationEventAction",
+          "parameters": {
+            "summary": "[[ $application.translations.app.fireNotification2_summary_2a16 ]]",
+            "displayMode": "transient",
+            "type": "info"
+          },
+          "outcomes": {
+            "success": "return1"
+          }
+        },
+        "callModuleFunction13": {
+          "module": "vb/action/builtin/callModuleFunctionAction",
+          "parameters": {
+            "module": "[[ $page.functions ]]",
+            "functionName": "updateImageCount",
+            "params": [
+              "{{ 0 }}",
+              "[[$chain.results.callModuleFunction1.length]]"
+            ]
+          },
+          "outcomes": {
+            "success": "assignVariables10"
+          }
+        },
+        "callModuleFunction14": {
+          "module": "vb/action/builtin/callModuleFunctionAction",
+          "parameters": {
+            "module": "[[ $page.functions ]]",
+            "functionName": "updateImageCount",
+            "params": [
+              "{{ $page.variables.img_counter }}",
+              "[[$chain.results.callModuleFunction1.length]]"
+            ]
+          },
+          "outcomes": {
+            "success": "callModuleFunction4"
+          }
+        },
+        "assignVariables9": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$page.variables.img_counter": {
+              "source": "{{ $page.variables.img_counter+1 }}"
+            }
+          },
+          "outcomes": {
+            "success": "callModuleFunction14"
+          }
+        },
+        "callModuleFunction15": {
+          "module": "vb/action/builtin/callModuleFunctionAction",
+          "parameters": {
+            "module": "[[ $page.functions ]]",
+            "functionName": "getFileEntries"
+          },
+          "outcomes": {
+            "success": "callModuleFunction1"
+          }
+        },
+        "assignVariables10": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$page.variables.img_counter": {
+              "source": "0"
+            }
+          },
+          "outcomes": {
+            "success": "forEach1"
+          }
+        },
+        "fireNotification3": {
+          "module": "vb/action/builtin/fireNotificationEventAction",
+          "parameters": {
+            "summary": "[[ $application.translations.app.fireNotification3_summary_f0d7 ]]",
+            "message": "[[ $application.translations.app.fireNotification3_message_bae4 ]]"
+          },
+          "outcomes": {
+            "success": "return1"
+          }
+        },
+        "fireNotification5": {
+          "module": "vb/action/builtin/fireNotificationEventAction",
+          "parameters": {
+            "target": "leaf",
+            "summary": "[[ $application.translations.app.fireNotification5_summary_c0ae ]]",
+            "message": "[[ $application.translations.app.fireNotification5_message_b265 ]]",
+            "displayMode": "transient"
+          },
+          "outcomes": {
+            "success": "assignVariables13"
+          }
+        },
+        "fireNotification6": {
+          "module": "vb/action/builtin/fireNotificationEventAction",
+          "parameters": {
+            "target": "leaf",
+            "summary": "[[ $application.translations.app.fireNotification6_summary_36b2 ]]",
+            "message": "[[ $application.translations.app.fireNotification6_message_3b46 ]]",
+            "displayMode": "transient"
+          },
+          "outcomes": {
+            "success": "assignVariables14"
+          }
+        },
+        "fireNotification7": {
+          "module": "vb/action/builtin/fireNotificationEventAction",
+          "parameters": {
+            "target": "leaf",
+            "summary": "[[ $application.translations.app.fireNotification7_summary_6c05 ]]",
+            "message": "[[ $application.translations.app.fireNotification7_message_0b41 ]]",
+            "displayMode": "transient"
+          },
+          "outcomes": {
+            "success": "assignVariables15"
+          }
+        },
+        "fireNotification8": {
+          "module": "vb/action/builtin/fireNotificationEventAction",
+          "parameters": {
+            "target": "leaf",
+            "summary": "[[ $application.translations.app.fireNotification8_summary_dad2 ]]",
+            "message": "[[ $application.translations.app.fireNotification8_message_bd8f ]]",
+            "displayMode": "transient"
+          },
+          "outcomes": {
+            "success": "assignVariables16"
+          }
+        },
+        "fireNotification9": {
+          "module": "vb/action/builtin/fireNotificationEventAction",
+          "parameters": {
+            "target": "leaf",
+            "summary": "[[ $application.translations.app.fireNotification9_summary_89ea ]]",
+            "message": "[[ $application.translations.app.fireNotification9_message_1b4f ]]",
+            "displayMode": "transient"
+          },
+          "outcomes": {
+            "success": "assignVariables17"
+          }
+        },
+        "fireNotification10": {
+          "module": "vb/action/builtin/fireNotificationEventAction",
+          "parameters": {
+            "target": "leaf",
+            "summary": "[[ $application.translations.app.fireNotification10_summary_0990 ]]",
+            "message": "[[ $application.translations.app.fireNotification10_message_8b7c ]]",
+            "displayMode": "transient"
+          },
+          "outcomes": {
+            "success": "assignVariables18"
+          }
+        },
+        "return1": {
+          "module": "vb/action/builtin/returnAction",
+          "parameters": {
+            "outcome": "success"
+          }
+        },
+        "callModuleFunction17": {
+          "module": "vb/action/builtin/callModuleFunctionAction",
+          "parameters": {
+            "module": "[[ $page.functions ]]",
+            "functionName": "getFileBlob",
+            "params": [
+              "{{ $current.data }}"
+            ]
+          },
+          "outcomes": {
+            "success": "callModuleFunction6"
+          }
+        },
+        "assignVariables11": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$chain.variables.currentData": {
+              "source": "{{ $current.data }}"
+            }
+          },
+          "outcomes": {
+            "success": "callRestEndpoint1"
+          }
+        },
+        "assignVariables13": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$chain.variables.checkImageUploaded": {
+              "source": false
+            }
+          }
+        },
+        "assignVariables14": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$chain.variables.checkImageUploaded": {
+              "source": false
+            }
+          }
+        },
+        "assignVariables15": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$chain.variables.checkImageUploaded": {
+              "source": false
+            }
+          }
+        },
+        "assignVariables16": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$chain.variables.checkImageUploaded": {
+              "source": false
+            }
+          }
+        },
+        "assignVariables17": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$chain.variables.checkImageUploaded": {
+              "source": false
+            }
+          }
+        },
+        "assignVariables18": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$chain.variables.checkImageUploaded": {
+              "source": false
+            }
+          }
+        },
+        "if3": {
+          "module": "vb/action/builtin/ifAction",
+          "parameters": {
+            "condition": "[[ $chain.variables.checkImageUploaded ]]"
+          },
+          "outcomes": {
+            "true": "fireNotification12",
+            "false": "fireNotification13"
+          }
+        },
+        "fireNotification12": {
+          "module": "vb/action/builtin/fireNotificationEventAction",
+          "parameters": {
+            "target": "leaf",
+            "summary": "[[ $application.translations.app.fireNotification12_summary_9471 ]]",
+            "displayMode": "transient",
+            "type": "confirmation"
+          },
+          "outcomes": {
+            "success": "return1"
+          }
+        },
+        "fireNotification13": {
+          "module": "vb/action/builtin/fireNotificationEventAction",
+          "parameters": {
+            "target": "leaf",
+            "summary": "[[ $application.translations.app.fireNotification13_summary_059a ]]",
+            "displayMode": "transient"
+          },
+          "outcomes": {
+            "success": "return1"
+          }
+        },
+        "callModuleFunction20": {
+          "module": "vb/action/builtin/callModuleFunctionAction",
+          "parameters": {
+            "module": "[[ $page.functions ]]",
+            "functionName": "resetBlobImg"
+          }
+        },
+        "fireNotification1": {
+          "module": "vb/action/builtin/fireNotificationEventAction",
+          "parameters": {
+            "target": "leaf",
+            "summary": "[[ $application.translations.app.fireNotification1_summary_1d33 ]]"
+          },
+          "outcomes": {
+            "success": "callModuleFunction20"
+          }
+        }
+      },
+      "variables": {
+        "currentData": {
+          "type": "string"
+        },
+        "checkImageUploaded": {
+          "type": "boolean",
+          "defaultValue": true
+        }
+      }
+    },
+    "UploadOfflineData": {
+      "root": "if1",
+      "description": "",
+      "actions": {
+        "if1": {
+          "module": "vb/action/builtin/ifAction",
+          "outcomes": {
+            "true": "callModuleFunction2",
+            "false": "fireNotification1"
+          },
+          "parameters": {
+            "condition": "[[ (navigator.onLine) ]]"
+          }
+        },
+        "fireNotification1": {
+          "module": "vb/action/builtin/fireNotificationEventAction",
+          "parameters": {
+            "summary": "[[ $application.translations.app.fireNotification1_summary_3ecc ]]",
+            "message": "[[ $application.translations.app.fireNotification1_message_53cd ]]",
+            "displayMode": "transient",
+            "type": "info"
+          },
+          "outcomes": {
+            "success": "return1"
+          }
+        },
+        "return1": {
+          "module": "vb/action/builtin/returnAction",
+          "parameters": {
+            "outcome": "success"
+          }
+        },
+        "callModuleFunction2": {
+          "module": "vb/action/builtin/callModuleFunctionAction",
+          "outcomes": {
+            "success": "if2"
+          },
+          "parameters": {
+            "module": "[[ $page.functions ]]",
+            "functionName": "getOfflineData"
+          }
+        },
+        "forEach1": {
+          "module": "vb/action/builtin/forEachAction",
+          "parameters": {
+            "items": "{{ $chain.results.callModuleFunction2 }}",
+            "actionId": "assignVariables12"
+          },
+          "outcomes": {
+            "success": "if3"
+          }
+        },
+        "callModuleFunction1": {
+          "module": "vb/action/builtin/callModuleFunctionAction",
+          "parameters": {
+            "module": "[[ $page.functions ]]",
+            "functionName": "getSurveyData",
+            "params": [
+              "{{ $current.data }}"
+            ]
+          },
+          "outcomes": {
+            "success": "callModuleFunction3"
+          }
+        },
+        "callModuleFunction3": {
+          "module": "vb/action/builtin/callModuleFunctionAction",
+          "parameters": {
+            "module": "[[ $page.functions ]]",
+            "functionName": "getDataSurveyCategory",
+            "params": [
+              "{{ $current.data }}"
+            ]
+          },
+          "outcomes": {
+            "success": "switch1"
+          }
+        },
+        "switch1": {
+          "module": "vb/action/builtin/switchAction",
+          "parameters": {
+            "possibleValues": [
+              "Service",
+              "Dashboard",
+              "Head",
+              "Household",
+              "Spouse"
+            ],
+            "caseValue": "[[ $chain.results.callModuleFunction3 ]]"
+          },
+          "outcomes": {
+            "Service": "assignVariables4",
+            "Dashboard": "assignVariables1",
+            "Head": "assignVariables2",
+            "Household": "assignVariables3",
+            "Spouse": "assignVariables5"
+          }
+        },
+        "callRestEndpoint1": {
+          "module": "vb/action/builtin/restAction",
+          "parameters": {
+            "endpoint": "businessObjects/do_updateDashDetails_DashBO",
+            "uriParams": {
+              "DashBO_Id": "1"
+            },
+            "body": "{{ $page.variables.paramDashboardData }}"
+          },
+          "outcomes": {
+            "failure": "fireNotification2",
+            "success": "callModuleFunction8"
+          }
+        },
+        "callRestEndpoint2": {
+          "module": "vb/action/builtin/restAction",
+          "parameters": {
+            "endpoint": "businessObjects/do_updateDetailsHH_HeadHouseholdBO",
+            "uriParams": {
+              "HeadHouseholdBO_Id": "1"
+            },
+            "body": "{{ $page.variables.paramHeadofhouseholdDetails }}"
+          },
+          "outcomes": {
+            "failure": "fireNotification6",
+            "success": "callModuleFunction7"
+          }
+        },
+        "callRestEndpoint3": {
+          "module": "vb/action/builtin/restAction",
+          "parameters": {
+            "endpoint": "businessObjects/do_updateHouseholdInfo_HouseholdInfoBO",
+            "uriParams": {
+              "HouseholdInfoBO_Id": "1"
+            },
+            "body": "{{ $page.variables.paramHouseholdDetails }}"
+          },
+          "outcomes": {
+            "failure": "fireNotification4",
+            "success": "callModuleFunction6"
+          }
+        },
+        "callRestEndpoint4": {
+          "module": "vb/action/builtin/restAction",
+          "parameters": {
+            "endpoint": "businessObjects/do_UpdateSpouseDetails_SpouseDetailsBO",
+            "uriParams": {
+              "SpouseDetailsBO_Id": "1"
+            },
+            "body": "{{ $page.variables.paramSpouseDetails }}"
+          },
+          "outcomes": {
+            "failure": "fireNotification8",
+            "success": "callModuleFunction4"
+          }
+        },
+        "callRestEndpoint5": {
+          "module": "vb/action/builtin/restAction",
+          "parameters": {
+            "endpoint": "businessObjects/do_UpdateServices_ServiceBO",
+            "uriParams": {
+              "ServiceBO_Id": "1"
+            },
+            "body": "{{ $page.variables.paramServiceDetails }}"
+          },
+          "outcomes": {
+            "failure": "fireNotification7",
+            "success": "callModuleFunction5"
+          }
+        },
+        "fireNotification2": {
+          "module": "vb/action/builtin/fireNotificationEventAction",
+          "parameters": {
+            "target": "leaf",
+            "displayMode": "transient",
+            "summary": "[[ $application.translations.app.fireNotification2_summary_fd64 ]]",
+            "message": "[[ $application.translations.app.fireNotification2_message_2807 ]]"
+          },
+          "outcomes": {
+            "success": "assignVariables10"
+          }
+        },
+        "fireNotification4": {
+          "module": "vb/action/builtin/fireNotificationEventAction",
+          "parameters": {
+            "target": "leaf",
+            "summary": "[[ $application.translations.app.fireNotification4_summary_5e3b ]]",
+            "message": "[[ $application.translations.app.fireNotification4_message_cc12 ]]",
+            "displayMode": "transient"
+          },
+          "outcomes": {
+            "success": "assignVariables8"
+          }
+        },
+        "if2": {
+          "module": "vb/action/builtin/ifAction",
+          "parameters": {
+            "condition": "[[ $chain.results.callModuleFunction2.length>0 ]]"
+          },
+          "outcomes": {
+            "true": "callModuleFunction10",
+            "false": "fireNotification5"
+          }
+        },
+        "fireNotification5": {
+          "module": "vb/action/builtin/fireNotificationEventAction",
+          "parameters": {
+            "target": "leaf",
+            "summary": "[[ $application.translations.app.fireNotification5_summary_ee7d ]]",
+            "displayMode": "transient",
+            "type": "info"
+          },
+          "outcomes": {
+            "success": "return1"
+          }
+        },
+        "assignVariables1": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$page.variables.paramDashboardData": {
+              "source": {
+                "uniqueSurveyID": "{{ $chain.results.callModuleFunction1.uniqueSurveyID }}",
+                "captureDate": "{{ $chain.results.callModuleFunction1.captureDate }}",
+                "captureStatus": "{{ $chain.results.callModuleFunction1.captureStatus }}",
+                "dwellingType": "{{ $chain.results.callModuleFunction1.dwellingType }}",
+                "houseNumber": "{{ $chain.results.callModuleFunction1.houseNumber }}",
+                "locationX": "{{ $chain.results.callModuleFunction1.locationX }}",
+                "locationY": "{{ $chain.results.callModuleFunction1.locationY }}",
+                "stickerNumber": "{{ $chain.results.callModuleFunction1.stickerNumber }}",
+                "userIdVar": "{{ $chain.results.callModuleFunction1.userIdVar }}",
+                "usernameVar": "{{ $chain.results.callModuleFunction1.usernameVar }}"
+              },
+              "reset": "none",
+              "auto": "always"
+            }
+          },
+          "outcomes": {
+            "success": "callRestEndpoint1"
+          }
+        },
+        "fireNotification6": {
+          "module": "vb/action/builtin/fireNotificationEventAction",
+          "parameters": {
+            "target": "leaf",
+            "summary": "[[ $application.translations.app.fireNotification6_summary_2842 ]]",
+            "displayMode": "transient",
+            "message": "[[ $application.translations.app.fireNotification6_message_1566 ]]"
+          },
+          "outcomes": {
+            "success": "assignVariables9"
+          }
+        },
+        "assignVariables2": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$page.variables.paramHeadofhouseholdDetails": {
+              "source": {
+                "ageOfHH": "{{ $chain.results.callModuleFunction1.ageOfHH }}",
+                "careDepGrantHH": "{{ $chain.results.callModuleFunction1.careDepGrantHH }}",
+                "childFosterGrantHH": "{{ $chain.results.callModuleFunction1.childFosterGrantHH }}",
+                "childSupGrantHH": "{{ $chain.results.callModuleFunction1.childSupGrantHH }}",
+                "comments": "{{ $chain.results.callModuleFunction1.comments }}",
+                "contactHH": "{{ $chain.results.callModuleFunction1.contactHH }}",
+                "disabilityGrantHH": "{{ $chain.results.callModuleFunction1.disabilityGrantHH }}",
+                "disabilityHH": "{{ $chain.results.callModuleFunction1.disabilityHH }}",
+                "disabilityOtherHH": "{{ $chain.results.callModuleFunction1.disabilityOtherHH }}",
+                "disabilityTypeHH": "{{ $chain.results.callModuleFunction1.disabilityTypeHH }}",
+                "eduHH": "{{ $chain.results.callModuleFunction1.eduHH }}",
+                "empStatusHH": "{{ $chain.results.callModuleFunction1.empStatusHH }}",
+                "genderHH": "{{ $chain.results.callModuleFunction1.genderHH }}",
+                "governmentSubsidyStatusHead": "{{ $chain.results.callModuleFunction1.governmentSubsidyStatusHead }}",
+                "grantInAidHH": "{{ $chain.results.callModuleFunction1.grantInAidHH }}",
+                "grantsHH": "{{ $chain.results.callModuleFunction1.grantsHH }}",
+                "idNumberHH": "{{ $chain.results.callModuleFunction1.idNumberHH }}",
+                "marStatusHH": "{{ $chain.results.callModuleFunction1.marStatusHH }}",
+                "nameHH": "{{ $chain.results.callModuleFunction1.nameHH }}",
+                "nationalityHH": "{{ $chain.results.callModuleFunction1.nationalityHH }}",
+                "nationalityOtherHH": "{{ $chain.results.callModuleFunction1.nationalityOtherHH }}",
+                "numOfDependants": "{{ $chain.results.callModuleFunction1.numOfDependants }}",
+                "popGroupHH": "{{ $chain.results.callModuleFunction1.popGroupHH }}",
+                "socialRefGrantHH": "{{ $chain.results.callModuleFunction1.socialRefGrantHH }}",
+                "stateOldVetHH": "{{ $chain.results.callModuleFunction1.stateOldVetHH }}",
+                "surnameHH": "{{ $chain.results.callModuleFunction1.surnameHH }}",
+                "surveyIDVar": "{{ $chain.results.callModuleFunction1.surveyIDVar }}",
+                "unemploymetInsHH": "{{ $chain.results.callModuleFunction1.unemploymetInsHH }}"
+              },
+              "reset": "none",
+              "auto": "always"
+            }
+          },
+          "outcomes": {
+            "success": "callRestEndpoint2"
+          }
+        },
+        "assignVariables3": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$page.variables.paramHouseholdDetails": {
+              "source": {
+                "currentTownDurationMonthsVar": "{{ $chain.results.callModuleFunction1.currentTownDurationMonthsVar }}",
+                "currentTownDurationYearsVar": "{{ $chain.results.callModuleFunction1.currentTownDurationYearsVar }}",
+                "doorsWindowsDefectDetails": "{{ $chain.results.callModuleFunction1.doorsWindowsDefectDetails }}",
+                "doorsWindowsDefects": "{{ $chain.results.callModuleFunction1.doorsWindowsDefects }}",
+                "dwellingDurationMonthsVar": "{{ $chain.results.callModuleFunction1.dwellingDurationMonthsVar }}",
+                "dwellingDurationYearsVar": "{{ $chain.results.callModuleFunction1.dwellingDurationYearsVar }}",
+                "dwellingOwnershipVar": "{{ $chain.results.callModuleFunction1.dwellingOwnershipVar }}",
+                "floorDefectDetails": "{{ $chain.results.callModuleFunction1.floorDefectDetails }}",
+                "floorDefects": "{{ $chain.results.callModuleFunction1.floorDefects }}",
+                "governmentPropertyDefects": "{{ $chain.results.callModuleFunction1.governmentPropertyDefects }}",
+                "homeLangvar": "{{ $chain.results.callModuleFunction1.homeLangvar }}",
+                "householdIncomevar": "{{ $chain.results.callModuleFunction1.householdIncomevar }}",
+                "noOfRoomsVar": "{{ $chain.results.callModuleFunction1.noOfRoomsVar }}",
+                "otherDefectDetails": "{{ $chain.results.callModuleFunction1.otherDefectDetails }}",
+                "otherDefects": "{{ $chain.results.callModuleFunction1.otherDefects }}",
+                "permitExpiryDateVar": "{{ $chain.results.callModuleFunction1.permitExpiryDateVar }}",
+                "permitTypeVar": "{{ $chain.results.callModuleFunction1.permitTypeVar }}",
+                "permitNumberVar": "{{ $chain.results.callModuleFunction1.permitNumberVar }}",
+                "plumbingDefectDetails": "{{ $chain.results.callModuleFunction1.plumbingDefectDetails }}",
+                "plumbingDefects": "{{ $chain.results.callModuleFunction1.plumbingDefects }}",
+                "provinceVar": "{{ $chain.results.callModuleFunction1.provinceVar }}",
+                "reasonToMove": "{{ $chain.results.callModuleFunction1.reasonToMove }}",
+                "rentGovernmentHousingLiVar": "{{ $chain.results.callModuleFunction1.rentGovernmentHousingLiVar }}",
+                "rentMonthlyAmountVar": "{{ $chain.results.callModuleFunction1.rentMonthlyAmountVar }}",
+                "rentReasonVar": "{{ $chain.results.callModuleFunction1.rentReasonVar }}",
+                "roofDefectDetails": "{{ $chain.results.callModuleFunction1.roofDefectDetails }}",
+                "roofDefects": "{{ $chain.results.callModuleFunction1.roofDefects }}",
+                "surveyIDVar": "{{ $chain.results.callModuleFunction1.surveyIDVar }}",
+                "townVar": "{{ $chain.results.callModuleFunction1.townVar }}",
+                "wallDefectDetails": "{{ $chain.results.callModuleFunction1.wallDefectDetails }}",
+                "wallDefects": "{{ $chain.results.callModuleFunction1.wallDefects }}"
+              },
+              "reset": "none",
+              "auto": "always"
+            }
+          },
+          "outcomes": {
+            "success": "callRestEndpoint3"
+          }
+        },
+        "assignVariables4": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$page.variables.paramServiceDetails": {
+              "source": {
+                "commType": "{{ $chain.results.callModuleFunction1.commType }}",
+                "crimeDetails": "{{ $chain.results.callModuleFunction1.crimeDetails }}",
+                "crimeVictim": "{{ $chain.results.callModuleFunction1.crimeVictim }}",
+                "healthType": "{{ $chain.results.callModuleFunction1.healthType }}",
+                "primaryEnergyCooking": "{{ $chain.results.callModuleFunction1.primaryEnergyCooking }}",
+                "primaryEnergyHeating": "{{ $chain.results.callModuleFunction1.primaryEnergyHeating }}",
+                "primaryEnergyLighting": "{{ $chain.results.callModuleFunction1.primaryEnergyLighting }}",
+                "surveyIDVar": "{{ $chain.results.callModuleFunction1.surveyIDVar }}",
+                "toiletType": "{{ $chain.results.callModuleFunction1.toiletType }}",
+                "transport": "{{ $chain.results.callModuleFunction1.transport }}",
+                "wasteCollection": "{{ $chain.results.callModuleFunction1.wasteCollection }}",
+                "wasteType": "{{ $chain.results.callModuleFunction1.wasteType }}",
+                "waterLitres": "{{ $chain.results.callModuleFunction1.waterLitres }}",
+                "waterType": "{{ $chain.results.callModuleFunction1.waterType }}"
+              },
+              "reset": "none",
+              "auto": "always"
+            }
+          },
+          "outcomes": {
+            "success": "callRestEndpoint5"
+          }
+        },
+        "assignVariables5": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$page.variables.paramSpouseDetails": {
+              "source": {
+                "ageSpouse": "{{ $chain.results.callModuleFunction1.ageSpouse }}",
+                "careDependencyGraSpouse": "{{ $chain.results.callModuleFunction1.careDependencyGraSpouse }}",
+                "childFosterCareGrSpouse": "{{ $chain.results.callModuleFunction1.childFosterCareGrSpouse }}",
+                "childSupportGrantSpouse": "{{ $chain.results.callModuleFunction1.childSupportGrantSpouse }}",
+                "citizenshipOtherSpouse": "{{ $chain.results.callModuleFunction1.citizenshipOtherSpouse }}",
+                "citizenshipSpouse": "{{ $chain.results.callModuleFunction1.citizenshipSpouse }}",
+                "contactSpouse": "{{ $chain.results.callModuleFunction1.contactSpouse }}",
+                "disabilityGrantSpouse": "{{ $chain.results.callModuleFunction1.disabilityGrantSpouse }}",
+                "disabilitySpouse": "{{ $chain.results.callModuleFunction1.disabilitySpouse }}",
+                "disabilityTypeOtherSpouse": "{{ $chain.results.callModuleFunction1.disabilityTypeOtherSpouse }}",
+                "disabilityTypeSpouse": "{{ $chain.results.callModuleFunction1.disabilityTypeSpouse }}",
+                "eduSpouse": "{{ $chain.results.callModuleFunction1.eduSpouse }}",
+                "empStatusSpouse": "{{ $chain.results.callModuleFunction1.empStatusSpouse }}",
+                "fullNameSpouse": "{{ $chain.results.callModuleFunction1.fullNameSpouse }}",
+                "genderSpouse": "{{ $chain.results.callModuleFunction1.genderSpouse }}",
+                "governmentSubsidyStatusSpouse": "{{ $chain.results.callModuleFunction1.governmentSubsidyStatusSpouse }}",
+                "grantInAidSpouse": "{{ $chain.results.callModuleFunction1.grantInAidSpouse }}",
+                "grantsSpouse": "{{ $chain.results.callModuleFunction1.grantsSpouse }}",
+                "idNumberSpouse": "{{ $chain.results.callModuleFunction1.idNumberSpouse }}",
+                "popGroupSpouse": "{{ $chain.results.callModuleFunction1.popGroupSpouse }}",
+                "socialReliefGrantSpouse": "{{ $chain.results.callModuleFunction1.socialReliefGrantSpouse }}",
+                "stateOldAgeWarVetSpouse": "{{ $chain.results.callModuleFunction1.stateOldAgeWarVetSpouse }}",
+                "surnameSpouse": "{{ $chain.results.callModuleFunction1.surnameSpouse }}",
+                "surveyIDVar": "{{ $chain.results.callModuleFunction1.surveyIDVar }}",
+                "unemploymentInsurSpouse": "{{ $chain.results.callModuleFunction1.unemploymentInsurSpouse }}"
+              },
+              "reset": "none",
+              "auto": "always"
+            }
+          },
+          "outcomes": {
+            "success": "callRestEndpoint4"
+          }
+        },
+        "fireNotification7": {
+          "module": "vb/action/builtin/fireNotificationEventAction",
+          "parameters": {
+            "target": "leaf",
+            "displayMode": "transient",
+            "summary": "[[ $application.translations.app.fireNotification7_summary_b4c3 ]]",
+            "message": "[[ $application.translations.app.fireNotification7_message_a64e ]]"
+          },
+          "outcomes": {
+            "success": "assignVariables7"
+          }
+        },
+        "fireNotification8": {
+          "module": "vb/action/builtin/fireNotificationEventAction",
+          "parameters": {
+            "target": "leaf",
+            "summary": "[[ $application.translations.app.fireNotification8_summary_e358 ]]",
+            "displayMode": "transient",
+            "message": "[[ $application.translations.app.fireNotification8_message_fffc ]]"
+          },
+          "outcomes": {
+            "success": "assignVariables6"
+          }
+        },
+        "callModuleFunction4": {
+          "module": "vb/action/builtin/callModuleFunctionAction",
+          "parameters": {
+            "module": "[[ $page.functions ]]",
+            "functionName": "deleteOfflineData",
+            "params": [
+              "{{ $current.data }}",
+              "{{ $page.variables.paramSpouseDetails.surveyIDVar }}"
+            ]
+          }
+        },
+        "callModuleFunction5": {
+          "module": "vb/action/builtin/callModuleFunctionAction",
+          "parameters": {
+            "module": "[[ $page.functions ]]",
+            "functionName": "deleteOfflineData",
+            "params": [
+              "{{ $current.data }}",
+              "{{ $page.variables.paramServiceDetails.surveyIDVar }}"
+            ]
+          }
+        },
+        "callModuleFunction6": {
+          "module": "vb/action/builtin/callModuleFunctionAction",
+          "parameters": {
+            "module": "[[ $page.functions ]]",
+            "functionName": "deleteOfflineData",
+            "params": [
+              "{{ $current.data }}",
+              "{{ $page.variables.paramHouseholdDetails.surveyIDVar }}"
+            ]
+          }
+        },
+        "callModuleFunction7": {
+          "module": "vb/action/builtin/callModuleFunctionAction",
+          "parameters": {
+            "module": "[[ $page.functions ]]",
+            "functionName": "deleteOfflineData",
+            "params": [
+              "{{ $current.data }}",
+              "{{ $page.variables.paramHeadofhouseholdDetails.surveyIDVar }}"
+            ]
+          }
+        },
+        "callModuleFunction8": {
+          "module": "vb/action/builtin/callModuleFunctionAction",
+          "parameters": {
+            "module": "[[ $page.functions ]]",
+            "functionName": "deleteOfflineData",
+            "params": [
+              "{{ $current.data }}",
+              "{{ $page.variables.paramDashboardData.uniqueSurveyID }}"
+            ]
+          }
+        },
+        "assignVariables6": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$chain.variables.checkUpload": {
+              "source": "false"
+            }
+          }
+        },
+        "assignVariables7": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$chain.variables.checkUpload": {
+              "source": "false"
+            }
+          }
+        },
+        "assignVariables8": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$chain.variables.checkUpload": {
+              "source": "false"
+            }
+          }
+        },
+        "assignVariables9": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$chain.variables.checkUpload": {
+              "source": false
+            }
+          }
+        },
+        "assignVariables10": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$chain.variables.checkUpload": {
+              "source": false
+            }
+          }
+        },
+        "if3": {
+          "module": "vb/action/builtin/ifAction",
+          "outcomes": {
+            "true": "fireNotification9",
+            "false": "fireNotification10"
+          },
+          "parameters": {
+            "condition": "[[ $chain.variables.checkUpload ]]"
+          }
+        },
+        "fireNotification9": {
+          "module": "vb/action/builtin/fireNotificationEventAction",
+          "parameters": {
+            "target": "leaf",
+            "summary": "[[ $application.translations.app.fireNotification9_summary_5de1 ]]",
+            "type": "confirmation",
+            "displayMode": "transient"
+          },
+          "outcomes": {
+            "success": "return1"
+          }
+        },
+        "fireNotification10": {
+          "module": "vb/action/builtin/fireNotificationEventAction",
+          "parameters": {
+            "target": "leaf",
+            "summary": "[[ $application.translations.app.fireNotification10_summary_6a81 ]]",
+            "displayMode": "transient",
+            "message": "[[ $application.translations.app.fireNotification10_message_18ba ]]"
+          },
+          "outcomes": {
+            "success": "return1"
+          }
+        },
+        "assignVariables11": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$chain.variables.data_counter": {
+              "source": "0"
+            }
+          },
+          "outcomes": {
+            "success": "forEach1"
+          }
+        },
+        "assignVariables12": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$chain.variables.data_counter": {
+              "source": "{{ $chain.variables.data_counter+1 }}"
+            }
+          },
+          "outcomes": {
+            "success": "callModuleFunction9"
+          }
+        },
+        "callModuleFunction9": {
+          "module": "vb/action/builtin/callModuleFunctionAction",
+          "parameters": {
+            "module": "[[ $page.functions ]]",
+            "functionName": "updateDataCount",
+            "params": [
+              "{{ $chain.variables.data_counter }}",
+              "{{ $chain.results.callModuleFunction2.length }}"
+            ]
+          },
+          "outcomes": {
+            "success": "callModuleFunction1"
+          }
+        },
+        "callModuleFunction10": {
+          "module": "vb/action/builtin/callModuleFunctionAction",
+          "outcomes": {
+            "success": "assignVariables11"
+          },
+          "parameters": {
+            "module": "[[ $page.functions ]]",
+            "functionName": "updateDataCount",
+            "params": [
+              "0",
+              "{{ $chain.results.callModuleFunction2.length }}"
+            ]
+          }
+        }
+      },
+      "variables": {
+        "checkUpload": {
+          "type": "boolean",
+          "defaultValue": true
+        },
+        "data_counter": {
+          "type": "number",
+          "defaultValue": 0
+        }
+      }
+    },
+    "UploadOfflineDataAndImages": {
+      "description": "",
+      "variables": {
+        "detail": {
+          "required": true,
+          "type": "any",
+          "input": "fromCaller"
+        }
+      },
+      "root": "callModuleFunction1",
+      "actions": {
+        "callActionChain1": {
+          "module": "vb/action/builtin/callChainAction",
+          "parameters": {
+            "id": "UploadOfflineImages"
+          },
+          "outcomes": {
+            "success": "callModuleFunction3"
+          }
+        },
+        "callActionChain2": {
+          "module": "vb/action/builtin/callChainAction",
+          "parameters": {
+            "id": "UploadOfflineData"
+          },
+          "outcomes": {
+            "success": "callActionChain1"
+          }
+        },
+        "callModuleFunction1": {
+          "module": "vb/action/builtin/callModuleFunctionAction",
+          "parameters": {
+            "module": "[[ $page.functions ]]",
+            "functionName": "showLoader"
+          },
+          "outcomes": {
+            "success": "callActionChain2"
+          }
+        },
+        "callModuleFunction2": {
+          "module": "vb/action/builtin/callModuleFunctionAction",
+          "parameters": {
+            "module": "[[ $page.functions ]]",
+            "functionName": "hideLoaderCompleted"
+          }
+        },
+        "callModuleFunction3": {
+          "module": "vb/action/builtin/callModuleFunctionAction",
+          "parameters": {
+            "module": "[[ $page.functions ]]",
+            "functionName": "hideLoader"
+          },
+          "outcomes": {
+            "success": "callModuleFunction2"
+          }
+        }
+      }
+    },
+    "NavigateToDashboard": {
+      "description": "",
+      "variables": {
+        "detail": {
+          "required": true,
+          "type": "any",
+          "input": "fromCaller"
+        }
+      },
+      "root": "navigateToPage1",
+      "actions": {
+        "navigateToPage1": {
+          "module": "vb/action/builtin/navigateToPageAction",
+          "parameters": {
+            "page": "dashboard"
+          }
+        }
+      }
+    },
+    "getFileEntries": {
+      "root": "callModuleFunction1",
+      "description": "",
+      "actions": {
+        "callModuleFunction1": {
+          "module": "vb/action/builtin/callModuleFunctionAction",
+          "parameters": {
+            "module": "[[ $page.functions ]]",
+            "functionName": "getFileEntries"
+          }
+        }
+      }
+    }
+  },
+  "eventListeners": {
+    "vbEnter": {
+      "chains": [
+        {
+          "chainId": "CheckAppOnlineOfflineStatus",
+          "parameters": {}
+        },
+        {
+          "chainId": "getFileEntries",
+          "parameters": {}
+        }
+      ]
+    },
+    "ojButton3291026821OjAction": {
+      "chains": [
+        {
+          "chainId": "UploadOfflineDataAndImages",
+          "parameters": {
+            "detail": "{{ $event.detail }}"
+          }
+        }
+      ]
+    },
+    "ojButton16648615211OjAction": {
+      "chains": [
+        {
+          "chainId": "NavigateToDashboard",
+          "parameters": {
+            "detail": "{{ $event.detail }}"
+          }
+        }
+      ]
+    }
+  },
+  "imports": {
+    "components": {
+      "oj-ext-mobile-page-template": {
+        "path": "vb/components/mobile-page-template/loader"
+      },
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-label": {
+        "path": "ojs/ojlabel"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      }
+    }
+  }
+}

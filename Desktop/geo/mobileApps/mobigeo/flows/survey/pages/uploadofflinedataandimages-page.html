@@ -1,0 +1,30 @@
+<oj-ext-mobile-page-template id="page-template" page-title="Offline Data Sync">
+  
+  <div class="oj-flex-item oj-flex oj-sm-flex-direction-column oj-sm-align-items-center oj-sm-justify-content-space-around">
+    <oj-label for="img_count" style="font-size:1rem; color:#1752a6; font-weight:bold;  margin-top: 2rem;" class="oj-sm-flex-0 oj-sm-align-self-center">Offline Image Upload Progress</oj-label>
+    <div class="oj-flex-item oj-sm-flex-0">
+      <img id="blob_img" style="object-fit: fill;" width="200" height="200">
+    </div>
+    
+    
+    <oj-input-text id="img_count" value="                                     0 /  0" class="oj-flex-item oj-sm-flex-0" disabled="true"></oj-input-text>
+    <oj-label for="data_count" style="font-size:1rem; color:#1752a6; font-weight:bold;   margin-top: 2rem;" class="oj-flex-item oj-sm-flex-initial">Offline Data Upload Progress</oj-label>
+    <oj-input-text id="data_count" value="                                     0 /  0" disabled="true" class="oj-flex-item oj-sm-flex-0"></oj-input-text>
+    <oj-label id="oj-label-1664861521-1" for="oj-input-text-1664861521-1" class="oj-flex-item oj-sm-flex-initial"></oj-label>
+    <oj-button id="oj-button--329102682-1" chroming="full" disabled="[[ !$variables.isAppOnline ]]" on-oj-action="[[$listeners.ojButton3291026821OjAction]]" class="oj-flex-item oj-sm-flex-0">Upload Offline Data and Images</oj-button>
+    <div class="oj-flex-item oj-sm-flex-initial">
+      <oj-button id="oj-button-1664861521-1" chroming="full" on-oj-action="[[$listeners.ojButton16648615211OjAction]]">Back to Dashboard</oj-button>
+    </div>
+  </div>
+</oj-ext-mobile-page-template>
+<div class="loader-screen" id="loaderid">
+  <div class="loader"></div>
+</div>
+
+<div id="fn">
+  
+</div>
+
+<div id="blob">
+  
+</div>

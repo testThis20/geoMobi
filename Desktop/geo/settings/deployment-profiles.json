@@ -1,0 +1,19 @@
+{
+    "profiles": [
+        {
+            "displayName": "Base configuration",
+            "description": "Default development profile in VBCS",
+            "id": "base_configuration",
+            "mobileBuildConfiguration": {
+                "mobigeo": {
+                    "android": "GeoMobi_key_09663425917190629"
+                }
+            }
+        }
+    ],
+    "defaults": {
+        "dev": "base_configuration",
+        "stage": "base_configuration",
+        "publish": "base_configuration"
+    }
+}

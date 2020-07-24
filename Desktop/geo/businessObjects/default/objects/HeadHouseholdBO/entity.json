@@ -1,0 +1,232 @@
+{
+    "displayLabel": "HeadHouseholdBO",
+    "name": "HeadHouseholdBO",
+    "oid": "4f065a26-2365-4ca9-8ff3-d3286e99f336",
+    "fields": [
+        {
+            "displayLabel": "Id",
+            "internal": true,
+            "key": true,
+            "name": "id",
+            "oid": "f94e943d-3101-4fe5-abc9-e5f6c31f0241",
+            "required": true,
+            "type": "number",
+            "unique": true
+        },
+        {
+            "displayLabel": "Created",
+            "internal": true,
+            "name": "creationDate",
+            "oid": "09dde9a8-56ca-425b-a2f9-9eb1a59b0bf7",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Last Updated",
+            "internal": true,
+            "name": "lastUpdateDate",
+            "oid": "623a7f2b-f15c-4e7f-a868-7969419cd2a8",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Created By",
+            "internal": true,
+            "name": "createdBy",
+            "oid": "991ec50b-59dc-45b4-9472-9d16cb646ca6",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Last Updated By",
+            "internal": true,
+            "name": "lastUpdatedBy",
+            "oid": "b150fa4a-2dc0-4324-bb4c-a2214806e2f7",
+            "type": "string"
+        },
+        {
+            "displayLabel": "<internal>",
+            "hidden": true,
+            "internal": true,
+            "name": "abcsChangeNumber",
+            "oid": "457e0d0a-7a40-4a56-afb9-0b11544c42dd",
+            "type": "number"
+        },
+        {
+            "name": "name",
+            "oid": "947a307d-8afd-4e53-9c61-02a0d4d81999",
+            "displayLabel": "name",
+            "type": "string"
+        }
+    ],
+    "objectFunctions": [
+        {
+            "definition": "def vo = newView('PersonalData')\nvo.appendViewCriteria(\"surveyID = '\"+surveyIDVar+\"'\")\nvo.executeQuery()\nif (!vo.hasNext()){\n  r = vo.createRow()\n  r.surveyID = surveyIDVar;\n\n  r.IDNumber=idNumberHH;\n  r.Name=nameHH;\n  r.Surname=surnameHH;  \n  r.Gender=genderHH;\n  r.AgeHH=ageOfHH;\n  r.Nationality=nationalityHH;\n  r.NationalityOther=nationalityOtherHH;\n\n  r.PopGroup=popGroupHH;\n  r.Disability=disabilityHH;\n  r.DisabilityType=disabilityTypeHH;\n  r.DisabilityTypeOther=disabilityOtherHH;\n  r.ContactDetails=contactHH;\n  r.HiEducation=eduHH;\n  r.Employment=empStatusHH;\n  r.MarStatus=marStatusHH;\n  r.Grants=grantsHH;\n\n  r.StateOldAgeWarVetPensio = stateOldVetHH;\n  r.DisabilityGrant\t= disabilityGrantHH;\n  r.ChildSupportGrant = childSupGrantHH;\n  r.ChildFosterCareGrant = childFosterGrantHH;\n  r.GrantInAid = grantInAidHH;\n  r.CareDependencyGrant = careDepGrantHH;\n  r.SocialReliefGrant = socialRefGrantHH;\n  r.UnemploymentInsuranceFu = unemploymetInsHH;\n  r.NumberOfDependants=numOfDependants;\n\n  r.governmentSubsidyStatusHead=governmentSubsidyStatusHead;\n\n  vo.insertRow(r)\n}\nwhile (vo.hasNext()) {\n  def r = vo.next();\n\n  r.IDNumber=idNumberHH;\n  r.Name=nameHH;\n  r.Surname=surnameHH;\n  r.Gender=genderHH;\n  r.AgeHH=ageOfHH;\n  r.Nationality=nationalityHH;\n  r.NationalityOther=nationalityOtherHH;\n\n  r.PopGroup=popGroupHH;\n  r.Disability=disabilityHH;\n  r.DisabilityType=disabilityTypeHH;\n  r.DisabilityTypeOther=disabilityOtherHH;\n  r.ContactDetails=contactHH;\n  r.HiEducation=eduHH;\n  r.Employment=empStatusHH;\n  r.MarStatus=marStatusHH;\n  r.Grants=grantsHH;\n\n\n  r.StateOldAgeWarVetPensio = stateOldVetHH;\n  r.DisabilityGrant\t= disabilityGrantHH;\n  r.ChildSupportGrant = childSupGrantHH;\n  r.ChildFosterCareGrant = childFosterGrantHH;\n  r.GrantInAid = grantInAidHH;\n  r.CareDependencyGrant = careDepGrantHH;\n  r.SocialReliefGrant = socialRefGrantHH;\n  r.UnemploymentInsuranceFu = unemploymetInsHH;\n  r.NumberOfDependants=numOfDependants;\n  \n  r.governmentSubsidyStatusHead=governmentSubsidyStatusHead;\n\n}\n\ndef vo1 = newView('GeneralField')\nvo1.appendViewCriteria(\"surveyID = '\"+surveyIDVar+\"'\")\nvo1.executeQuery()\nif (!vo1.hasNext()){\n  r = vo1.createRow()\n  r.surveyID = surveyIDVar;  \n  r.Comments=comments;\n  vo1.insertRow(r)\n}\nwhile (vo1.hasNext()) {\n  def r = vo1.next();\n  r.Comments=comments;\n}\n",
+            "name": "updateDetailsHH",
+            "refId": "0c20cebd-f72d-412f-91c3-427b159ecb5f",
+            "parameters": [
+                {
+                    "name": "nameHH",
+                    "type": "String"
+                },
+                {
+                    "name": "surnameHH",
+                    "type": "String"
+                },
+                {
+                    "name": "genderHH",
+                    "type": "String"
+                },
+                {
+                    "name": "ageOfHH",
+                    "type": "String"
+                },
+                {
+                    "name": "nationalityHH",
+                    "type": "String"
+                },
+                {
+                    "name": "nationalityOtherHH",
+                    "type": "String"
+                },
+                {
+                    "name": "popGroupHH",
+                    "type": "String"
+                },
+                {
+                    "name": "disabilityHH",
+                    "type": "String"
+                },
+                {
+                    "name": "disabilityTypeHH",
+                    "type": "String"
+                },
+                {
+                    "name": "disabilityOtherHH",
+                    "type": "String"
+                },
+                {
+                    "name": "contactHH",
+                    "type": "String"
+                },
+                {
+                    "name": "eduHH",
+                    "type": "String"
+                },
+                {
+                    "name": "empStatusHH",
+                    "type": "String"
+                },
+                {
+                    "name": "marStatusHH",
+                    "type": "String"
+                },
+                {
+                    "name": "grantsHH",
+                    "type": "String"
+                },
+                {
+                    "name": "stateOldVetHH",
+                    "type": "String"
+                },
+                {
+                    "name": "disabilityGrantHH",
+                    "type": "String"
+                },
+                {
+                    "name": "childSupGrantHH",
+                    "type": "String"
+                },
+                {
+                    "name": "childFosterGrantHH",
+                    "type": "String"
+                },
+                {
+                    "name": "grantInAidHH",
+                    "type": "String"
+                },
+                {
+                    "name": "careDepGrantHH",
+                    "type": "String"
+                },
+                {
+                    "name": "socialRefGrantHH",
+                    "type": "String"
+                },
+                {
+                    "name": "unemploymetInsHH",
+                    "type": "String"
+                },
+                {
+                    "name": "idNumberHH",
+                    "type": "String"
+                },
+                {
+                    "name": "numOfDependants",
+                    "type": "String"
+                },
+                {
+                    "name": "surveyIDVar",
+                    "type": "String"
+                },
+                {
+                    "name": "comments",
+                    "type": "String"
+                },
+                {
+                    "name": "governmentSubsidyStatusHead",
+                    "type": "String"
+                }
+            ],
+            "returnType": "void",
+            "visibility": [
+                "external"
+            ]
+        }
+    ],
+    "security": {
+        "type": "local",
+        "acl": [
+            {
+                "roleId": "approle.anonymous.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "roleId": "approle.authenticated.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            }
+        ]
+    },
+    "setupData": true
+}

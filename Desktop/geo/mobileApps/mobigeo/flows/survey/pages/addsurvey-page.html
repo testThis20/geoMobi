@@ -1,0 +1,1006 @@
+<oj-ext-mobile-page-template id="page-template" page-title="Survey">
+  <div class="oj-sm-flex-1 oj-flex oj-sm-flex-direction-column oj-sm-flex-wrap-nowrap" style="overflow-y: auto; padding:1.2rem; -webkit-overflow-scrolling: touch;-webkit-transform: translateZ(0);">
+    <oj-validation-group id="serviceSection">
+      <h1 style="font-size:1.5rem; color:#1752a6; font-weight:bold" id="h1--1332266279-2222">Dwelling Information</h1>
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332Mar266279-42" for="oj-input-text--1332266279-15">Unique Record Reference</oj-label>
+      <oj-input-text style="font-size:1.2rem; color:#1752a6;" id="oj-input-text--1332266279-15" placeholder="Unique Record Reference" disabled="true" value="{{ $flow.variables.timeStamp }}"></oj-input-text>
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-35" for="oj-input-text--1332266279-7">X-Location</oj-label>
+      <oj-input-text style="font-size:1.2rem; color:#1752a6;" id="oj-input-text--1332266279-7" placeholder="X-Location" disabled="true" value="{{ $flow.variables.XLocation }}"></oj-input-text>
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-laundegrbel--1332266279-38" for="oj-input-text--1332266279-14">Y-Location</oj-label>
+      <oj-input-text style="font-size:1.2rem; color:#1752a6;" id="oj-input-text--1332266279-14" placeholder="Y-Location" disabled="true" value="{{ $flow.variables.YLocation }}"></oj-input-text>
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-43" for="oj-input-text--1332266279-16">Device Username</oj-label>
+      <oj-input-text style="font-size:1.2rem; color:#1752a6;" id="oj-input-text--1332266279-16" disabled="true" value="{{ $flow.variables.username }}" placeholder="Surveyor username"></oj-input-text>
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-44" for="cdt">Capture Date and Time</oj-label>
+      <oj-input-text style="font-size:1.2rem; color:#1752a6;" id="cdt" disabled="true" value="{{ $flow.variables.localTime }}" placeholder="Date and Time of Survey"></oj-input-text>
+      
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="dcidl" for="dcid">Data Collector ID Number</oj-label>
+     
+      <oj-input-text style="font-size:1.2rem; color:#1752a6;" disabled="true" value="{{ $flow.variables.userID }}" id="dcid" placeholder="Data Collector ID Number"></oj-input-text>
+      
+      
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-29">Photo of Dwelling</oj-label>
+      <center>
+      <div>
+        <img id="photoOfDwelling" class="oj-sm-flex-initial" width="150" height="100" style="object-fit: fill; object-position: 80% 80%;">
+      </div>
+      <div>
+        <oj-button id="oj-button--1332266279-1" chroming="full" on-oj-action="[[$listeners.ojButton13322662791OjAction]]">Take photo of dwelling</oj-button>
+      </div>
+      </center>
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-71" for="oj-input-text--1332266279-37">Comment </oj-label>
+      <oj-input-text id="oj-input-text--1332266279-37" placeholder="Comment " value="{{ $variables.paramHHDetails.comments }}"></oj-input-text>
+      <div class="oj-sm-align-self-center">
+      </div>
+      <h1 style="font-size:1.5rem; color:#1752a6; font-weight: bold; padding-top:4rem" id="h1--1332266279-1">Head of Household</h1>
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-3" for="oj-input-text--1332266279-3" class="oj-flex-item">Head of Household ID Number</oj-label>
+      <oj-input-text id="oj-input-text--1332266279-3" placeholder="Please enter the Head of Household ID Number" required="true" value="{{ $variables.paramHHDetails.idNumberHH }}" class="oj-flex-item" on-value-changed="[[$listeners.ojInputText13322662793Value]]"></oj-input-text>
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-1" for="oj-input-text--1332266279-1" class="oj-flex-item">Head of Household Full Name</oj-label>
+      <oj-input-text id="oj-input-text--1332266279-1" class="oj-flex-item" placeholder="Please enter full name" required="true" value="{{ $variables.paramHHDetails.nameHH }}" validators=' [{"type":"regexp", "options":{"pattern":"[A-Z a-z]+", "hint":"Head of Household Full Name.", "messageDetail": "Enter Valid Name"}}]' virtual-keyboard="text"></oj-input-text>
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-2" for="oj-input-text--1332266279-2" class="oj-flex-item">Head of Household Surname</oj-label>
+      <oj-input-text id="oj-input-text--1332266279-2" class="oj-flex-item" placeholder="Please enter the surname" required="true" value="{{ $variables.paramHHDetails.surnameHH }}" validators=' [{"type":"regexp", "options":{"pattern":"[A-Z a-z]+", "hint":"Head of Household surname.", "messageDetail": "Enter Valid surname"}}]' virtual-keyboard="text"></oj-input-text>
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-30" for="oj-select-one--1332266279-15" class="oj-flex-item">Head of Household  Gender</oj-label>
+      <oj-select-one id="oj-select-one--1332266279-15" class="oj-flex-item oj-form-control-text-align-start" value="{{ $variables.paramHHDetails.genderHH }}" options-keys.value="GenderValue" options-keys.label="Gender" placeholder="Please Select" required="true" on-value-changed="[[$listeners.ojSelectOne133226627915Value]]">
+        <oj-option value="Male">Male</oj-option>
+        <oj-option value="Female">Female</oj-option>      	
+      
+      </oj-select-one>
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-72" for="oj-select-one--1332266279-31" class="oj-flex-item">Head of Household Age Category</oj-label>
+      <oj-select-one id="oj-select-one--1332266279-31" class="oj-flex-item oj-form-control-text-align-start" required="true" value="{{ $variables.paramHHDetails.ageOfHH }}" options-keys.value="Value" options-keys.label="Age" placeholder="Please Select">
+        <oj-option value="16-20">16-20</oj-option>
+        <oj-option value="21-30">21-30</oj-option>
+        <oj-option value="31-40">31-40</oj-option>
+        <oj-option value="41-50">41-50</oj-option>
+        <oj-option value="51-60">51-60</oj-option>
+        <oj-option value="61-70">61-70</oj-option>
+        <oj-option value="71+">71+</oj-option>        
+      
+      </oj-select-one>
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-73" for="oj-select-one--1332266279-32" class="oj-flex-item">Head of Household Citizenship / Nationality</oj-label>
+      <oj-select-one id="oj-select-one--1332266279-32" class="oj-flex-item oj-form-control-text-align-start" value="{{ $variables.paramHHDetails.nationalityHH }}" on-value-changed="[[$listeners.ojSelectOne133226627932Value]]" options-keys.value="Value" options-keys.label="Nation" required="true" placeholder="Please Select">
+        <oj-option value="South Africa">South Africa</oj-option>
+        <oj-option value="Botswana">Botswana</oj-option>
+        <oj-option value="Namibia">Namibia</oj-option>
+        <oj-option value="Lesotho">Lesotho</oj-option>
+        <oj-option value="Zimbabwe">Zimbabwe</oj-option>
+        <oj-option value="Mozambique">Mozambique</oj-option>
+        <oj-option value="Angola">Angola</oj-option>
+        <oj-option value="Malawi">Malawi</oj-option>
+        <oj-option value="Swaziland">Swaziland</oj-option>
+        <oj-option value="Other Country">Other Country</oj-option>       
+        
+      </oj-select-one>
+      <div :hidden="[[ $variables.showOtherCountry]]">
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-11" for="oj-input-text--1332266279-5" class="oj-flex-item">Head of Household Citizenship Other</oj-label>
+        <oj-input-text id="oj-input-text--1332266279-5" class="oj-flex-item" placeholder="Please Enter" validators=' [{"type":"regexp", "options":{"pattern":"[A-Z a-z]+", "hint":"Head of Household Citizenship.", "messageDetail": "Enter Valid Citizenship"}}]' value="{{ $variables.paramHHDetails.nationalityOtherHH }}" required="[[ $variables.validatorHHHCitizenshipOther ]]"></oj-input-text>
+      </div>
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-5" for="oj-select-one--1332266279-2" class="oj-flex-item">Head of Household Population Group</oj-label>
+      <oj-menu style="display:none;" id="oj-menu--1332266279-2">
+        <oj-option value="item1">Menu Item 1</oj-option>
+      </oj-menu>
+      <oj-select-one style="font-size:1.2rem; color:#1752a6;" id="oj-select-one--1332266279-2" class="oj-flex-item oj-form-control-text-align-start" placeholder="Please Select" required="true" value="{{ $variables.paramHHDetails.popGroupHH }}">
+       
+        <oj-option value="African">African</oj-option>
+        <oj-option value="Coloured">Coloured</oj-option>
+        <oj-option value="Indian">Indian</oj-option>
+        <oj-option value="White">White</oj-option>
+      </oj-select-one>
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-9" for="oj-select-one--1332266279-5" class="oj-flex-item">Head of Household Disability</oj-label>
+      <oj-select-one style="font-size:1.2rem; color:#1752a6;" id="oj-select-one--1332266279-5" on-value-changed="[[$listeners.ojSelectOne13322662795Value]]" options-keys.value="Options" options-keys.label="Disability" class="oj-flex-item oj-form-control-text-align-start" value="{{ $variables.paramHHDetails.disabilityHH }}" required="true" placeholder="Please Select">
+        <oj-option value="Yes">Yes</oj-option>
+        <oj-option value="No">No</oj-option>
+      </oj-select-one>
+      
+      <div :hidden="[[ $variables.showDisability ]]" class="oj-flex-item">
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-12" for="oj-select-one--1332266279-10" class="oj-flex-item">Head of the Household Disability Type</oj-label>
+        <oj-select-one style="font-size:1.2rem; color:#1752a6;" id="oj-select-one--1332266279-10" class="oj-flex-item oj-form-control-text-align-start" options-keys.value="Value" options-keys.label="DisabilityType" value="{{ $variables.paramHHDetails.disabilityTypeHH }}" on-value-changed="[[$listeners.ojSelectOne133226627910Value]]" required="[[ !$variables.showDisability ]]">
+      <oj-option value="Seeing">Seeing</oj-option>
+      <oj-option value="Hearing">Hearing</oj-option>
+      <oj-option value="Communication">Communication</oj-option>
+      <oj-option value="Walking">Walking</oj-option>
+      <oj-option value="Remembering">Remembering</oj-option>
+      <oj-option value="Self-care">Self-care</oj-option>
+      <oj-option value="Other">Other</oj-option>      
+      
+        </oj-select-one>
+      </div>
+      
+      <div :hidden="[[$variables.showOtherDisability]]" class="oj-flex-item">
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-31" for="oj-input-text--1332266279-6" class="oj-flex-item">Head of Household Disability Others</oj-label>
+        <oj-input-text id="oj-input-text--1332266279-6" class="oj-flex-item" placeholder="Please enter" value="{{ $variables.paramHHDetails.disabilityOtherHH }}" required="[[ !$variables.showOtherDisability ]]"></oj-input-text>
+      </div>
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-76" for="oj-select-one--1332266279-35" class="oj-flex-item">Head of Household Grants</oj-label>
+      <oj-select-one id="oj-select-one--1332266279-35" class="oj-flex-item oj-form-control-text-align-start" required="true" value="{{ $variables.paramHHDetails.grantsHH }}" on-value-changed="[[$listeners.ojSelectOne133226627935Value]]" options-keys.value="Options" options-keys.label="Disability" placeholder="Please Select">
+        <oj-option value="Yes">Yes</oj-option>
+        <oj-option value="No">No</oj-option>      
+      
+      </oj-select-one>
+      
+      <div :hidden="[[ $variables.showGrants]]">
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-77" for="oj-select-one--1332266279-36" class="oj-flex-item">State/Old Age/War Veteran Pension</oj-label>
+        <oj-select-one id="oj-select-one--1332266279-36" class="oj-flex-item oj-form-control-text-align-start" required="[[ $variables.isGrantsReqd ]]" value="{{ $variables.paramHHDetails.stateOldVetHH }}" on-value-changed="[[$listeners.ojSelectOne133226627936Value]]" placeholder="Please Select">
+        <oj-option value="Yes">Yes</oj-option>
+        <oj-option value="No">No</oj-option>
+        </oj-select-one>
+      
+      
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-78" for="oj-select-one--1332266279-37" class="oj-flex-item"> Disability Grant</oj-label>
+        <oj-select-one id="oj-select-one--1332266279-37" class="oj-flex-item oj-form-control-text-align-start" required="[[ $variables.isGrantsReqd ]]" value="{{ $variables.paramHHDetails.disabilityGrantHH }}" placeholder="Please Select">
+        <oj-option value="Yes">Yes</oj-option>
+        <oj-option value="No">No</oj-option>
+        </oj-select-one>
+      
+      
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-79" for="oj-select-one--1332266279-38" class="oj-flex-item">Child Support Grant</oj-label>
+        <oj-select-one id="oj-select-one--1332266279-38" class="oj-flex-item oj-form-control-text-align-start" required="[[ $variables.isGrantsReqd ]]" value="{{ $variables.paramHHDetails.childSupGrantHH }}" placeholder="Please Select">
+        <oj-option value="Yes">Yes</oj-option>
+        <oj-option value="No">No</oj-option>
+        </oj-select-one>
+      
+      
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-80" for="oj-select-one--1332266279-39" class="oj-flex-item">Child Foster Care Grant</oj-label>
+        <oj-select-one id="oj-select-one--1332266279-39" class="oj-flex-item oj-form-control-text-align-start" value="{{ $variables.paramHHDetails.childFosterGrantHH }}" required="[[ $variables.isGrantsReqd ]]" placeholder="Please Select">
+        <oj-option value="Yes">Yes</oj-option>
+        <oj-option value="No">No</oj-option>
+        </oj-select-one>
+      
+      
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-81" for="oj-select-one--1332266279-40" class="oj-flex-item">Grant in Aid</oj-label>
+        <oj-select-one id="oj-select-one--1332266279-40" class="oj-flex-item oj-form-control-text-align-start" required="[[ $variables.isGrantsReqd ]]" value="{{ $variables.paramHHDetails.grantInAidHH }}" placeholder="Please Select">
+        <oj-option value="Yes">Yes</oj-option>
+        <oj-option value="No">No</oj-option>
+        </oj-select-one>
+      
+      
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-82" for="oj-select-one--1332266279-41" class="oj-flex-item">Care Dependency Grant</oj-label>
+        <oj-select-one id="oj-select-one--1332266279-41" class="oj-flex-item oj-form-control-text-align-start" required="[[ $variables.isGrantsReqd ]]" value="{{ $variables.paramHHDetails.careDepGrantHH }}" placeholder="Please Select">
+        <oj-option value="Yes">Yes</oj-option>
+        <oj-option value="No">No</oj-option>
+        </oj-select-one>
+      
+      
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-83" for="oj-select-one--1332266279-42" class="oj-flex-item">Social Relief of Distress Grant</oj-label>
+        <oj-select-one id="oj-select-one--1332266279-42" class="oj-flex-item oj-form-control-text-align-start" required="[[ $variables.isGrantsReqd ]]" value="{{ $variables.paramHHDetails.socialRefGrantHH }}" placeholder="Please Select">
+       <oj-option value="Yes">Yes</oj-option>
+        <oj-option value="No">No</oj-option>
+        </oj-select-one>
+      
+      
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-84" for="oj-select-one--1332266279-43" class="oj-flex-item">Unemployment Insurance   Fund (UIF)</oj-label>
+        <oj-select-one id="oj-select-one--1332266279-43" class="oj-flex-item oj-form-control-text-align-start" required="[[ $variables.isGrantsReqd ]]" value="{{ $variables.paramHHDetails.unemploymetInsHH }}" placeholder="Please Select">
+        <oj-option value="Yes">Yes</oj-option>
+        <oj-option value="No">No</oj-option>
+        </oj-select-one>
+      </div>
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-85" for="oj-input-text--1332266279-38" class="oj-flex-item">Head of Household Contact Number</oj-label>
+      <oj-input-text id="oj-input-text--1332266279-38" class="oj-flex-item" placeholder="Please enter your phone number" required="true" value="{{ $variables.paramHHDetails.contactHH }}" validators='[{"type":"regexp", "options":{"pattern":"\\+? *([\\d]+ *\\( *[0-9]+ *\\))?[\\d -.]+", "hint":"Enter a valid phone number.", "messageDetail": "Value must be a valid phone number"}}]' on-value-changed="[[$listeners.ojInputText133226627938Value]]" virtual-keyboard="tel"></oj-input-text>
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-14" for="oj-select-one--1332266279-8" class="oj-flex-item">Head of the Household Highest Education</oj-label>
+      <oj-select-one style="font-size:1.2rem; color:#1752a6;" id="oj-select-one--1332266279-8" class="oj-flex-item oj-form-control-text-align-start" value="{{ $variables.paramHHDetails.eduHH }}" required="true" options-keys.label="eduLevel" placeholder="Please Select">
+        <oj-option value="No formal school education">No formal school education</oj-option>
+        <oj-option value="Less than Grade 7 (Standard 5) completed">Less than Grade 7 (Standard 5) completed</oj-option>
+        <oj-option value="Completed Grade 7 (Standard 5)">Completed Grade 7 (Standard 5)</oj-option>
+        <oj-option value="Completed Grade 10 (Standard 8)">Completed Grade 10 (Standard 8)</oj-option>
+        <oj-option value="Completed Grade 12 (Matric)">Completed Grade 12 (Matric)</oj-option>
+        <oj-option value="Post matric three year qualification (including diplomas)">Post matric three year qualification (including diplomas)</oj-option>
+        <oj-option value="Undergraduate Degree">Undergraduate Degree/s</oj-option>
+        <oj-option value="Post Graduate Qualification">Post Graduate Qualification</oj-option>        
+      
+      </oj-select-one>
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-86" for="oj-select-one--1332266279-44" class="oj-flex-item">Head of Household Employment Status</oj-label>
+      <oj-select-one id="oj-select-one--1332266279-44" class="oj-flex-item oj-form-control-text-align-start" value="{{ $variables.paramHHDetails.empStatusHH }}" required="true" on-value-changed="[[$listeners.ojSelectOne133226627944Value]]" placeholder="Please Select">
+        <oj-option value="Employed Full Time">Employed Full Time</oj-option>
+        <oj-option value="Self-Employed">Self-Employed</oj-option>
+        <oj-option value="Part-Time/Casual/Temporary/Contract/Unemployed(less than 6 months in past year)">Part-Time/Casual/Temporary/Contract/Unemployed(less than 6 months in past year)</oj-option>
+        <oj-option value="Unemployed more than 6 months in the past year">Unemployed more than 6 months in the past year</oj-option>
+        <oj-option value="Unemployed less than 6 months in the past year">Unemployed less than 6 months in the past year</oj-option>
+        <oj-option value="House Wife/Homemaker">House Wife/Homemaker</oj-option>
+        <oj-option value="Pensioner">Pensioner</oj-option>
+        <oj-option value="Medically Unfit">Medically Unfit</oj-option>
+        <oj-option value="Disabled">Disabled</oj-option>
+      </oj-select-one>
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-6" for="oj-select-one--1332266279-6" class="oj-flex-item">Head of Household Marital Status</oj-label>
+      <oj-select-one id="oj-select-one--1332266279-6" class="oj-flex-item oj-form-control-text-align-start" required="true" value="{{ $variables.paramHHDetails.marStatusHH }}" options-keys.label="MarStatus" on-value-changed="[[$listeners.ojSelectOne13322662796Value]]" placeholder="Please Select">
+        <oj-option value="Married in terms of common law">Married in terms of common law</oj-option>
+        <oj-option value="Married in terms of customary law">Married in terms of customary law</oj-option>
+        <oj-option value="Married in terms of Muslim">Married in terms of Muslim</oj-option>
+        <oj-option value="Married both in terms of civil and traditional/Muslim">Married both in terms of civil and traditional/Muslim</oj-option>
+        <oj-option value="Divorced">Divorced</oj-option>
+        <oj-option value="Separated">Separated</oj-option>
+        <oj-option value="Widowed">Widowed</oj-option>
+        <oj-option value="Living together with partner">Living together with partner</oj-option>
+        <oj-option value="Single and never been married">Single and never been married</oj-option>	
+      
+      </oj-select-one>
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-33" for="oj-input-number--1332266279-2" class="oj-flex-item">Number of Dependants</oj-label>
+      <oj-input-number id="oj-input-number--1332266279-2" placeholder="Enter Value" value="{{ $variables.paramHHDetails.numOfDependants }}" min="0" on-value-changed="[[$listeners.ojInputNumber13322662792Value]]" class="oj-form-control-text-align-start" required="true" max="5" converter='{"options":{"useGrouping":false},"type":"number"}' virtual-keyboard="number"></oj-input-number>
+      
+      
+      <div :hidden="[[ $variables.showDependant1 ]]">
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-34" class="oj-flex-item">Photo of the Dependant Birth Certificate</oj-label>
+        
+       <center>
+       <div class="oj-flex-item oj-sm-align-self-center">
+       <div>
+        <img id="dependantPhoto1" class="oj-sm-flex-initial" width="150" height="100" style="object-fit: fill; object-position: 80% 80%;">
+      </div>
+      
+      <div class="oj-flex-item oj-sm-align-self-center" style="Padding-bottom: 2rem">
+      <oj-button id="oj-button--1332266279-5" chroming="full" on-oj-action="[[$listeners.ojButton13322662795OjAction]]">Take Photo of Dependant Birth Cert</oj-button>
+      </div></div></center>
+      </div>
+      
+      <div :hidden="[[ $variables.showDependant2 ]]">
+       <center>
+       <div class="oj-flex-item oj-sm-align-self-center">
+       <div>
+        <img id="dependantPhoto2" class="oj-sm-flex-initial" width="150" height="100" style="object-fit: fill; object-position: 80% 80%;">
+      </div>
+      <div class="oj-flex-item oj-sm-align-self-center" style="Padding-bottom: 2rem">
+      <oj-button id="oj-button--1332266279-6" chroming="full" on-oj-action="[[$listeners.ojButton13322662796OjAction]]">Take Photo of Dependant Birth Cert</oj-button>
+      </div></div></center>
+      </div>
+      
+      <div :hidden="[[ $variables.showDependant3 ]]">
+       <center>
+       <div class="oj-flex-item oj-sm-align-self-center">
+       <div>
+        <img id="dependantPhoto3" class="oj-sm-flex-initial" width="150" height="100" style="object-fit: fill; object-position: 80% 80%;">
+      </div>
+      <div class="oj-flex-item oj-sm-align-self-center" style="Padding-bottom: 2rem">
+      <oj-button id="oj-button--1332266279-9" chroming="full" on-oj-action="[[$listeners.ojButton13322662799OjAction]]">Take Photo of Dependant Birth Cert</oj-button>
+      </div></div></center>
+      </div>
+      
+      <div :hidden="[[ $variables.showDependant4 ]]">
+       <center>
+       <div class="oj-flex-item oj-sm-align-self-center">
+      <div>
+        <img id="dependantPhoto4" class="oj-sm-flex-initial" width="150" height="100" style="object-fit: fill; object-position: 80% 80%;">
+      </div>
+      <div class="oj-flex-item oj-sm-align-self-center" style="Padding-bottom: 2rem">
+      <oj-button id="oj-button--1332266279-7" chroming="full" on-oj-action="[[$listeners.ojButton13322662797OjAction]]">Take Photo of Dependant Birth Cert</oj-button>
+      </div></div></center>
+      </div>
+      
+      <div :hidden="[[ $variables.showDependant ]]">
+        <center>
+      <div class="oj-flex-item oj-sm-align-self-center">
+      <div>
+        <img id="dependantPhoto" class="oj-sm-flex-initial" width="150" height="100" style="object-fit: fill; object-position: 80% 80%;">
+      </div>
+      </div>
+      <div class="oj-flex-item oj-sm-align-self-center" style="Padding-bottom: 2rem">
+     <oj-button id="oj-button--1332266279-8" on-oj-action="[[$listeners.ojButton13322662798OjAction]]" chroming="full">Take Photo of Dependant Birth Cert</oj-button>
+      </div>
+        </center>
+      </div>
+      
+      <div>
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-87" for="oj-button--1332266279-2">Photo of Head of Household ID Document</oj-label>
+        <center>
+        <div>
+        <img id="photoIDDocHH" class="oj-sm-flex-initial" width="150" height="100" style="object-fit: fill; object-position: 80% 80%;">
+        </div>
+      
+        
+        <div>
+      <oj-button id="oj-button--1332266279-2" on-oj-action="[[$listeners.ojButton13322662792OjAction]]" chroming="full">Take Photo of ID for Head</oj-button>
+        </div>
+        </center>
+      </div>
+      <div class="oj-sm-align-self-center">
+      </div>
+      
+      
+
+      
+      
+
+      
+      
+
+
+      
+      
+    </oj-validation-group>
+    <div class="oj-flex-item">
+      <oj-validation-group id="spouseForm">
+        <div :hidden="[[ $variables.showMarried ]]" disabled="[[ $variables.showMarried ]]">
+
+      <h1 style="font-size:1.5rem; color:#1752a6; font-weight: bold; padding-top:4rem" id="h1--1332266279-123">Spouse Information</h1>
+
+        <oj-validation-group id="SpouseOfHousehold">      
+
+      
+      
+      
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-301" for="oj-input-text--1332266279-301" class="oj-flex-item">Spouse of Household ID Number</oj-label>
+      <oj-input-text id="oj-input-text--1332266279-301" placeholder="Please enter the Spouse of Household ID Number" required="true" value="{{ $variables.paramVarSpouseDetails.idNumberSpouse }}" class="oj-flex-item" on-value-changed="[[$listeners.ojInputText1332266279301Value]]"></oj-input-text>
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-101" for="oj-input-text--1332266279-101" class="oj-flex-item">Spouse of Household Full Name</oj-label>
+      <oj-input-text id="oj-input-text--1332266279-101" class="oj-flex-item" placeholder="Please enter full name" required="true" value="{{ $variables.paramVarSpouseDetails.fullNameSpouse }}" validators=' [{"type":"regexp", "options":{"pattern":"[A-Z a-z]+", "hint":"Head of Household Spouse Full Name.", "messageDetail": "Enter Valid Name"}}]' virtual-keyboard="text"></oj-input-text>
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-201" for="oj-input-text--1332266279-201" class="oj-flex-item">Spouse of Household Surname</oj-label>
+      <oj-input-text id="oj-input-text--1332266279-201" class="oj-flex-item" placeholder="Please enter the surname" required="true" value="{{ $variables.paramVarSpouseDetails.surnameSpouse }}" validators=' [{"type":"regexp", "options":{"pattern":"[A-Z a-z]+", "hint":"Head of Household spouse surname.", "messageDetail": "Enter Valid surname"}}]' virtual-keyboard="text"></oj-input-text>
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-401" for="oj-select-one--1332266279-101" class="oj-flex-item">Spouse of Household Gender</oj-label>
+      
+      <oj-select-one style="font-size:1.2rem; color:#1752a6;" id="oj-select-one--1332266279-101" class="oj-flex-item oj-form-control-text-align-start" placeholder="Please Select Gender" required="true" value="{{ $variables.paramVarSpouseDetails.genderSpouse }}">
+       
+      <oj-option value="Male">Male</oj-option>
+      <oj-option value="Female">Female</oj-option>      	
+      
+      
+      
+      </oj-select-one>
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-7201" for="oj-select-one--1332266279-3101" class="oj-flex-item">Spouse of Household Age Category</oj-label>
+      <oj-select-one id="oj-select-one--1332266279-3101" class="oj-flex-item oj-form-control-text-align-start" required="true" value="{{ $variables.paramVarSpouseDetails.ageSpouse }}" options-keys.value="Value" options-keys.label="Age" placeholder="Please Select">     
+      
+      
+      
+       
+      <oj-option value="16-20">16-20</oj-option>
+      <oj-option value="21-30">21-30</oj-option>
+      <oj-option value="31-40">31-40</oj-option>
+      <oj-option value="41-50">41-50</oj-option>
+      <oj-option value="51-60">51-60</oj-option>
+      <oj-option value="61-70">61-70</oj-option>
+      <oj-option value="71+">71+</oj-option>        
+        
+      
+      
+      
+      </oj-select-one>
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-7301" for="oj-select-one--1332266279-3201" class="oj-flex-item">Spouse of Household Citizenship / Nationality</oj-label>
+      <oj-select-one id="oj-select-one--1332266279-3201" placeholder="Please Select" required="true" class="oj-flex-item oj-form-control-text-align-start" value="{{ $variables.paramVarSpouseDetails.citizenshipSpouse }}" options-keys.value="Value" options-keys.label="Nation" on-value-changed="[[$listeners.ojSelectOne13322662793201Value]]">
+       
+      <oj-option value="South Africa">South Africa</oj-option>
+      <oj-option value="Botswana">Botswana</oj-option>
+      <oj-option value="Namibia">Namibia</oj-option>
+      <oj-option value="Lesotho">Lesotho</oj-option>
+      <oj-option value="Zimbabwe">Zimbabwe</oj-option>
+      <oj-option value="Mozambique">Mozambique</oj-option>
+      <oj-option value="Angola">Angola</oj-option>
+      <oj-option value="Malawi">Malawi</oj-option>
+      <oj-option value="Swaziland">Swaziland</oj-option>
+      <oj-option value="Other Country">Other Country</oj-option>       
+
+      
+      
+      
+      </oj-select-one>
+      <div :hidden="[[ $variables.showNatSpouse ]]">
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-7401" for="oj-input-text--1332266279-21" class="oj-flex-item">Spouse Citizenship other</oj-label>
+      <oj-input-text id="oj-input-text--1332266279-21" placeholder="Spouse Citizenship Other" value="{{ $variables.paramVarSpouseDetails.citizenshipOtherSpouse }}" validators=' [{"type":"regexp", "options":{"pattern":"[A-Z a-z]+", "hint":"Head of Household Spouse Citizenship.", "messageDetail": "Enter Valid Citizenship"}}]' required="[[ !$variables.showNatSpouse ]]"></oj-input-text>
+      </div>
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-501" for="oj-select-one--1332266279-201" class="oj-flex-item">Spouse of Household Population group</oj-label>
+     
+      <oj-select-one style="font-size:1.2rem; color:#1752a6;" id="oj-select-one--1332266279-201" class="oj-flex-item oj-form-control-text-align-start" placeholder="Please select a population group" required="true" value="{{ $variables.paramVarSpouseDetails.popGroupSpouse }}">
+       
+      <oj-option value="African">African</oj-option>
+      <oj-option value="Coloured">Coloured</oj-option>
+      <oj-option value="Indian">Indian</oj-option>
+      <oj-option value="White">White</oj-option>
+      </oj-select-one>
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-901" for="oj-select-one--1332266279-501" class="oj-flex-item">Spouse Disability</oj-label>
+      <oj-select-one style="font-size:1.2rem; color:#1752a6;" id="oj-select-one--1332266279-501" class="oj-flex-item oj-form-control-text-align-start" placeholder="Please Select" required="true" value="{{ $variables.paramVarSpouseDetails.disabilitySpouse }}" on-value-changed="[[$listeners.ojSelectOne1332266279501Value]]" options-keys.value="Options" options-keys.label="Disability">
+       
+      <oj-option value="Yes">Yes</oj-option>
+      <oj-option value="No">No</oj-option>
+      </oj-select-one>
+      <div :hidden="[[ $variables.showSpouseDisability ]]">
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-1201" for="oj-select-one--1332266279-601" class="oj-flex-item">Spouse of the household Disability type</oj-label>
+      <oj-select-one style="font-size:1.2rem; color:#1752a6;" id="oj-select-one--1332266279-601" class="oj-flex-item oj-form-control-text-align-start" placeholder="Please Select" value="{{ $variables.paramVarSpouseDetails.disabilityTypeSpouse }}" options-keys.value="Value" options-keys.label="DisabilityType" on-value-changed="[[$listeners.ojSelectOne1332266279601Value]]" required="[[ !$variables.showSpouseDisability ]]">
+         
+        <oj-option value="Seeing">Seeing</oj-option>
+        <oj-option value="Hearing">Hearing</oj-option>
+        <oj-option value="Communication">Communication</oj-option>
+        <oj-option value="Walking">Walking</oj-option>
+        <oj-option value="Remembering">Remembering</oj-option>
+        <oj-option value="Self-care">Self-care</oj-option>
+        <oj-option value="Other">Other</oj-option>      
+        
+      
+      
+      </oj-select-one>
+      </div>
+      <div :hidden="[[ $variables.showSpouseDisabilityOther ]]">
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-7501" for="oj-input-text--1332266279-22" class="oj-flex-item">Spouse of Household Disability Other</oj-label>
+      <oj-input-text id="oj-input-text--1332266279-22" placeholder="Spouse of Household Disability Other" value="{{ $variables.paramVarSpouseDetails.disabilityTypeOtherSpouse }}" required="[[ !$variables.showSpouseDisabilityOther ]]"></oj-input-text>      
+      
+      
+      
+      </div>
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-7601" for="oj-select-one--1332266279-3501" class="oj-flex-item">Spouse of Household Grants</oj-label>
+      <oj-select-one id="oj-select-one--1332266279-3501" class="oj-flex-item oj-form-control-text-align-start" value="{{ $variables.paramVarSpouseDetails.grantsSpouse }}" options-keys.value="Options" options-keys.label="Disability" on-value-changed="[[$listeners.ojSelectOne13322662793501Value]]" required="true" placeholder="Please Select">
+       
+      <oj-option value="Yes">Yes</oj-option>
+      <oj-option value="No">No</oj-option>
+      </oj-select-one>
+      <div :hidden="[[ $variables.showGrantsSpouse ]]">
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-7701" for="oj-select-one--1332266279-3601" class="oj-flex-item">State/Old Age/War Veteran Pension</oj-label>
+      <oj-select-one id="oj-select-one--1332266279-3601" class="oj-flex-item oj-form-control-text-align-start" required="[[ $variables.isGrantsReqdSpouse ]]" placeholder="Please select" value="{{ $variables.paramVarSpouseDetails.stateOldAgeWarVetSpouse }}">
+         
+        <oj-option value="Yes">Yes</oj-option>
+        <oj-option value="No">No</oj-option>
+      </oj-select-one>
+      
+      
+      
+      
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-7801" for="oj-select-one--1332266279-3701" class="oj-flex-item"> Disability Grant</oj-label>
+      <oj-select-one id="oj-select-one--1332266279-3701" class="oj-flex-item oj-form-control-text-align-start" required="[[ $variables.isGrantsReqdSpouse ]]" placeholder="Please select" value="{{ $variables.paramVarSpouseDetails.disabilityGrantSpouse }}">
+         
+        <oj-option value="Yes">Yes</oj-option>
+        <oj-option value="No">No</oj-option>
+      </oj-select-one>      
+      
+      
+      
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-7901" for="oj-select-one--1332266279-3801" class="oj-flex-item">Child Support Grant</oj-label>
+      <oj-select-one id="oj-select-one--1332266279-3801" class="oj-flex-item oj-form-control-text-align-start" required="[[ $variables.isGrantsReqdSpouse ]]" placeholder="Please select" value="{{ $variables.paramVarSpouseDetails.childSupportGrantSpouse }}">
+          
+        
+        
+        
+        <oj-option value="Yes">Yes</oj-option>
+        <oj-option value="No">No</oj-option>
+      </oj-select-one>      
+      
+      
+      
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-8001" for="oj-select-one--1332266279-3901" class="oj-flex-item">Child Foster Care Grant</oj-label>
+      <oj-select-one id="oj-select-one--1332266279-3901" class="oj-flex-item oj-form-control-text-align-start" required="[[ $variables.isGrantsReqdSpouse ]]" placeholder="Please select" value="{{ $variables.paramVarSpouseDetails.childFosterCareGrSpouse }}">
+         
+        <oj-option value="Yes">Yes</oj-option>
+        <oj-option value="No">No</oj-option>
+      </oj-select-one>
+      
+      
+      
+      
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-8101" for="oj-select-one--1332266279-4001" class="oj-flex-item">Grant in Aid</oj-label>
+      <oj-select-one id="oj-select-one--1332266279-4001" class="oj-flex-item oj-form-control-text-align-start" required="[[ $variables.isGrantsReqdSpouse ]]" placeholder="Please select" value="{{ $variables.paramVarSpouseDetails.grantInAidSpouse }}">
+         
+        <oj-option value="Yes">Yes</oj-option>
+        <oj-option value="No">No</oj-option>
+      </oj-select-one>      
+      
+      
+      
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-8201" for="oj-select-one--1332266279-4101" class="oj-flex-item">Care Dependency Grant</oj-label>
+      <oj-select-one id="oj-select-one--1332266279-4101" class="oj-flex-item oj-form-control-text-align-start" required="[[ $variables.isGrantsReqdSpouse ]]" placeholder="Please select" value="{{ $variables.paramVarSpouseDetails.careDependencyGraSpouse }}">
+         
+        <oj-option value="Yes">Yes</oj-option>
+        <oj-option value="No">No</oj-option>
+      </oj-select-one>
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-8301" for="oj-select-one--1332266279-4201" class="oj-flex-item">Social Relief of Distress Grant</oj-label>
+      <oj-select-one id="oj-select-one--1332266279-4201" class="oj-flex-item oj-form-control-text-align-start" required="[[ $variables.isGrantsReqdSpouse ]]" placeholder="Please select" value="{{ $variables.paramVarSpouseDetails.socialReliefGrantSpouse }}">
+         
+        <oj-option value="Yes">Yes</oj-option>
+        <oj-option value="No">No</oj-option>
+      </oj-select-one>
+      
+      
+      
+      
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-8401" for="oj-select-one--1332266279-4301" class="oj-flex-item">Unemployment Insurance   Fund (UIF)</oj-label>
+      <oj-select-one id="oj-select-one--1332266279-4301" class="oj-flex-item oj-form-control-text-align-start" required="[[ $variables.isGrantsReqdSpouse ]]" placeholder="Please select" value="{{ $variables.paramVarSpouseDetails.unemploymentInsurSpouse }}">
+         
+        <oj-option value="Yes">Yes</oj-option>
+        <oj-option value="No">No</oj-option>
+      </oj-select-one>
+      </div>
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-8501" for="oj-input-text--1332266279-3801" class="oj-flex-item">Spouse of Household Contact Number</oj-label>
+      <oj-input-text virtual-keyboard="tel" validators='[{"type":"regexp", "options":{"pattern":"\\+? *([\\d]+ *\\( *[0-9]+ *\\))?[\\d -.]+", "hint":"Enter a valid phone number.", "messageDetail": "Value must be a valid phone number"}}]' id="oj-input-text--1332266279-3801" class="oj-flex-item" placeholder="Please enter your phone number" value="{{ $variables.paramVarSpouseDetails.contactSpouse }}" on-value-changed="[[$listeners.ojInputText13322662793801Value]]" required="true"></oj-input-text>
+      
+      
+      
+      
+      
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-14011" for="oj-select-one--1332266279-8011" class="oj-flex-item">Spouse of Household Highest Education</oj-label>
+      <oj-select-one style="font-size:1.2rem; color:#1752a6;" id="oj-select-one--1332266279-8011" placeholder="Please Select" class="oj-flex-item oj-form-control-text-align-start" value="{{ $variables.paramVarSpouseDetails.eduSpouse }}" options-keys.label="eduLevel" required="true">
+      <oj-option value="No formal school education">No formal school education</oj-option>
+      <oj-option value="Less than Grade 7 (Standard 5) completed">Less than Grade 7 (Standard 5) completed</oj-option>
+      <oj-option value="Completed Grade 7 (Standard 5)">Completed Grade 7 (Standard 5)</oj-option>
+      <oj-option value="Completed Grade 10 (Standard 8)">Completed Grade 10 (Standard 8)</oj-option>
+      <oj-option value="Completed Grade 12 (Matric)">Completed Grade 12 (Matric)</oj-option>
+      <oj-option value="Post matric three year qualification (including diplomas)">Post matric three year qualification (including diplomas)</oj-option>
+      <oj-option value="Undergraduate Degree/s">Undergraduate Degree/s</oj-option>
+      <oj-option value="Post Graduate Qualification">Post Graduate Qualification</oj-option>        
+      
+      
+      
+      </oj-select-one>
+      
+      
+      
+      
+      
+      
+      <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-8601" for="oj-select-one--1332266279-4401" class="oj-flex-item">Spouse of Household Employment Status</oj-label>
+      <oj-select-one id="oj-select-one--1332266279-4401" class="oj-flex-item oj-form-control-text-align-start" placeholder="Please Select" value="{{ $variables.paramVarSpouseDetails.empStatusSpouse }}" required="true">
+      <oj-option value="Employed Full Time">Employed Full Time</oj-option>
+      <oj-option value="Self-Employed">Self-Employed</oj-option>
+      <oj-option value="Part-Time/Casual/Temporary/Contract/Unemployed(less than 6 months in past year)">Part-Time/Casual/Temporary/Contract/Unemployed(less than 6 months in past year)</oj-option>
+      <oj-option value="Unemployed more than 6 months in the past year">Unemployed more than 6 months in the past year</oj-option>
+      <oj-option value="Unemployed less than 6 months in the past year">Unemployed less than 6 months in the past year</oj-option>
+      <oj-option value="House Wife/Homemaker">House Wife/Homemaker</oj-option>
+      <oj-option value="Pensioner">Pensioner</oj-option>
+      <oj-option value="Medically Unfit">Medically Unfit</oj-option>
+      <oj-option value="Disabled">Disabled</oj-option>      
+      
+      
+      
+      </oj-select-one>
+        </oj-validation-group>      
+
+           
+      
+        
+        
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-8701" class="oj-flex-item" for="oj-button--1332266279-201">Photo of Spouse of Household ID Document</oj-label>
+        <center>      
+      
+      
+      
+      <div class="oj-flex-item oj-sm-align-self-center">
+       <div>
+        <img id="spousePhotoIDDocHH" class="oj-sm-flex-initial" width="150" height="100" style="object-fit: fill; object-position: 80% 80%;">
+      </div>
+       
+      </div>
+      <div class="oj-flex-item oj-sm-align-self-center">
+        <oj-button id="oj-button--1332266279-201" on-oj-action="[[$listeners.ojButton1332266279201OjAction]]" chroming="full">Take Photo of ID for Spouse</oj-button>
+      </div>  
+        </center>  
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-88" class="oj-flex-item" for="oj-button--1332266279-3">Photo of Head of Household Marriage Certificate</oj-label>
+        <center>
+      <div class="oj-flex-item oj-sm-align-self-center">
+      
+        <div>
+        <img id="MarriageCertificate" class="oj-sm-flex-initial" width="150" height="100" style="object-fit: fill; object-position: 80% 80%;">
+      </div>
+      
+      
+       
+      </div>  
+      <div class="oj-flex-item oj-sm-align-self-center">
+        <oj-button id="oj-button--1332266279-3" on-oj-action="[[$listeners.ojButton13322662793OjAction]]" chroming="full">Take Photo of Marriage Certificate</oj-button>
+      </div>
+        </center>
+        </div>
+      </oj-validation-group>
+    </div>
+    <div class="oj-flex-item">
+      <oj-validation-group id="ThirdValidation">
+        <h1 style="font-size:1.5rem; color:#1752a6; font-weight: bold; padding-top:4rem" id="h1--1332266279-2 ">Household Information</h1>
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-13" for="oj-select-one--1332266279-7">Home Language</oj-label>
+        <oj-select-one style="font-size:1.2rem; color:#1752a6;" id="oj-select-one--1332266279-7" placeholder="Please Select" class="oj-form-control-text-align-start" value="{{ $variables.paramHouseInfoVar.homeLangvar }}" required="true">
+        
+        <oj-option value="Afrikaans">Afrikaans</oj-option>
+        <oj-option value="English">English</oj-option>
+        <oj-option value="Xhosa">Xhosa</oj-option>
+        <oj-option value="isiNdebele">isiNdebele</oj-option>
+        <oj-option value="isiZulu">isiZulu</oj-option>
+        <oj-option value="Sepedi">Sepedi</oj-option>
+        <oj-option value="Sesotho">Sesotho</oj-option>
+        <oj-option value="Setswana">Setswana</oj-option>
+        <oj-option value="isiSwati">isiSwati</oj-option>
+        <oj-option value="Tshivenda">Tshivenda</oj-option>
+        <oj-option value="Xitsonga">Xitsonga</oj-option>
+        <oj-option value="Other">Other</oj-option>
+        </oj-select-one>
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-32" for="oj-select-one--1332266279-9">Household Monthly Income</oj-label>
+        <oj-select-one id="oj-select-one--1332266279-9" placeholder="Household income" class="oj-form-control-text-align-start" disabled="[[ $variables.disableIncome ]]" required="true" value="{{ $variables.paramHouseInfoVar.householdIncomevar }}">
+        <oj-option value="R0-R1500">R0-R1500</oj-option>
+        <oj-option value="R1501-R2500 ">R1501-R2500 </oj-option>
+        <oj-option value="R2501-R3500">R2501-R3500</oj-option>
+        <oj-option value="R3501-R5000">R3501-R5000</oj-option>
+        <oj-option value="R5001 - R7500">R5001 - R7500</oj-option>
+        <oj-option value="R7501-R12500">R7501-R12500</oj-option>
+        <oj-option value="R12501-R15000">R12501-R15000</oj-option>
+        <oj-option value="R1501-R18000">R1501-R18000</oj-option>
+        <oj-option value="R18001-R20000">R18001-R20000</oj-option>
+        <oj-option value="R20001-R22000">R20001-R22000</oj-option>
+        <oj-option value="R22001-R30000">R22001-R30000</oj-option>
+        <oj-option value="R30 001 - R42 000">R30 001 - R42 000</oj-option>
+        <oj-option value="R42 001 - R54 000">R42 001 - R54 000</oj-option>
+        <oj-option value="R54 001 - R72 000">R54 001 - R72 000</oj-option>
+        <oj-option value="R72 001 - R96 000">R72 001 - R96 000</oj-option>
+        <oj-option value="R96 001 - R132 000">R96 001 - R132 000</oj-option>
+        <oj-option value="R132 001 - R192 000">R132 001 - R192 000</oj-option>
+        <oj-option value="R192 001 - R360 000">R192 001 - R360 000</oj-option>
+        <oj-option value="R360 001 OR MORE">R360 001 OR MORE</oj-option>
+        <oj-option value="DO NOT KNOW">DO NOT KNOW</oj-option>
+        </oj-select-one>
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-4" for="oj-input-number--1332266279-3">Dwelling Duration (Years)</oj-label>
+        <oj-input-number id="oj-input-number--1332266279-3" min="0" value="{{ $variables.paramHouseInfoVar.dwellingDurationYearsVar }}" required="true" placeholder="Enter Value" virtual-keyboard="number" converter='{"options":{"useGrouping":false},"type":"number"}' class="oj-form-control-text-align-start"></oj-input-number>
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-36" for="oj-input-number--1332266279-4">Dwelling Duration (Months)</oj-label>
+        <oj-input-number id="oj-input-number--1332266279-4" min="0" max="11" value="{{ $variables.paramHouseInfoVar.dwellingDurationMonthsVar }}" required="true" placeholder="Enter Value" converter='{"options":{"useGrouping":false},"type":"number"}' virtual-keyboard="number" class="oj-form-control-text-align-start"></oj-input-number>
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-10" for="oj-select-one--1332266279-29">Dwelling Ownership</oj-label>
+        <oj-select-one id="oj-select-one--1332266279-29" options-keys.value="id" options-keys.label="Ownership" on-value-changed="[[$listeners.ojSelectOne133226627929Value]]" placeholder="Please Select" class="oj-form-control-text-align-start" value="{{ $variables.paramHouseInfoVar.dwellingOwnershipVar }}" required="true">
+        <oj-option value="Owner">Owner</oj-option>
+        <oj-option value="Rent">Rent</oj-option>
+        </oj-select-one>
+        <div :hidden="[[ $variables.showOwnership ]]">
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-37" for="oj-input-text--1332266279-26" class="oj-flex-item">Rent Monthly Amount</oj-label>
+        <oj-input-text id="oj-input-text--1332266279-26" class="oj-flex-item" placeholder="What is the monthly rent that you are currently paying" value="{{ $variables.paramHouseInfoVar.rentMonthlyAmountVar }}" required="[[ $variables.validatorIsDwellingOnRent ]]" virtual-keyboard="number" validators="{{$page.functions.testValidRentAmount($variables.paramHouseInfoVar.rentMonthlyAmountVar )}}"></oj-input-text>
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-39" for="oj-select-one--1332266279-11" class="oj-flex-item">Rent Reason</oj-label>
+        <oj-select-one id="oj-select-one--1332266279-11" class="oj-flex-item oj-form-control-text-align-start" placeholder="Please Select" value="{{ $variables.paramHouseInfoVar.rentReasonVar }}" required="[[ $variables.validatorIsDwellingOnRent ]]">
+      <oj-option value="Matter of choice – e.g., you could buy a house/flat but prefer to rent">Matter of choice – e.g., you could buy a house/flat but prefer to rent</oj-option>
+      <oj-option value="Result of circumstances – e.g., you cannot afford to buy a house/flat">Result of circumstances – e.g., you cannot afford to buy a house/flat</oj-option>
+      <oj-option value="Convenience – e.g., living with family/friends, etc.">Convenience – e.g., living with family/friends, etc.</oj-option>
+      <oj-option value="Don’t know">Don’t know</oj-option>
+        </oj-select-one>
+        
+        
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-40" for="oj-select-one--1332266279-12">Government Housing List</oj-label>
+        <oj-select-one id="oj-select-one--1332266279-12" class="oj-form-control-text-align-start" value="{{ $variables.paramHouseInfoVar.rentGovernmentHousingLiVar }}" required="[[ $variables.validatorIsDwellingOnRent ]]" placeholder="Please Select">
+        <oj-option value="Yes">Yes</oj-option>
+        <oj-option value="No">No</oj-option>
+        </oj-select-one>
+        
+        </div>
+        
+      
+         <div>
+         <oj-label style="font-size:1.2rem; color:#1752a6;" id="SSH_Label" for="SSH">Government Subsidy Status - Head </oj-label>
+        <oj-select-one id="SSH" class="oj-form-control-text-align-start" value="{{ $variables.paramHHDetails.governmentSubsidyStatusHead }}" required="true" placeholder="Please Select">
+        <oj-option value="None">None</oj-option>
+        <oj-option value="Approved">Approved</oj-option>
+        <oj-option value="Failed">Failed</oj-option>
+        <oj-option value="Received">Received</oj-option>
+        <oj-option value="Send for Searches">Send for Searches</oj-option>
+        </oj-select-one>
+        </div>
+        
+        <div :hidden="[[ $variables.showMarried ]]" disabled="[[ $variables.showMarried ]]">
+         <oj-label style="font-size:1.2rem; color:#1752a6;" id="SSS_Label" for="SSS">Government Subsidy Status - Spouse</oj-label>
+        <oj-select-one id="SSS" class="oj-form-control-text-align-start" value="{{ $variables.paramVarSpouseDetails.governmentSubsidyStatusSpouse }}" required="[[ !$variables.showMarried ]]" placeholder="Please Select">
+        <oj-option value="None">None</oj-option>
+        <oj-option value="Approved">Approved</oj-option>
+        <oj-option value="Failed">Failed</oj-option>
+        <oj-option value="Received">Received</oj-option>
+        <oj-option value="Send for Searches">Send for Searches</oj-option>
+        </oj-select-one>
+        </div>
+        
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-41" for="oj-input-number--1332266279-5">How many rooms are in the dwelling?</oj-label>
+        <oj-input-number id="oj-input-number--1332266279-5" class="oj-form-control-text-align-start" value="{{ $variables.paramHouseInfoVar.noOfRoomsVar }}" min="1" required="true" placeholder="Enter Value" virtual-keyboard="number" converter='{"options":{"useGrouping":false},"type":"number"}'></oj-input-number>
+        
+        
+        <div :hidden="[[ $variables.showProvince ]]">
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-45" for="oj-select-one--1332266279-16" class="oj-flex-item">Which Province do you come from</oj-label>
+        <oj-select-one id="oj-select-one--1332266279-16" class="oj-flex-item oj-form-control-text-align-start" value="{{ $variables.paramHouseInfoVar.provinceVar }}" required="[[ !$variables.showProvince ]]">
+      <oj-option value="Gauteng">Gauteng</oj-option>
+      <oj-option value="Limpopo">Limpopo</oj-option>
+      <oj-option value="KwaZuluNatal">KwaZuluNatal</oj-option>
+      <oj-option value="Eastern Cape">Eastern Cape</oj-option>
+      <oj-option value="Northern Cape">Northern Cape</oj-option>
+      <oj-option value="Western Cape">Western Cape</oj-option>
+      <oj-option value="North West">North West</oj-option>
+      <oj-option value="Free State">Free State</oj-option>
+      <oj-option value="Mpumalanga">Mpumalanga</oj-option>
+     
+       
+        
+        
+        </oj-select-one>
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-46" for="oj-input-text--1332266279-17" class="oj-flex-item">Which Town do you come from</oj-label>
+        <oj-input-text id="oj-input-text--1332266279-17" placeholder="State the town you come from?" class="oj-flex-item" validators=' [{"type":"regexp", "options":{"pattern":"[A-Z a-z]+", "hint":"Town.", "messageDetail": "Enter Valid Town"}}]' value="{{ $variables.paramHouseInfoVar.townVar }}" required="[[ !$variables.showProvince ]]"></oj-input-text>
+        </div>
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-47" for="oj-input-number--1332266279-1">Current Town Duration (Years)</oj-label>
+        <oj-input-number id="oj-input-number--1332266279-1" placeholder="Enter years" min="0" value="{{ $variables.paramHouseInfoVar.currentTownDurationYearsVar }}" required="true" converter='{"options":{"useGrouping":false},"type":"number"}' virtual-keyboard="number" class="oj-form-control-text-align-start"></oj-input-number>
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-471" for="oj-input-number--1332266279-11">Current Town Duration (Months)</oj-label>
+        <oj-input-number id="oj-input-number--1332266279-11" placeholder="Enter months" min="0" max="11" value="{{ $variables.paramHouseInfoVar.currentTownDurationMonthsVar }}" required="true" virtual-keyboard="number" converter='{"options":{"useGrouping":false},"type":"number"}' class="oj-form-control-text-align-start"></oj-input-number>
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-48" for="oj-select-one--1332266279-18">Why did you choose to move to this area?</oj-label>
+        <oj-select-one id="oj-select-one--1332266279-18" placeholder="Please Select" class="oj-form-control-text-align-start" value="{{ $variables.paramHouseInfoVar.reasonToMove }}" required="true">
+         
+        <oj-option value="Better economic circumstances (jobs, income, land for product, etc)">Better economic circumstances (jobs, income, land for product, etc)</oj-option>
+        <oj-option value="Better infrastructure and services (housing, health, education, policing, plot, etc)">Better infrastructure and services (housing, health, education, policing, plot, etc)</oj-option>
+        <oj-option value="Better and more secure environment (less violence and crime, quality of life, etc)">Better and more secure environment (less violence and crime, quality of life, etc)</oj-option>
+        <oj-option value="Family/kin related">Family/kin related</oj-option>
+        <oj-option value="Eviction/removal">Eviction/removal</oj-option>
+        </oj-select-one>
+        <div :hidden="[[ $variables.showPermit ]]"> 
+      
+        
+        
+        
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-49" for="oj-select-one--1332266279-19" class="oj-flex-item">What is your permit type?</oj-label>
+        <oj-select-one id="oj-select-one--1332266279-19" class="oj-flex-item" placeholder="What is your permit type?" value="{{ $variables.paramHouseInfoVar.permitTypeVar }}" required="[[ !$variables.showPermit ]]">
+       
+      <oj-option value="Asylum Seeker">Asylum Seeker</oj-option>
+      <oj-option value="Emergency">Emergency</oj-option>
+      <oj-option value="Immigrant">Immigrant</oj-option>
+      <oj-option value="Permanent Residence">Permanent Residence</oj-option>
+      <oj-option value="Refugee">Refugee</oj-option>
+      <oj-option value="Temporary">Temporary</oj-option>
+      <oj-option value="Visum"> Visum</oj-option>
+      <oj-option value="Work permit">Work permit</oj-option>
+        </oj-select-one>
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-50" for="oj-input-date--1332266279-1" class="oj-flex-item">When does your permit expire?</oj-label>
+        <oj-input-date id="oj-input-date--1332266279-1" class="oj-flex-item" placeholder="When does your permit expire? " value="{{ $variables.paramHouseInfoVar.permitExpiryDateVar }}" required="[[ !$variables.showPermit ]]"></oj-input-date>
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-51" for="oj-input-text--1332266279-27" class="oj-flex-item">What is your permit number?</oj-label>
+        <oj-input-text id="oj-input-text--1332266279-27" class="oj-flex-item" placeholder="What is your permit number?" value="{{ $variables.paramHouseInfoVar.permitNumberVar }}" required="[[ !$variables.showPermit ]]"></oj-input-text>
+        </div>
+        
+        <div>
+        <div :hidden="[[ !$flow.variables.validatorIsDwellingTypeHostel ]]">  
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-7" for="oj-select-one--1332266279-45" class="oj-flex-item">Government Property Defects</oj-label>
+        <oj-select-one id="oj-select-one--1332266279-45" class="oj-flex-item oj-form-control-text-align-start" required="[[ $flow.variables.validatorIsDwellingTypeHostel ]]" on-value-changed="[[$listeners.ojSelectOne133226627945Value]]" value="{{ $page.variables.paramHouseInfoVar.governmentPropertyDefects }}">
+      <oj-option disabled="true">Please select</oj-option>
+      <oj-option value="Yes">Yes</oj-option>
+      <oj-option value="No">No</oj-option>
+        </oj-select-one>
+        <div>
+        
+         <div :hidden="[[ !$variables.validatorIsDefectPresent ]]"> 
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-15" for="oj-select-one--1332266279-46" class="oj-flex-item">Roof Defects</oj-label>
+        <oj-select-one id="oj-select-one--1332266279-46" class="oj-flex-item oj-form-control-text-align-start" required="[[ $variables.validatorIsDefectPresent ]]" value="{{ $page.variables.paramHouseInfoVar.roofDefects }}" on-value-changed="[[$listeners.ojSelectOne133226627946Value]]">
+         <oj-option disabled="true">Please select</oj-option>
+      <oj-option value="Yes">Yes</oj-option>
+      <oj-option value="No">No</oj-option>
+      </oj-select-one>
+      </div>
+      
+        <div :hidden="[[ !($variables.validatorIsDefectPresent && $variables.validatorIsRoofDefectPresent) ]]">       
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-16" for="oj-input-text--1332266279-4" class="oj-flex-item">Roof Defect Details</oj-label>
+        <oj-input-text id="oj-input-text--1332266279-4" class="oj-flex-item" placeholder="Roof Defect Details" value="{{ $page.variables.paramHouseInfoVar.roofDefectDetails }}" required="[[ $variables.validatorIsDefectPresent && $variables.validatorIsRoofDefectPresent ]]"></oj-input-text>
+        </div> 
+        
+        <div :hidden="[[ !$variables.validatorIsDefectPresent ]]"> 
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-17" for="oj-select-one--1332266279-47" class="oj-flex-item">Walls Defects</oj-label>
+        <oj-select-one id="oj-select-one--1332266279-47" class="oj-flex-item oj-form-control-text-align-start" required="[[ $variables.validatorIsDefectPresent ]]" value="{{ $page.variables.paramHouseInfoVar.wallDefects }}" on-value-changed="[[$listeners.ojSelectOne133226627947Value]]">
+         <oj-option disabled="true">Please select</oj-option>
+      <oj-option value="Yes">Yes</oj-option>
+      
+      <oj-option value="No">No</oj-option>
+      </oj-select-one>
+      </div> 
+      <div :hidden="[[ !($variables.validatorIsDefectPresent && $variables.validatorIsWallDefectPresent) ]]"> 
+        
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-18" for="oj-input-text--1332266279-8" class="oj-flex-item">Walls Defects Details</oj-label>
+        <oj-input-text id="oj-input-text--1332266279-8" class="oj-flex-item" placeholder="Walls Defects Details" value="{{ $page.variables.paramHouseInfoVar.wallDefectDetails }}" required="[[ $variables.validatorIsDefectPresent && $variables.validatorIsWallDefectPresent ]]"></oj-input-text>
+ 
+      </div> 
+        
+        <div :hidden="[[ !$variables.validatorIsDefectPresent ]]"> 
+        
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-19" for="oj-select-one--1332266279-48" class="oj-flex-item">Floor Defects</oj-label>
+        <oj-select-one id="oj-select-one--1332266279-48" class="oj-flex-item oj-form-control-text-align-start" required="[[ $variables.validatorIsDefectPresent ]]" value="{{ $page.variables.paramHouseInfoVar.floorDefects }}" on-value-changed="[[$listeners.ojSelectOne133226627948Value]]">
+         <oj-option disabled="true">Please select</oj-option>
+      <oj-option value="Yes">Yes</oj-option>
+      <oj-option value="No">No</oj-option>
+      </oj-select-one>
+      </div>
+      <div :hidden="[[ !($variables.validatorIsDefectPresent && $variables.validatorIsFloorDefectPresent) ]]"> 
+        
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-20" for="oj-input-text--1332266279-9" class="oj-flex-item">Floor Defects Details</oj-label>
+        <oj-input-text id="oj-input-text--1332266279-9" class="oj-flex-item" placeholder="Floor Defects Details" value="{{ $page.variables.paramHouseInfoVar.floorDefectDetails }}" required="[[ $variables.validatorIsDefectPresent && $variables.validatorIsFloorDefectPresent ]]"></oj-input-text>
+        </div>
+      
+        
+        <div :hidden="[[ !$variables.validatorIsDefectPresent ]]"> 
+        
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-21" for="oj-select-one--1332266279-49" class="oj-flex-item">Plumbing Defects</oj-label>
+        <oj-select-one id="oj-select-one--1332266279-49" class="oj-flex-item oj-form-control-text-align-start" required="[[ $variables.validatorIsDefectPresent ]]" value="{{ $page.variables.paramHouseInfoVar.plumbingDefects }}" on-value-changed="[[$listeners.ojSelectOne133226627949Value]]">
+         <oj-option disabled="true">Please select</oj-option>
+      <oj-option value="Yes">Yes</oj-option>
+      <oj-option value="No">No</oj-option>
+      </oj-select-one>
+      </div>
+      <div :hidden="[[ !($variables.validatorIsDefectPresent && $variables.validatorIsPlumbingDefectPresent) ]]"> 
+        
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-22" for="oj-input-text--1332266279-10" class="oj-flex-item">Plumbing Defects Details</oj-label>
+        <oj-input-text id="oj-input-text--1332266279-10" class="oj-flex-item" placeholder="Plumbing Defects Details" value="{{ $page.variables.paramHouseInfoVar.plumbingDefectDetails }}" required="[[ $variables.validatorIsDefectPresent && $variables.validatorIsPlumbingDefectPresent ]]"></oj-input-text>
+      
+      </div>
+        
+        <div :hidden="[[ !$variables.validatorIsDefectPresent ]]"> 
+        
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-23" for="oj-select-one--1332266279-50" class="oj-flex-item">Doors / Windows Defects</oj-label>
+        <oj-select-one id="oj-select-one--1332266279-50" class="oj-flex-item oj-form-control-text-align-start" required="[[ $variables.validatorIsDefectPresent ]]" value="{{ $page.variables.paramHouseInfoVar.doorsWindowsDefects }}" on-value-changed="[[$listeners.ojSelectOne133226627950Value]]">
+         <oj-option disabled="true">Please select</oj-option>
+      <oj-option value="Yes">Yes</oj-option>
+      <oj-option value="No">No</oj-option>
+      </oj-select-one>
+      </div>
+      <div :hidden="[[ !($variables.validatorIsDefectPresent && $variables.validatorIsDoorDefectPresent) ]]"> 
+        
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-24" for="oj-input-text--1332266279-11" class="oj-flex-item">Doors / Windows Defects Details</oj-label>
+        <oj-input-text id="oj-input-text--1332266279-11" class="oj-flex-item" placeholder="Doors / Windows Defects Details" value="{{ $page.variables.paramHouseInfoVar.doorsWindowsDefectDetails }}" required="[[ $variables.validatorIsDefectPresent && $variables.validatorIsDoorDefectPresent ]]"></oj-input-text>
+      
+      </div>
+        
+        <div :hidden="[[ !$variables.validatorIsDefectPresent ]]"> 
+        
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-25" for="oj-select-one--1332266279-51" class="oj-flex-item">Other Defects</oj-label>
+        <oj-select-one id="oj-select-one--1332266279-51" class="oj-flex-item oj-form-control-text-align-start" value="{{ $page.variables.paramHouseInfoVar.otherDefects }}" on-value-changed="[[$listeners.ojSelectOne133226627951Value]]">
+         <oj-option disabled="true">Please select</oj-option>
+      <oj-option value="Yes">Yes</oj-option>
+      <oj-option value="No">No</oj-option>
+      </oj-select-one>
+      </div>
+      <div :hidden="[[ !($variables.validatorIsDefectPresent && $variables.validatorIsOtherDefectPresent) ]]"> 
+        
+      
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-26" for="oj-input-text--1332266279-12" class="oj-flex-item">Other Defects Details</oj-label>
+        <oj-input-text id="oj-input-text--1332266279-12" class="oj-flex-item" placeholder="Other Defects Details" value="{{ $page.variables.paramHouseInfoVar.otherDefectDetails }}" required="[[ $variables.validatorIsDefectPresent && $variables.validatorIsOtherDefectPresent ]]"></oj-input-text>
+        </div>
+        </div>
+        <div style="padding-top: 2rem;" class="oj-sm-align-self-center"></div>
+      
+    </div>
+
+      
+  
+
+
+  </div>
+</oj-validation-group></div>
+    <div class="oj-flex-item">
+      <oj-validation-group id="fourthForm">
+        <h1 style="font-size:1.5rem; color:#1752a6; font-weight: bold; padding-top:4rem" id="h1--1332266279-3">Service Delivery</h1>
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-53" for="oj-select-one--1332266279-20">Toilet</oj-label>
+        <oj-select-one id="oj-select-one--1332266279-20" class="oj-form-control-text-align-start" value="{{ $variables.paramVarService.toiletType }}" options-keys.value="Value" options-keys.label="Toilet" required="true" placeholder="Please Select">
+        <oj-option value="Flush toilet (connected to sewer system) outside dwelling">Flush toilet (connected to sewer system) outside dwelling</oj-option>
+        <oj-option value="Flush toilet (with septic tank) outside the dwelling	">Flush toilet (with septic tank) outside the dwelling	</oj-option>
+        <oj-option value="Chemical toilet outside the house	">Chemical toilet outside the house	</oj-option>
+        <oj-option value="Pit latrine with ventilation	">Pit latrine with ventilation	</oj-option>
+        <oj-option value="Pit latrine without ventilation	">Pit latrine without ventilation	</oj-option>
+        <oj-option value="Bucket latrine	">Bucket latrine	</oj-option>
+        </oj-select-one>
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-54" for="oj-select-one--1332266279-21">Water</oj-label>
+        <oj-select-one id="oj-select-one--1332266279-21" class="oj-form-control-text-align-start" required="true" value="{{ $variables.paramVarService.waterType }}" options-keys.label="water" placeholder="Please Select">
+          
+        
+        
+        
+        
+        <oj-option value="No access to piped water">No access to piped water</oj-option>
+        <oj-option value="Piped (tap) water on community stand: distance greater than 200m from dwelling">Piped (tap) water on community stand: distance greater than 200m from dwelling</oj-option>
+        <oj-option value="Piped (tap) water on community stand: distance less than 200m from dwelling ">Piped (tap) water on community stand: distance less than 200m from dwelling </oj-option>
+        <oj-option value="Piped (tap) water inside yard ">Piped (tap) water inside yard </oj-option>
+        <oj-option value="Piped (tap) water inside dwelling">Piped (tap) water inside dwelling</oj-option>
+        <oj-option value="Dam ">Dam </oj-option>
+        <oj-option value="River  ">River  </oj-option>
+        <oj-option value="Stream ">Stream </oj-option>
+        <oj-option value="Water tanker (truck)">Water tanker (truck)</oj-option>
+        <oj-option value="Borehole">Borehole</oj-option>
+
+      
+      
+      
+        
+        </oj-select-one>
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-55" for="oj-input-text--1332266279-28">Water (Litres)</oj-label>
+        <oj-input-text id="oj-input-text--1332266279-28" placeholder="How many liters of water per day" required="true" value="{{ $variables.paramVarService.waterLitres }}" validators=' [{"type":"regexp", "options":{"pattern":"[0-9]+", "hint":"Water Quantity in litres.", "messageDetail": "Enter Valid Number"}}]' virtual-keyboard="number"></oj-input-text>
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-56" for="oj-select-one--1332266279-22">Primary Energy - Cooking</oj-label>
+        <oj-select-one id="oj-select-one--1332266279-22" class="oj-form-control-text-align-start" placeholder="Please Select" required="true" value="{{ $variables.paramVarService.primaryEnergyCooking }}">
+         
+        <oj-option value="Electricity">Electricity</oj-option>
+        <oj-option value="Paraffin">Paraffin</oj-option>
+        <oj-option value="Gas">Gas</oj-option>
+        <oj-option value="Wood ">Wood </oj-option>
+        <oj-option value="Coal/Charcoal">Coal/Charcoal</oj-option>
+        <oj-option value="Candles">Candles</oj-option>
+        <oj-option value="Bio-fuel stoves (that uses soft gel fuel)">Bio-fuel stoves (that uses soft gel fuel)</oj-option>
+        <oj-option value="Solar">Solar</oj-option>
+        <oj-option value="Genarator">Genarator</oj-option>
+        </oj-select-one>
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-8" for="oj-select-one--1332266279-4">Primary Energy - Lighting</oj-label>
+        <oj-select-one id="oj-select-one--1332266279-4" class="oj-form-control-text-align-start" placeholder="Please Select" required="true" value="{{ $variables.paramVarService.primaryEnergyLighting }}">
+        <oj-option value="Electricity">Electricity</oj-option>
+        <oj-option value="Paraffin">Paraffin</oj-option>
+        <oj-option value="Gas">Gas</oj-option>
+        <oj-option value="Wood ">Wood </oj-option>
+        <oj-option value="Coal/Charcoal">Coal/Charcoal</oj-option>
+        <oj-option value="Candles">Candles</oj-option>
+        <oj-option value="Bio-fuel stoves (that uses soft gel fuel)">Bio-fuel stoves (that uses soft gel fuel)</oj-option>
+        <oj-option value="Solar">Solar</oj-option>
+        <oj-option value="Genarator">Genarator</oj-option>
+        </oj-select-one>
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-27" for="oj-select-one--1332266279-14">Primary Energy - Heating</oj-label>
+        <oj-select-one id="oj-select-one--1332266279-14" class="oj-form-control-text-align-start" placeholder="Please Select" required="true" value="{{ $variables.paramVarService.primaryEnergyHeating }}">
+         
+        <oj-option value="Electricity">Electricity</oj-option>
+        <oj-option value="Paraffin">Paraffin</oj-option>
+        <oj-option value="Gas">Gas</oj-option>
+        <oj-option value="Wood ">Wood </oj-option>
+        <oj-option value="Coal/Charcoal">Coal/Charcoal</oj-option>
+        <oj-option value="Candles">Candles</oj-option>
+        <oj-option value="Bio-fuel stoves (that uses soft gel fuel)">Bio-fuel stoves (that uses soft gel fuel)</oj-option>
+        <oj-option value="Solar">Solar</oj-option>
+        <oj-option value="Genarator">Genarator</oj-option>
+      
+      
+      
+      
+        
+        </oj-select-one>
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-57" for="oj-select-one--1332266279-23">Waste Collection Frequency</oj-label>
+        <oj-select-one id="oj-select-one--1332266279-23" class="oj-form-control-text-align-start" placeholder="Please Select" required="true" value="{{ $variables.paramVarService.wasteCollection }}">
+        
+        <oj-option value="Weekly">Weekly</oj-option>
+        <oj-option value="Monthly">Monthly</oj-option>
+        </oj-select-one>
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-58" for="oj-select-one--1332266279-24">Waste Collection Type</oj-label>
+        <oj-select-one id="oj-select-one--1332266279-24" class="oj-form-control-text-align-start" placeholder="Please Select" required="true" value="{{ $variables.paramVarService.wasteType }}">
+         
+        <oj-option value="Communal collection">Communal collection</oj-option>
+        <oj-option value="Thrown in a hole">Thrown in a hole</oj-option>
+        <oj-option value="Massive Skib bin">Massive Skib bin</oj-option>
+        </oj-select-one>
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-59" for="oj-select-one--1332266279-25">Health Facility</oj-label>
+        <oj-select-one id="oj-select-one--1332266279-25" class="oj-form-control-text-align-start" placeholder="Please Select" required="true" value="{{ $variables.paramVarService.healthType }}">
+         
+        <oj-option value="At a clinic (stationary)">At a clinic (stationary)</oj-option>
+        <oj-option value="At a clinic (mobile) ">At a clinic (mobile) </oj-option>
+        <oj-option value="At a hospital">At a hospital</oj-option>
+        </oj-select-one>
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-60" for="oj-select-one--1332266279-26">Transport</oj-label>
+        <oj-select-one id="oj-select-one--1332266279-26" class="oj-form-control-text-align-start" required="true" value="{{ $variables.paramVarService.transport }}" placeholder="Please Select">
+         
+        <oj-option value="Walking">Walking</oj-option>
+        <oj-option value="Bicycle">Bicycle</oj-option>
+        <oj-option value="Scooter/motorcycle">Scooter/motorcycle</oj-option>
+        <oj-option value="Minibus taxi/Sedan taxi/bakkie taxi">Minibus taxi/Sedan taxi/bakkie taxi</oj-option>
+        <oj-option value="Bus">Bus</oj-option>
+        <oj-option value="Train">Train</oj-option>
+        <oj-option value="Private car/bakkie/minibus (driver)">Private car/bakkie/minibus (driver)</oj-option>
+        <oj-option value="Private car/bakkie/minibus (passenger)">Private car/bakkie/minibus (passenger)</oj-option>
+        <oj-option value="Animal transport">Animal transport</oj-option>
+        </oj-select-one>
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-61" for="oj-select-one--1332266279-27">Communication</oj-label>
+        <oj-select-one id="oj-select-one--1332266279-27" class="oj-form-control-text-align-start" placeholder="Please Select" required="true" value="{{ $variables.paramVarService.commType }}">
+         
+        <oj-option value="Community newspapers">Community newspapers</oj-option>
+        <oj-option value="Word of mouth">Word of mouth</oj-option>
+        <oj-option value="Pamphlets">Pamphlets</oj-option>
+        <oj-option value="Radio">Radio</oj-option>
+        <oj-option value="Local meetings">Local meetings</oj-option>
+        <oj-option value="Municipal Office">Municipal Office</oj-option>
+        <oj-option value="Municipal call centre">Municipal call centre</oj-option>
+        <oj-option value="Online newspapers">Online newspapers</oj-option>
+        <oj-option value="Municipal website">Municipal website</oj-option>
+        <oj-option value="Social networking sites">Social networking sites</oj-option>
+        </oj-select-one>
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-62" for="oj-select-one--1332266279-28">Crime</oj-label>
+        <oj-select-one id="oj-select-one--1332266279-28" class="oj-form-control-text-align-start" placeholder="Please Select" required="true" value="{{ $variables.paramVarService.crimeVictim }}" options-keys.label="crime" on-value-changed="[[$listeners.ojSelectOne133226627928Value]]"> 
+       
+        
+        
+        <oj-option value="Rape">Rape</oj-option>
+        <oj-option value="Assault (including street/gang violence)">Assault (including street/gang violence)</oj-option>
+        <oj-option value="Murder">Murder</oj-option>
+        <oj-option value="Robbery (mugging)">Robbery (mugging)</oj-option>
+        <oj-option value="Hijacking">Hijacking</oj-option>
+        <oj-option value="Burglary (breaking into your home and stealing)">Burglary (breaking into your home and stealing)</oj-option>
+        <oj-option value="Theft">Theft</oj-option>
+        <oj-option value="Car Theft">Car Theft</oj-option>
+        <oj-option value="Theft of items out of a Car">Theft of items out of a Car</oj-option>
+        <oj-option value="Stock Theft">Stock Theft</oj-option>
+        <oj-option value="Fraud">Fraud</oj-option>
+        <oj-option value="None">None</oj-option>       
+      
+
+      
+        
+        </oj-select-one>
+        <div :hidden="[[$variables.showCrime]]">
+        <oj-label style="font-size:1.2rem; color:#1752a6;" id="oj-label--1332266279-28" for="oj-input-text--1332266279-13" class="oj-flex-item">Crime Details</oj-label>
+        <oj-input-text id="oj-input-text--1332266279-13" class="oj-flex-item" placeholder="Crime Details" value="{{ $variables.paramVarService.crimeDetails }}" required="[[ $variables.requiredCrime ]]"></oj-input-text> 
+
+      
+        
+        
+        </div>
+        <center>
+        <div class="oj-sm-align-self-center">
+      <oj-button style="margin-top:2rem" id="oj-button--1332266279-4" on-oj-action="[[$listeners.ojButton13322662794OjAction]]" chroming="full" disabled="[[ $variables.disableSubmitSurveyButton ]]" class="oj-button-confirm oj-button-xl">Submit Survey</oj-button>
+        </div>
+        </center>
+      </oj-validation-group>
+    </div>
+  </div></oj-ext-mobile-page-template>
+  <div class="loader-screen" id="loaderid">
+       <div class="loader"></div>
+  </div>

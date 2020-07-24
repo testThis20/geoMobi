@@ -1,0 +1,146 @@
+{
+    "fieldValidators": [],
+    "objectFunctions": [
+        {
+            "active": "active",
+            "functionBody": "def vo = newView('HouseholdInformation')\nvo.appendViewCriteria(\"surveyID = '\"+surveyIDVar+\"'\")\nvo.executeQuery()\nif (!vo.hasNext()){\n  r = vo.createRow()\n  r.surveyID = surveyIDVar;\n\n  r.HomeLanguage = homeLangvar;\n  r.HouseholdIncome = householdIncomevar;\n  r.currentTownReason=reasonToMove;\n  \n  r.dwellingDurationYears = dwellingDurationYearsVar;\n  r.dwellingDurationMonths = dwellingDurationMonthsVar;\n  r.dwellingOwnership = dwellingOwnershipVar;\n  r.rentMonthlyAmount = rentMonthlyAmountVar;\n  r.rentReason = rentReasonVar;\n  r.rentGovernmentHousingLi = rentGovernmentHousingLiVar;\t\t\t\n  r.province = provinceVar;\n  r.town = townVar;\n  r.currentTownDurationYears = currentTownDurationYearsVar;\t\t\n  r.currentTownDurationMonths = currentTownDurationMonthsVar;\n  r.permitType = permitTypeVar;\t\t\n  r.permitExpiryDate = permitExpiryDateVar;\t\t\n  r.permitNumber = permitNumberVar;\n  r.NumberOfRooms = noOfRoomsVar;\n  \n  r.governmentPropertyDefects= governmentPropertyDefects;\n  r.roofDefects = roofDefects;\n  r.roofDefectDetails = roofDefectDetails;\n  r.wallDefects = wallDefects;\n  r.wallDefectDetails = wallDefectDetails;\n  r.plumbingDefects = plumbingDefects;\n  r.plumbingDefectDetails = plumbingDefectDetails;\n  r.floorDefects = floorDefects;\n  r.floorDefectDetails = floorDefectDetails;\n  r.doorsWindowsDefects = doorsWindowsDefects;\n  r.doorsWindowsDefectDetails = doorsWindowsDefectDetails;\n  r.otherDefects = otherDefects;\n  r.otherDefectDetails = otherDefectDetails;\n  \n  //r.governmentSubsidyStatusHead=governmentSubsidyStatusHead;\n  //r.governmentSubsidyStatusSpouse=governmentSubsidyStatusSpouse;\n\n  vo.insertRow(r);\n}\nwhile (vo.hasNext()) {\n  def r = vo.next();\n  \n  r.homeLanguage = homeLangvar;\n  r.householdIncome = householdIncomevar;\n  r.currentTownReason=reasonToMove;\n  \n  r.dwellingDurationYears = dwellingDurationYearsVar;\n  r.dwellingDurationMonths = dwellingDurationMonthsVar;\n  r.dwellingOwnership = dwellingOwnershipVar;\n  r.rentMonthlyAmount = rentMonthlyAmountVar;\n  r.rentReason = rentReasonVar;\n  r.rentGovernmentHousingLi = rentGovernmentHousingLiVar;\t\t\t\n  r.province = provinceVar;\n  r.town = townVar;\n  r.currentTownDurationYears = currentTownDurationYearsVar;\t\t\n  r.currentTownDurationMonths = currentTownDurationMonthsVar;\n  r.permitType = permitTypeVar;\t\t\n  r.permitExpiryDate = permitExpiryDateVar;\t\t\n  r.permitNumber = permitNumberVar;\n  r.NumberOfRooms = noOfRoomsVar;\n\n  r.governmentPropertyDefects= governmentPropertyDefects;\n  r.roofDefects = roofDefects;\n  r.roofDefectDetails = roofDefectDetails;\n  r.wallDefects = wallDefects;\n  r.wallDefectDetails = wallDefectDetails;\n  r.plumbingDefects = plumbingDefects;\n  r.plumbingDefectDetails = plumbingDefectDetails;\n  r.floorDefects = floorDefects;\n  r.floorDefectDetails = floorDefectDetails;\n  r.doorsWindowsDefects = doorsWindowsDefects;\n  r.doorsWindowsDefectDetails = doorsWindowsDefectDetails;\n  r.otherDefects = otherDefects;\n  r.otherDefectDetails = otherDefectDetails;\n  \n  //r.governmentSubsidyStatusHead=governmentSubsidyStatusHead;\n  //r.governmentSubsidyStatusSpouse=governmentSubsidyStatusSpouse;\n\n}",
+            "functionName": "updateHouseholdInfo",
+            "lastUpdate": "2020-03-21T05:18:14",
+            "oid": "3043b99c-649a-4f25-8822-b8dd642c08ca",
+            "parameters": [
+                {
+                    "parameterName": "reasonToMove",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "homeLangvar",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "householdIncomevar",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "dwellingDurationYearsVar",
+                    "parameterType": "Long"
+                },
+                {
+                    "parameterName": "dwellingDurationMonthsVar",
+                    "parameterType": "Long"
+                },
+                {
+                    "parameterName": "dwellingOwnershipVar",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "rentMonthlyAmountVar",
+                    "parameterType": "Long"
+                },
+                {
+                    "parameterName": "rentReasonVar",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "rentGovernmentHousingLiVar",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "provinceVar",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "townVar",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "currentTownDurationYearsVar",
+                    "parameterType": "Long"
+                },
+                {
+                    "parameterName": "currentTownDurationMonthsVar",
+                    "parameterType": "Long"
+                },
+                {
+                    "parameterName": "permitTypeVar",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "permitNumberVar",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "permitExpiryDateVar",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "noOfRoomsVar",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "surveyIDVar",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "governmentPropertyDefects",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "roofDefects",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "roofDefectDetails",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "wallDefects",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "wallDefectDetails",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "plumbingDefects",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "plumbingDefectDetails",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "floorDefects",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "floorDefectDetails",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "doorsWindowsDefects",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "doorsWindowsDefectDetails",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "otherDefects",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "otherDefectDetails",
+                    "parameterType": "String"
+                }
+            ],
+            "returnType": "void",
+            "scriptMimeType": "application/x-adf-groovy",
+            "visibility": [
+                "external"
+            ]
+        }
+      ],
+    "objectValidators": [],
+    "triggers": [],
+    "fieldTriggers": []
+}

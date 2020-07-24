@@ -1,0 +1,1160 @@
+{
+ "pageModelVersion": "19.3.1",
+ "title": "",
+ "description": "",
+ "variables": {
+  "paramDashVar": {
+   "type": "do_updateDashDetails_DashBO",
+            "defaultValue": {
+                "captureStatus": "Contact/Interview"
+            }
+  },
+        "paramStickerPhoto": {
+            "type": "do_updateStickerPhoto_StickerPhotoBO"
+        },
+        "showSurveyBtn": {
+            "type": "boolean",
+            "defaultValue": false
+        },
+        "StickerPhotoUploaded": {
+            "type": "boolean",
+            "defaultValue": false
+        },
+        "showNoSurveyBtn": {
+            "type": "boolean",
+            "defaultValue": true
+        },
+        "disableStickerPhotoUploadButton": {
+            "type": "boolean",
+            "defaultValue": false
+        },
+        "isDashboardUploaded": {
+            "type": "boolean",
+            "defaultValue": false
+        },
+        "showStickerPhotoButton": {
+            "type": "boolean",
+            "defaultValue": false
+        },
+        "isDwellingTypeSelect": {
+            "type": "boolean",
+            "defaultValue": true
+        },
+        "isCaptureStatusSelect": {
+            "type": "boolean",
+            "defaultValue": false
+        }
+ },
+ "metadata": {},
+ "types": {
+  "@decorators.do_updateDashDetails_DashBO": {
+			"endpoint": "do_updateDashDetails_DashBO",
+			"service": "businessObjects",
+			"path": "request"
+		},
+  "do_updateDashDetails_DashBO": {
+            "captureDate": "string",
+   "captureStatus": "string",
+   "dwellingType": "string",
+   "houseNumber": "string",
+            "locationX": "string",
+            "locationY": "string",
+   "stickerNumber": "string",
+            "uniqueSurveyID": "string",
+            "userIdVar": "string",
+            "usernameVar": "string"
+  },
+        "@decorators.do_updateStickerPhoto_StickerPhotoBO": {
+            "endpoint": "do_updateStickerPhoto_StickerPhotoBO",
+            "service": "businessObjects",
+            "path": "request"
+        },
+        "do_updateStickerPhoto_StickerPhotoBO": {
+            "stickerPhotoPath": "string",
+            "surveyIDVar": "string"
+        },
+        "@decorators.postImages": {
+            "endpoint": "postImages",
+            "service": "ordsTestGallery",
+            "path": ""
+        },
+        "postImages": [
+            {
+                "response": "array"
+            }
+        ]
+ },
+ "chains": {
+        "CaptureStatusSurvey": {
+            "description": "",
+            "variables": {
+                "value": {
+                    "required": true,
+                    "type": "any",
+                    "input": "fromCaller"
+                }
+            },
+            "root": "runInParallel1",
+            "actions": {
+                "if1": {
+                    "module": "vb/action/builtin/ifAction",
+                    "parameters": {
+                        "condition": "[[ $page.variables.paramDashVar.captureStatus == \"Contact/Interview\" ]]"
+                    },
+                    "outcomes": {
+                        "true": "assignVariables2",
+                        "false": "assignVariables1"
+                    }
+                },
+                "assignVariables1": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$page.variables.showSurveyBtn": {
+                            "source": true
+                        },
+                        "$page.variables.showNoSurveyBtn": {
+                            "source": false
+                        }
+                    },
+                    "outcomes": {
+                        "success": "return1"
+                    }
+                },
+                "assignVariables2": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$page.variables.showSurveyBtn": {
+                            "source": false
+                        },
+                        "$page.variables.showNoSurveyBtn": {
+                            "source": true
+                        }
+                    },
+                    "outcomes": {
+                        "success": "return1"
+                    }
+                },
+                "runInParallel1": {
+                    "module": "vb/action/builtin/forkAction",
+                    "parameters": {
+                        "actions": {
+                            "if1": "if1",
+                            "if2": "if2"
+                        }
+                    }
+                },
+                "if2": {
+                    "module": "vb/action/builtin/ifAction",
+                    "parameters": {
+                        "condition": "[[ $page.variables.paramDashVar.captureStatus == \"Select\" || $page.variables.paramDashVar.captureStatus == \"Please Select\" ]]"
+                    },
+                    "outcomes": {
+                        "true": "assignVariables3",
+                        "false": "assignVariables4"
+                    }
+                },
+                "assignVariables3": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$page.variables.isCaptureStatusSelect": {
+                            "source": true
+                        }
+                    },
+                    "outcomes": {
+                        "success": "return2"
+                    }
+                },
+                "assignVariables4": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$page.variables.isCaptureStatusSelect": {
+                            "source": false
+                        }
+                    },
+                    "outcomes": {
+                        "success": "return2"
+                    }
+                },
+                "return1": {
+                    "module": "vb/action/builtin/returnAction",
+                    "parameters": {
+                        "outcome": "success"
+                    }
+                },
+                "return2": {
+                    "module": "vb/action/builtin/returnAction",
+                    "parameters": {
+                        "outcome": "success"
+                    }
+                }
+            }
+        },
+        "NoSurvey": {
+            "description": "",
+            "variables": {
+                "detail": {
+                    "required": true,
+                    "type": "any",
+                    "input": "fromCaller"
+                }
+            },
+            "root": "callModuleFunction1",
+            "actions": {
+                "fireNotification1": {
+                    "module": "vb/action/builtin/fireNotificationEventAction",
+                    "parameters": {
+                        "summary": "[[ $application.translations.app.fireNotification1_summary_b982 ]]",
+                        "displayMode": "transient",
+                        "type": "confirmation",
+                        "message": "[[ $application.translations.app.fireNotification1_message_d9b5 ]]"
+                    },
+                    "outcomes": {
+                        "success": "callModuleFunction7"
+                    }
+                },
+                "callModuleFunction7": {
+                    "module": "vb/action/builtin/callModuleFunctionAction",
+                    "parameters": {
+                        "module": "[[ $page.functions ]]",
+                        "functionName": "resetFields"
+                    },
+                    "outcomes": {
+                        "success": "assignVariables1"
+                    }
+                },
+                "callActionChain1": {
+                    "module": "vb/action/builtin/callChainAction",
+                    "parameters": {
+                        "id": "UploadDashboard",
+                        "params": {
+                            "detail": "{{ $chain.variables.detail }}"
+                        }
+                    },
+                    "outcomes": {
+                        "success": "if1"
+                    }
+                },
+                "if1": {
+                    "module": "vb/action/builtin/ifAction",
+                    "parameters": {
+                        "condition": "[[ $page.variables.isDashboardUploaded==true ]]"
+                    },
+                    "outcomes": {
+                        "true": "fireNotification1",
+                        "false": "assignVariables6"
+                    }
+                },
+                "assignVariables1": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$page.variables.isDashboardUploaded": {
+                            "source": false
+                        }
+                    },
+                    "outcomes": {
+                        "success": "assignVariables3"
+                    }
+                },
+                "assignVariables3": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$page.variables.StickerPhotoUploaded": {
+                            "source": false
+                        }
+                    },
+                    "outcomes": {
+                        "success": "assignVariables5"
+                    }
+                },
+                "assignVariables4": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$page.variables.showNoSurveyBtn": {
+                            "source": true
+                        },
+                        "$page.variables.showStickerPhotoButton": {
+                            "source": true
+                        }
+                    },
+                    "outcomes": {
+                        "success": "callActionChain1"
+                    }
+                },
+                "assignVariables6": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$page.variables.showNoSurveyBtn": {
+                            "source": false
+                        }
+                    },
+                    "outcomes": {
+                        "success": "assignVariables5"
+                    }
+                },
+                "callModuleFunction1": {
+                    "module": "vb/action/builtin/callModuleFunctionAction",
+                    "parameters": {
+                        "module": "[[ $page.functions ]]",
+                        "functionName": "showLoader"
+                    },
+                    "outcomes": {
+                        "success": "assignVariables4"
+                    }
+                },
+                "callModuleFunction3": {
+                    "module": "vb/action/builtin/callModuleFunctionAction",
+                    "parameters": {
+                        "module": "[[ $page.functions ]]",
+                        "functionName": "hideLoader"
+                    }
+                },
+                "assignVariables5": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$page.variables.showStickerPhotoButton": {
+                            "source": false
+                        }
+                    },
+                    "outcomes": {
+                        "success": "callModuleFunction3"
+                    }
+                }
+            }
+        },
+        "UploadDashboard": {
+            "description": "",
+            "variables": {
+                "detail": {
+                    "required": true,
+                    "type": "any",
+                    "input": "fromCaller"
+                }
+            },
+            "root": "if1",
+            "actions": {
+                "callRestEndpoint1": {
+                    "module": "vb/action/builtin/restAction",
+                    "parameters": {
+                        "endpoint": "businessObjects/do_updateDashDetails_DashBO",
+                        "uriParams": {
+                            "DashBO_Id": "1"
+                        },
+                        "body": "{{ $page.variables.paramDashVar }}"
+                    },
+                    "outcomes": {
+                        "success": "assignVariables5",
+                        "failure": "fireNotification2"
+                    }
+                },
+                "fireNotification2": {
+                    "module": "vb/action/builtin/fireNotificationEventAction",
+                    "parameters": {
+                        "summary": "[[ $application.translations.app.fireNotification2_summary_0067 ]]",
+                        "displayMode": "transient",
+                        "type": "error",
+                        "message": "[[ $application.translations.app.fireNotification2_message_9746 ]]"
+                    },
+                    "outcomes": {
+                        "success": "assignVariables2"
+                    }
+                },
+                "fireNotification3": {
+                    "module": "vb/action/builtin/fireNotificationEventAction",
+                    "parameters": {
+                        "summary": "[[ $application.translations.app.fireNotification3_summary_decc ]]",
+                        "displayMode": "transient",
+                        "type": "error",
+                        "message": "[[ $application.translations.app.fireNotification3_message_696e ]]"
+                    },
+                    "outcomes": {
+                        "success": "assignVariables6"
+                    }
+                },
+                "if1": {
+                    "module": "vb/action/builtin/ifAction",
+                    "parameters": {
+                        "condition": "{{ $application.functions.isFormValid(\"CreateForm\") }}"
+                    },
+                    "outcomes": {
+                        "false": "fireNotification3",
+                        "true": "if2"
+                    }
+                },
+                "assignVariables3": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$page.variables.paramDashVar": {
+                            "source": {
+                                "uniqueSurveyID": "{{ $flow.variables.timeStamp }}",
+                                "usernameVar": "{{ $flow.variables.username }}",
+                                "userIdVar": "{{ $flow.variables.userID }}",
+                                "locationY": "{{ $chain.results.callModuleFunction2 }}",
+                                "locationX": "{{ $chain.results.callModuleFunction3 }}",
+                                "captureDate": "{{ $flow.variables.localTime }}"
+                            },
+                            "reset": "none",
+                            "auto": "always"
+                        }
+                    },
+                    "outcomes": {
+                        "success": "if5"
+                    }
+                },
+                "if3": {
+                    "module": "vb/action/builtin/ifAction",
+                    "parameters": {
+                        "condition": "[[ $page.variables.StickerPhotoUploaded==true]]"
+                    },
+                    "outcomes": {
+                        "false": "fireNotification7",
+                        "true": "callModuleFunction2"
+                    }
+                },
+                "fireNotification7": {
+                    "module": "vb/action/builtin/fireNotificationEventAction",
+                    "parameters": {
+                        "summary": "[[ $application.translations.app.fireNotification7_summary_b3e1 ]]",
+                        "type": "error",
+                        "displayMode": "transient",
+                        "message": "[[ $application.translations.app.fireNotification7_message_8b5d ]]"
+                    },
+                    "outcomes": {
+                        "success": "assignVariables1"
+                    }
+                },
+                "assignVariables5": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$page.variables.isDashboardUploaded": {
+                            "source": true
+                        }
+                    },
+                    "outcomes": {
+                        "success": "return1"
+                    }
+                },
+                "assignVariables2": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$page.variables.isDashboardUploaded": {
+                            "source": false
+                        }
+                    },
+                    "outcomes": {
+                        "success": "return1"
+                    }
+                },
+                "assignVariables4": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$flow.variables.YLocation": {
+                            "source": "{{ $chain.results.callModuleFunction2 }}"
+                        },
+                        "$flow.variables.XLocation": {
+                            "source": "{{ $chain.results.callModuleFunction3 }}"
+                        }
+                    },
+                    "outcomes": {
+                        "success": "if6"
+                    }
+                },
+                "callModuleFunction2": {
+                    "module": "vb/action/builtin/callModuleFunctionAction",
+                    "parameters": {
+                        "module": "[[ $page.functions ]]",
+                        "functionName": "GetLatitude",
+                        "returnType": "number"
+                    },
+                    "outcomes": {
+                        "success": "callModuleFunction3"
+                    }
+                },
+                "callModuleFunction3": {
+                    "module": "vb/action/builtin/callModuleFunctionAction",
+                    "parameters": {
+                        "module": "[[ $page.functions ]]",
+                        "functionName": "GetLongitude",
+                        "returnType": "number"
+                    },
+                    "outcomes": {
+                        "success": "assignVariables4"
+                    }
+                },
+                "assignVariables1": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$page.variables.isDashboardUploaded": {
+                            "source": false
+                        }
+                    },
+                    "outcomes": {
+                        "success": "return1"
+                    }
+                },
+                "assignVariables6": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$page.variables.isDashboardUploaded": {
+                            "source": false
+                        }
+                    },
+                    "outcomes": {
+                        "success": "return1"
+                    }
+                },
+                "if2": {
+                    "module": "vb/action/builtin/ifAction",
+                    "parameters": {
+                        "condition": "[[ $page.variables.isDwellingTypeSelect==true ]]"
+                    },
+                    "outcomes": {
+                        "false": "if4",
+                        "true": "fireNotification1"
+                    }
+                },
+                "fireNotification1": {
+                    "module": "vb/action/builtin/fireNotificationEventAction",
+                    "parameters": {
+                        "summary": "[[ $application.translations.app.fireNotification1_summary_913d ]]",
+                        "displayMode": "transient",
+                        "message": "[[ $application.translations.app.fireNotification1_message_e1b6 ]]"
+                    },
+                    "outcomes": {
+                        "success": "assignVariables7"
+                    }
+                },
+                "if4": {
+                    "module": "vb/action/builtin/ifAction",
+                    "parameters": {
+                        "condition": "[[ $page.variables.isCaptureStatusSelect==true ]]"
+                    },
+                    "outcomes": {
+                        "false": "if3",
+                        "true": "fireNotification4"
+                    }
+                },
+                "fireNotification4": {
+                    "module": "vb/action/builtin/fireNotificationEventAction",
+                    "parameters": {
+                        "summary": "[[ $application.translations.app.fireNotification4_summary_fa7c ]]",
+                        "type": "error",
+                        "displayMode": "transient",
+                        "message": "[[ $application.translations.app.fireNotification4_message_83c8 ]]"
+                    },
+                    "outcomes": {
+                        "success": "assignVariables8"
+                    }
+                },
+                "assignVariables7": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$page.variables.isDashboardUploaded": {
+                            "source": false
+                        }
+                    },
+                    "outcomes": {
+                        "success": "return1"
+                    }
+                },
+                "assignVariables8": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$page.variables.isDashboardUploaded": {
+                            "source": false
+                        }
+                    },
+                    "outcomes": {
+                        "success": "return1"
+                    }
+                },
+                "if5": {
+                    "module": "vb/action/builtin/ifAction",
+                    "parameters": {
+                        "condition": "[[ (navigator.onLine) ]]"
+                    },
+                    "outcomes": {
+                        "true": "callRestEndpoint1",
+                        "false": "callModuleFunction4"
+                    }
+                },
+                "callModuleFunction4": {
+                    "module": "vb/action/builtin/callModuleFunctionAction",
+                    "parameters": {
+                        "module": "[[ $page.functions ]]",
+                        "functionName": "saveDashboardDataOffline",
+                        "params": [
+                            "{{ $page.variables.paramDashVar }}"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": "assignVariables10"
+                    }
+                },
+                "if6": {
+                    "module": "vb/action/builtin/ifAction",
+                    "parameters": {
+                        "condition": "[[ $flow.variables.XLocation==\"NaN\" || $flow.variables.YLocation ==\"NaN\" ]]"
+                    },
+                    "outcomes": {
+                        "false": "assignVariables3",
+                        "true": "fireNotification5"
+                    }
+                },
+                "fireNotification5": {
+                    "module": "vb/action/builtin/fireNotificationEventAction",
+                    "parameters": {
+                        "summary": "[[ $application.translations.app.fireNotification5_summary_0be4 ]]",
+                        "message": "[[ $application.translations.app.fireNotification5_message_d6aa ]]",
+                        "displayMode": "transient"
+                    },
+                    "outcomes": {
+                        "success": "assignVariables9"
+                    }
+                },
+                "assignVariables9": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$page.variables.isDashboardUploaded": {
+                            "source": false
+                        }
+                    },
+                    "outcomes": {
+                        "success": "return1"
+                    }
+                },
+                "return1": {
+                    "module": "vb/action/builtin/returnAction",
+                    "parameters": {
+                        "outcome": "success"
+                    }
+                },
+                "assignVariables10": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$page.variables.isDashboardUploaded": {
+                            "source": true
+                        }
+                    },
+                    "outcomes": {
+                        "success": "return1"
+                    }
+                }
+            }
+        },
+        "StartSurvey": {
+            "description": "",
+            "variables": {
+                "detail": {
+                    "required": true,
+                    "type": "any",
+                    "input": "fromCaller"
+                }
+            },
+            "root": "callModuleFunction1",
+            "actions": {
+                "navigateToPage1": {
+                    "module": "vb/action/builtin/navigateToPageAction",
+                    "parameters": {
+                        "page": "addsurvey"
+                    },
+                    "outcomes": {
+                        "success": "callModuleFunction2"
+                    }
+                },
+                "callActionChain1": {
+                    "module": "vb/action/builtin/callChainAction",
+                    "parameters": {
+                        "id": "UploadDashboard",
+                        "params": {
+                            "detail": "{{ $chain.variables.detail }}"
+                        }
+                    },
+                    "outcomes": {
+                        "success": "if1"
+                    }
+                },
+                "if1": {
+                    "module": "vb/action/builtin/ifAction",
+                    "parameters": {
+                        "condition": "[[ $page.variables.isDashboardUploaded==true ]]"
+                    },
+                    "outcomes": {
+                        "true": "navigateToPage1",
+                        "false": "callModuleFunction2"
+                    }
+                },
+                "callModuleFunction1": {
+                    "module": "vb/action/builtin/callModuleFunctionAction",
+                    "parameters": {
+                        "module": "[[ $page.functions ]]",
+                        "functionName": "showLoader"
+                    },
+                    "outcomes": {
+                        "success": "callActionChain1"
+                    }
+                },
+                "callModuleFunction2": {
+                    "module": "vb/action/builtin/callModuleFunctionAction",
+                    "parameters": {
+                        "module": "[[ $page.functions ]]",
+                        "functionName": "hideLoader"
+                    }
+                }
+            }
+        },
+        "UploadStickerPhoto": {
+            "description": "",
+            "variables": {
+                "detail": {
+                    "required": true,
+                    "type": "any",
+                    "input": "fromCaller"
+                }
+            },
+            "root": "getSurveyID",
+            "actions": {
+                "getSurveyID": {
+                    "module": "vb/action/builtin/callModuleFunctionAction",
+                    "parameters": {
+                        "module": "[[ $page.functions ]]",
+                        "functionName": "getTime",
+                        "returnType": "string"
+                    },
+                    "outcomes": {
+                        "success": "assignVariables2"
+                    }
+                },
+                "assignVariables2": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$flow.variables.timeStamp": {
+                            "source": "{{ $chain.results.getSurveyID }}"
+                        }
+                    },
+                    "outcomes": {
+                        "success": "takePhoto1"
+                    }
+                },
+                "callModuleFunction1": {
+                    "module": "vb/action/builtin/callModuleFunctionAction",
+                    "parameters": {
+                        "module": "[[ $page.functions ]]",
+                        "functionName": "saveStickerPhoto",
+                        "params": [
+                            "{{ $chain.results.takePhoto1.file }}",
+                            "{{ $flow.variables.timeStamp+\"_StickerNumber.jpg\" }}"
+                        ],
+                        "returnType": "string"
+                    },
+                    "outcomes": {
+                        "success": "assignVariables11"
+                    }
+                },
+                "callModuleFunction2": {
+                    "module": "vb/action/builtin/callModuleFunctionAction",
+                    "parameters": {
+                        "module": "[[ $page.functions ]]",
+                        "functionName": "getLocalTime",
+                        "params": [
+                            "{{ $chain.results.getSurveyID }}"
+                        ],
+                        "returnType": "string"
+                    },
+                    "outcomes": {
+                        "success": "assignVariables8"
+                    }
+                },
+                "assignVariables8": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$flow.variables.localTime": {
+                            "source": "{{ $chain.results.callModuleFunction2 }}"
+                        }
+                    },
+                    "outcomes": {
+                        "success": "callModuleFunction11"
+                    },
+                    "description": "This is the Survey capture date time"
+                },
+                "if2": {
+                    "module": "vb/action/builtin/ifAction",
+                    "parameters": {
+                        "condition": "[[ (navigator.onLine) ]]"
+                    },
+                    "outcomes": {
+                        "true": "UploadToDatabase",
+                        "false": "callModuleFunction1"
+                    }
+                },
+                "fireNotification8": {
+                    "module": "vb/action/builtin/fireNotificationEventAction",
+                    "parameters": {
+                        "message": "[[ $application.translations.app.fireNotification8_message_f5d0 ]]",
+                        "displayMode": "transient",
+                        "summary": "[[ $application.translations.app.fireNotification8_summary_3bea ]]"
+                    },
+                    "outcomes": {
+                        "success": "callModuleFunction9"
+                    }
+                },
+                "callRestEndpoint4": {
+                    "module": "vb/action/builtin/restAction",
+                    "parameters": {
+                        "endpoint": "businessObjects/do_updateStickerPhoto_StickerPhotoBO",
+                        "uriParams": {
+                            "StickerPhotoBO_Id": "1"
+                        },
+                        "body": "{{ $page.variables.paramStickerPhoto }}"
+                    },
+                    "outcomes": {
+                        "success": "assignVariables10",
+                        "failure": "assignVariables6"
+                    }
+                },
+                "assignVariables9": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$page.variables.paramStickerPhoto": {
+                            "source": {
+                                "stickerPhotoPath": "{{ $chain.results.UploadToDatabase.headers.get('location') }}",
+                                "surveyIDVar": "{{ $flow.variables.timeStamp }}"
+                            },
+                            "reset": "none",
+                            "auto": "always"
+                        }
+                    },
+                    "outcomes": {
+                        "success": "callRestEndpoint4"
+                    }
+                },
+                "UploadToDatabase": {
+                    "module": "vb/action/builtin/restAction",
+                    "parameters": {
+                        "endpoint": "ordsTestGallery/postImages",
+                        "uriParams": {
+                            "title": "{{ $flow.variables.timeStamp+\"_StickerNumber.jpg\" }}",
+                            "content_type": "image/png"
+                        },
+                        "body": "{{ $chain.results.takePhoto1.file }}",
+                        "responseBodyFormat": "",
+                        "contentType": "image/png"
+                    },
+                    "outcomes": {
+                        "success": "assignVariables9",
+                        "failure": "assignVariables7"
+                    }
+                },
+                "assignVariables10": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$page.variables.StickerPhotoUploaded": {
+                            "source": true
+                        }
+                    },
+                    "outcomes": {
+                        "success": "callModuleFunction9"
+                    }
+                },
+                "takePhoto1": {
+                    "module": "vb/action/builtin/takePhotoAction",
+                    "parameters": {
+                        "mediaType": "image"
+                    },
+                    "outcomes": {
+                        "success": "callModuleFunction10"
+                    }
+                },
+                "fireNotification1": {
+                    "module": "vb/action/builtin/fireNotificationEventAction",
+                    "parameters": {
+                        "summary": "[[ $application.translations.app.fireNotification1_summary_f9e3 ]]",
+                        "displayMode": "transient",
+                        "message": "[[ $application.translations.app.fireNotification1_message_99ca ]]"
+                    },
+                    "outcomes": {
+                        "success": "callModuleFunction9"
+                    }
+                },
+                "assignVariables6": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$page.variables.StickerPhotoUploaded": {
+                            "source": false
+                        }
+                    },
+                    "outcomes": {
+                        "success": "fireNotification1"
+                    }
+                },
+                "assignVariables7": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$page.variables.StickerPhotoUploaded": {
+                            "source": false
+                        }
+                    },
+                    "outcomes": {
+                        "success": "fireNotification8"
+                    }
+                },
+                "assignVariables11": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$page.variables.StickerPhotoUploaded": {
+                            "source": true
+                        }
+                    },
+                    "outcomes": {
+                        "success": "callModuleFunction9"
+                    }
+                },
+                "callModuleFunction9": {
+                    "module": "vb/action/builtin/callModuleFunctionAction",
+                    "parameters": {
+                        "module": "[[ $page.functions ]]",
+                        "functionName": "hideLoader"
+                    }
+                },
+                "callModuleFunction10": {
+                    "module": "vb/action/builtin/callModuleFunctionAction",
+                    "parameters": {
+                        "module": "[[ $page.functions ]]",
+                        "functionName": "showLoader"
+                    },
+                    "outcomes": {
+                        "success": "callModuleFunction2"
+                    }
+                },
+                "callModuleFunction11": {
+                    "module": "vb/action/builtin/callModuleFunctionAction",
+                    "parameters": {
+                        "module": "[[ $page.functions ]]",
+                        "functionName": "setImageSrc",
+                        "params": [
+                            "{{ $chain.results.takePhoto1.file }}"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": "if2"
+                    }
+                }
+            }
+        },
+        "StartHeiGeoGPS": {
+            "root": "callModuleFunction1",
+            "description": "",
+            "actions": {
+                "callModuleFunction1": {
+                    "module": "vb/action/builtin/callModuleFunctionAction",
+                    "parameters": {
+                        "module": "[[ $page.functions ]]",
+                        "functionName": "StartHeiGeo"
+                    }
+                }
+            }
+        },
+        "checkDwellingType": {
+            "description": "",
+            "variables": {
+                "value": {
+                    "required": true,
+                    "type": "any",
+                    "input": "fromCaller"
+                }
+            },
+            "root": "runInParallel1",
+            "actions": {
+                "if1": {
+                    "module": "vb/action/builtin/ifAction",
+                    "parameters": {
+                        "condition": "[[ $page.variables.paramDashVar.dwellingType==\"Hostel\" ]]"
+                    },
+                    "outcomes": {
+                        "true": "assignVariables2",
+                        "false": "assignVariables3"
+                    }
+                },
+                "assignVariables2": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$flow.variables.validatorIsDwellingTypeHostel": {
+                            "source": true
+                        }
+                    },
+                    "outcomes": {
+                        "success": "return1"
+                    }
+                },
+                "assignVariables3": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$flow.variables.validatorIsDwellingTypeHostel": {
+                            "source": false
+                        }
+                    },
+                    "outcomes": {
+                        "success": "return1"
+                    }
+                },
+                "runInParallel1": {
+                    "module": "vb/action/builtin/forkAction",
+                    "parameters": {
+                        "actions": {
+                            "if1": "if1",
+                            "if2": "if2"
+                        }
+                    }
+                },
+                "if2": {
+                    "module": "vb/action/builtin/ifAction",
+                    "parameters": {
+                        "condition": "[[ $page.variables.paramDashVar.dwellingType==\"Select\" || $page.variables.paramDashVar.dwellingType==\"Please Select\" ]]"
+                    },
+                    "outcomes": {
+                        "true": "assignVariables1",
+                        "false": "assignVariables4"
+                    }
+                },
+                "assignVariables1": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$page.variables.isDwellingTypeSelect": {
+                            "source": true
+                        }
+                    },
+                    "outcomes": {
+                        "success": "return2"
+                    }
+                },
+                "assignVariables4": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$page.variables.isDwellingTypeSelect": {
+                            "source": false
+                        }
+                    },
+                    "outcomes": {
+                        "success": "return2"
+                    }
+                },
+                "return1": {
+                    "module": "vb/action/builtin/returnAction",
+                    "parameters": {
+                        "outcome": "success"
+                    }
+                },
+                "return2": {
+                    "module": "vb/action/builtin/returnAction",
+                    "parameters": {
+                        "outcome": "success"
+                    }
+                }
+            }
+        },
+        "NavigateToOfflineSync": {
+            "description": "",
+            "variables": {
+                "detail": {
+                    "required": true,
+                    "type": "any",
+                    "input": "fromCaller"
+                }
+            },
+            "root": "navigateToPage1",
+            "actions": {
+                "navigateToPage1": {
+                    "module": "vb/action/builtin/navigateToPageAction",
+                    "parameters": {
+                        "page": "uploadofflinedataandimages"
+                    }
+                }
+            }
+        }
+ },
+ "eventListeners": {
+  "ojButton5400921462OjAction": {
+   "chains": [
+    {
+     "chainId": "StartSurvey",
+     "parameters": {
+						"detail": "{{ $event.detail }}"
+					}
+    }
+   ]
+  },
+  "ojButton5400921463OjAction": {
+   "chains": [
+    {
+     "chainId": "UploadStickerPhoto"
+    }
+   ]
+  },
+        "ojButton5400921461OjAction": {
+            "chains": [
+                {
+                    "chainId": "NoSurvey"
+                }
+            ]
+        },
+        "ojSelectOne5400921461Value": {
+            "chains": [
+                {
+                    "chainId": "CaptureStatusSurvey",
+                    "parameters": {
+                        "value": "{{ $event.detail.value }}"
+                    }
+                }
+            ]
+        },
+        "dwellingTypeValue": {
+            "chains": [
+                {
+                    "chainId": "checkDwellingType"
+                }
+            ]
+        },
+        "vbEnter": {
+            "chains": [
+                {
+                    "chainId": "StartHeiGeoGPS",
+                    "parameters": {}
+                }
+            ]
+        },
+        "ojButton5400921469OjAction": {
+            "chains": [
+                {
+                    "chainId": "NavigateToOfflineSync",
+                    "parameters": {
+                        "detail": "{{ $event.detail }}"
+                    }
+                }
+            ]
+        }
+ },
+ "imports": {
+  "components": {
+   "oj-ext-mobile-page-template": {
+				"path": "vb/components/mobile-page-template/loader"
+			},
+   "oj-button": {
+				"path": "ojs/ojbutton"
+			},
+   "oj-label": {
+				"path": "ojs/ojlabel"
+			},
+   "oj-input-text": {
+				"path": "ojs/ojinputtext"
+			},
+   "oj-select-one": {
+				"path": "ojs/ojselectcombobox"
+			},
+   "oj-validation-group": {
+				"path": "ojs/ojvalidationgroup"
+			},
+            "oj-option": {
+                "path": "ojs/ojoption"
+            }
+  }
+ }
+}

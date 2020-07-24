@@ -1,0 +1,122 @@
+{
+    "fieldValidators": [],
+    "objectFunctions": [
+        {
+            "active": "active",
+            "functionBody": "def vo = newView('SpouseData')\nvo.appendViewCriteria(\"surveyID = '\"+surveyIDVar+\"'\")\nvo.executeQuery()\nif (!vo.hasNext()){\n  r = vo.createRow()\n    r.surveyID = surveyIDVar;\n\n  r.SpouseIdNumber=idNumberSpouse;\n  r.SpouseFirstName=fullNameSpouse;\n  r.SpouseSurname=surnameSpouse;\n  r.SpouseGender=genderSpouse;\n  r.SpouseAge=ageSpouse;\n  r.SpouseCitizenship=citizenshipSpouse;\n  r.SpouseCitizenshipOther=citizenshipOtherSpouse;\n  r.SpousePopGroup=popGroupSpouse;\n  r.SpouseDisability=disabilitySpouse;\n  r.SpouseDisabilityType=disabilityTypeSpouse;\n  r.SpouseDisabilityOther=disabilityTypeOtherSpouse;\n  r.SpouseHouseholdGrants=grantsSpouse;\n  r.SpouseContactDetails=contactSpouse;\n  r.SpouseHiEducation=eduSpouse;\n  r.SpouseEmpStatus=empStatusSpouse;\n  \n  r.SpouseStateOldAgeWarVet=stateOldAgeWarVetSpouse;\t\t\n  r.SpouseDisabilityGrant=disabilityGrantSpouse;\n  r.SpouseChildSupportGrant=childSupportGrantSpouse;\n  r.SpouseChildFosterCareGr=childFosterCareGrSpouse;\n  r.SpouseGrantInAid=grantInAidSpouse;\n  r.SpouseCareDependencyGra=careDependencyGraSpouse;\t\t\n  r.SpouseSocialReliefGrant=socialReliefGrantSpouse;\n  r.SpouseUnemploymentInsur=unemploymentInsurSpouse;\n\n  r.governmentSubsidyStatusSpouse=governmentSubsidyStatusSpouse;\n\n  vo.insertRow(r)\n}\nwhile (vo.hasNext()) {\n  def r = vo.next();\n  r.SpouseIdNumber=idNumberSpouse;\n  r.SpouseFirstName=fullNameSpouse;\n  r.SpouseSurname=surnameSpouse;\n  r.SpouseGender=genderSpouse;\n  r.SpouseAge=ageSpouse;\n  r.SpouseCitizenship=citizenshipSpouse;\n  r.SpouseCitizenshipOther=citizenshipOtherSpouse;\n  r.SpousePopGroup=popGroupSpouse;\n  r.SpouseDisability=disabilitySpouse;\n  r.SpouseDisabilityType=disabilityTypeSpouse;\n  r.SpouseDisabilityOther=disabilityTypeOtherSpouse;\n  r.SpouseHouseholdGrants=grantsSpouse;\n  r.SpouseContactDetails=contactSpouse;\n  r.SpouseHiEducation=eduSpouse;\n  r.SpouseEmpStatus=empStatusSpouse;\n  r.SpouseStateOldAgeWarVet=stateOldAgeWarVetSpouse;\t\t\n  r.SpouseDisabilityGrant=disabilityGrantSpouse;\n  r.SpouseChildSupportGrant=childSupportGrantSpouse;\n  r.SpouseChildFosterCareGr=childFosterCareGrSpouse;\n  r.SpouseGrantInAid=grantInAidSpouse;\n  r.SpouseCareDependencyGra=careDependencyGraSpouse;\t\t\n  r.SpouseSocialReliefGrant=socialReliefGrantSpouse;\n  r.SpouseUnemploymentInsur=unemploymentInsurSpouse;\n  r.governmentSubsidyStatusSpouse=governmentSubsidyStatusSpouse;\n}",
+            "functionName": "UpdateSpouseDetails",
+            "lastUpdate": "2020-03-21T06:33:02",
+            "oid": "e747bf8e-e8dd-4b21-ab7f-be5aaf373ca3",
+            "parameters": [
+                {
+                    "parameterName": "fullNameSpouse",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "surnameSpouse",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "genderSpouse",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "ageSpouse",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "citizenshipSpouse",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "citizenshipOtherSpouse",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "popGroupSpouse",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "disabilitySpouse",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "disabilityTypeSpouse",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "disabilityTypeOtherSpouse",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "grantsSpouse",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "contactSpouse",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "eduSpouse",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "empStatusSpouse",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "stateOldAgeWarVetSpouse",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "disabilityGrantSpouse",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "childSupportGrantSpouse",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "childFosterCareGrSpouse",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "grantInAidSpouse",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "careDependencyGraSpouse",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "socialReliefGrantSpouse",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "unemploymentInsurSpouse",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "idNumberSpouse",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "surveyIDVar",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "governmentSubsidyStatusSpouse",
+                    "parameterType": "String"
+                }
+            ],
+            "returnType": "void",
+            "scriptMimeType": "application/x-adf-groovy",
+            "visibility": [
+                "external"
+            ]
+        }
+      ],
+    "objectValidators": [],
+    "triggers": [],
+    "fieldTriggers": []
+}

@@ -1,0 +1,78 @@
+{
+    "fieldValidators": [],
+    "objectFunctions": [
+        {
+            "active": "active",
+            "functionBody": "def vo = newView('Service')\nvo.appendViewCriteria(\"surveyID = '\"+surveyIDVar+\"'\")\nvo.executeQuery()\nif (!vo.hasNext()){\n  r = vo.createRow()\n  r.surveyID = surveyIDVar;\n\n  r.CrimeDetails=crimeDetails;\n  r.WaterLitres=waterLitres;\n  r.WaterType=waterType;\n  r.ToiletType=toiletType;\n  r.WasteType=wasteType;\n  r.HealthAccess=healthType;\n  r.CommType=commType;\n  r.CrimeVictim=crimeVictim;\n  r.PECooking=primaryEnergyCooking;\n  r.PELighting=primaryEnergyLighting;\n  r.PEHeating=primaryEnergyHeating;\n  r.TransportType=transport;\n  r.wasteCollectionFrequenc = wasteCollection;\n  vo.insertRow(r);\n}\nwhile (vo.hasNext()) {\n  def r = vo.next();\n  r.CrimeDetails=crimeDetails;\n  r.WaterLitres=waterLitres;\n  r.WaterType=waterType;\n  r.ToiletType=toiletType;\n  r.WasteType=wasteType;\n  r.HealthAccess=healthType;\n  r.CommType=commType;\n  r.CrimeVictim=crimeVictim;\n  r.PECooking=primaryEnergyCooking;\n  r.PELighting=primaryEnergyLighting;\n  r.PEHeating=primaryEnergyHeating;\n  r.TransportType=transport;\n  r.wasteCollectionFrequenc = wasteCollection; \n}\n",
+            "functionName": "UpdateServices",
+            "lastUpdate": "2020-03-19T15:08:24",
+            "oid": "af0e103c-f05f-4c90-97e2-9780e1260561",
+            "parameters": [
+                {
+                    "parameterName": "crimeDetails",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "waterType",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "waterLitres",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "wasteType",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "healthType",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "toiletType",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "commType",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "crimeVictim",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "primaryEnergyCooking",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "primaryEnergyLighting",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "primaryEnergyHeating",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "transport",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "surveyIDVar",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "wasteCollection",
+                    "parameterType": "String"
+                }
+            ],
+            "returnType": "void",
+            "scriptMimeType": "application/x-adf-groovy",
+            "visibility": [
+                "external"
+            ]
+        }
+      ],
+    "objectValidators": [],
+    "triggers": [],
+    "fieldTriggers": []
+}

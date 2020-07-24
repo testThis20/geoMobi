@@ -1,0 +1,366 @@
+{
+    "displayLabel": "Data_Personal",
+    "name": "PersonalData",
+    "oid": "cffcd251-1f6f-4939-a8d3-7bdc0f98e8e2",
+    "fields": [
+        {
+            "displayLabel": "Id",
+            "internal": true,
+            "key": true,
+            "name": "id",
+            "oid": "dbaa50eb-4923-4fc2-bfbd-1b53d1e802e1",
+            "required": true,
+            "type": "number",
+            "unique": true
+        },
+        {
+            "displayLabel": "Created",
+            "internal": true,
+            "name": "creationDate",
+            "oid": "c2e31812-b4e1-4809-9191-fa523d57d50b",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Last Updated",
+            "internal": true,
+            "name": "lastUpdateDate",
+            "oid": "04f20cfb-79f1-4c50-b779-6fc321aa5590",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Created By",
+            "internal": true,
+            "name": "createdBy",
+            "oid": "fdce1483-b769-4386-a5a7-46dedbd80ec6",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Last Updated By",
+            "internal": true,
+            "name": "lastUpdatedBy",
+            "oid": "e4b608d1-9904-45f7-bf20-54bfb69b749d",
+            "type": "string"
+        },
+        {
+            "displayLabel": "<internal>",
+            "hidden": true,
+            "internal": true,
+            "name": "abcsChangeNumber",
+            "oid": "0452e543-5683-4dda-ac8d-499281feb046",
+            "type": "number"
+        },
+        {
+            "name": "IDNumber",
+            "oid": "94c846cd-c1e9-4e85-b6e3-25f3ce48d011",
+            "displayLabel": "IDNumber",
+            "type": "string"
+        },
+        {
+            "name": "Name",
+            "oid": "70475b28-bdc8-4624-a901-95b92ed0128a",
+            "displayLabel": "Name",
+            "type": "string"
+        },
+        {
+            "name": "Surname",
+            "oid": "de428c79-2a23-4532-a013-f3fbff52eeb6",
+            "displayLabel": "Surname",
+            "type": "string"
+        },
+        {
+            "name": "Gender",
+            "oid": "e0ba5c11-870a-49b5-8902-0ec11d26687b",
+            "displayLabel": "Gender",
+            "type": "string"
+        },
+        {
+            "name": "PopGroup",
+            "oid": "d521033d-a2d8-4ef2-a508-c1fc2e224419",
+            "displayLabel": "PopGroup",
+            "type": "string"
+        },
+        {
+            "name": "MarStatus",
+            "oid": "c85eb7ff-15b0-4d00-b5cc-d8a5e572aad7",
+            "displayLabel": "MarStatus",
+            "type": "string"
+        },
+        {
+            "name": "ContactDetails",
+            "oid": "0b5d2e99-fa40-42a6-bef2-7860658f8e75",
+            "displayLabel": "ContactDetails",
+            "type": "string"
+        },
+        {
+            "name": "Nationality",
+            "oid": "4b43490b-8c9f-4b25-b0b4-3421f2296ffd",
+            "displayLabel": "Nationality",
+            "type": "string"
+        },
+        {
+            "name": "Disability",
+            "oid": "66d85522-5b0e-4977-9d74-5b1bcc3cd60a",
+            "displayLabel": "Disability",
+            "type": "string"
+        },
+        {
+            "name": "HiEducation",
+            "oid": "7acb565c-a7b9-4680-a4f3-512e54748284",
+            "displayLabel": "HiEducation",
+            "type": "string"
+        },
+        {
+            "name": "Employment",
+            "oid": "d8ca4f3b-68fa-41af-a64d-a94783f26baa",
+            "displayLabel": "Employment",
+            "type": "string"
+        },
+        {
+            "name": "Grants",
+            "oid": "9167aaf1-d46c-428e-a5a4-176d118e37ea",
+            "displayLabel": "Grants",
+            "type": "string"
+        },
+        {
+            "name": "NationalityOther",
+            "oid": "c65a386a-2c3d-4100-8218-840bbaa7ded6",
+            "displayLabel": "NationalityOther",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            }
+        },
+        {
+            "name": "DisabilityType",
+            "oid": "46340209-0684-4c6f-9e5b-b0e995e7774d",
+            "displayLabel": "DisabilityType",
+            "type": "string"
+        },
+        {
+            "name": "DisabilityTypeOther",
+            "oid": "07563495-afb9-44fb-adb3-fbf9b728b459",
+            "displayLabel": "DisabilityTypeOther",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            }
+        },
+        {
+            "name": "StateOldAgeWarVetPensio",
+            "oid": "d7f6d158-3650-4aed-9374-81bf79fd96ef",
+            "displayLabel": "State/OldAge/WarVet/Pension",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            }
+        },
+        {
+            "name": "DisabilityGrant",
+            "oid": "0af86c42-b948-499b-be91-2d6606e4aafe",
+            "displayLabel": "DisabilityGrant",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            }
+        },
+        {
+            "name": "ChildSupportGrant",
+            "oid": "cba6149c-8c0d-48c2-b6d5-eb85ed6191b0",
+            "displayLabel": "ChildSupportGrant",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            }
+        },
+        {
+            "name": "ChildFosterCareGrant",
+            "oid": "4ffdbcd1-c4c8-4af6-89e5-57c306db3eb6",
+            "displayLabel": "ChildFosterCareGrant",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            }
+        },
+        {
+            "name": "GrantInAid",
+            "oid": "05598613-d114-45dc-973c-64e381a3fffe",
+            "displayLabel": "GrantInAid",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            }
+        },
+        {
+            "name": "CareDependencyGrant",
+            "oid": "e3c048c8-33f3-49da-a200-3c439ef36156",
+            "displayLabel": "CareDependencyGrant",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            }
+        },
+        {
+            "name": "SocialReliefGrant",
+            "oid": "992e5229-2254-47bc-bcb8-6f8b7126860f",
+            "displayLabel": "SocialReliefGrant",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            }
+        },
+        {
+            "name": "UnemploymentInsuranceFu",
+            "oid": "971f086b-8090-4473-a581-36ea4acc58bc",
+            "displayLabel": "UnemploymentInsuranceFund",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            }
+        },
+        {
+            "name": "AgeHH",
+            "oid": "6289595d-8c3a-4d0d-867f-5c930531511c",
+            "displayLabel": "AgeHH",
+            "type": "string"
+        },
+        {
+            "name": "NumberOfDependants",
+            "oid": "ca84802f-feba-423c-8772-bb30db5127e2",
+            "displayLabel": "NumberOfDependants",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "0"
+                }
+            }
+        },
+        {
+            "name": "DependantBCPhoto",
+            "oid": "1bbd4ffc-d902-4b27-8931-2f5fdd31a497",
+            "displayLabel": "DependantBCPhoto",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            }
+        },
+        {
+            "name": "surveyID",
+            "oid": "69773cd7-11ae-4259-a3b2-299c172e33c9",
+            "displayLabel": "surveyID",
+            "type": "string",
+            "unique": true
+        },
+        {
+            "name": "PhotoID",
+            "oid": "7e004e86-470a-4fe8-8e12-b769897e50c4",
+            "displayLabel": "PhotoID",
+            "type": "string"
+        },
+        {
+            "name": "PhotoDwelling",
+            "oid": "11f0641b-824e-45fd-b318-d0dc1ebe3a2e",
+            "displayLabel": "PhotoDwelling",
+            "type": "string"
+        },
+        {
+            "name": "PhotoMarriageCertificate",
+            "oid": "edadf6de-08c5-4bf6-b085-d1b0364e9b5d",
+            "displayLabel": "PhotoMarriageCertificate",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            }
+        },
+        {
+            "name": "governmentSubsidyStatusHead",
+            "oid": "d5744b96-bdb2-43e3-a377-e3842339ecf5",
+            "displayLabel": "governmentSubsidyStatusHead",
+            "type": "string"
+        }
+    ],
+    "security": {
+        "type": "local",
+        "acl": [
+            {
+                "roleId": "approle.anonymous.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "roleId": "approle.authenticated.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            }
+        ]
+    },
+    "pluralLabel": "Data_Personal"
+}

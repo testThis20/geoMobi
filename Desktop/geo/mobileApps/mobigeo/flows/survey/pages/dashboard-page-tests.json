@@ -1,0 +1,28 @@
+{
+    "chains": {
+        "NoSurvey": {
+            "Test 1": {
+                "mocks": {
+                    "callActionChain1": {
+                        "outcome": "success"
+                    }
+                }
+            }
+        },
+        "UploadDashboard": {
+            "Test 1": {
+                "context": {},
+                "mocks": {
+                    "callRestEndpoint1": {
+                        "outcome": "success",
+                        "result": {
+                            "status": 200,
+                            "headers": {},
+                            "body": {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+   }

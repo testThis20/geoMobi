@@ -1,0 +1,27 @@
+{
+    "chains": {
+        "UsernameInput": {
+            "Test 1": {
+                "mocks": {
+                    "callRestEndpoint1": {
+                        "outcome": "success",
+                        "result": {
+                            "status": 200,
+                            "headers": {},
+                            "body": {}
+                        }
+                    },
+                    "callRestEndpoint2": {
+                        "outcome": "success",
+                        "result": {
+                            "status": 200,
+                            "headers": {},
+                            "body": {}
+                        }
+                    }
+                }
+            }
+        },
+        "SignIn": {}
+    }
+   }

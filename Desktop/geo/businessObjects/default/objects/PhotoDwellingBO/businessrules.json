@@ -1,0 +1,30 @@
+{
+    "fieldValidators": [],
+    "objectFunctions": [
+        {
+            "active": "active",
+            "functionBody": "def vo = newView('PersonalData')\nvo.appendViewCriteria(\"surveyID = '\"+surveyIDVar+\"'\")\nvo.executeQuery()\nif (!vo.hasNext()){\n  r = vo.createRow()\n  r.surveyID = surveyIDVar;\n  r.PhotoDwelling=dwellingPhoto;\n  vo.insertRow(r);\n}\nwhile (vo.hasNext()) {\n  def r = vo.next();\n    r.PhotoDwelling=dwellingPhoto;\n    \n}\n",
+            "functionName": "updateSurveyPhotos",
+            "lastUpdate": "2020-03-21T04:16:59",
+            "oid": "09052a8e-67e8-4459-9868-9adb263e4691",
+            "parameters": [
+                {
+                    "parameterName": "dwellingPhoto",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "surveyIDVar",
+                    "parameterType": "String"
+                }
+            ],
+            "returnType": "void",
+            "scriptMimeType": "application/x-adf-groovy",
+            "visibility": [
+                "external"
+            ]
+        }
+      ],
+    "objectValidators": [],
+    "triggers": [],
+    "fieldTriggers": []
+}

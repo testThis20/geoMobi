@@ -1,0 +1,44 @@
+<div id="oj-ext-mobile-page-wrapper" class="oj-offcanvas-outer-wrapper oj-offcanvas-page">
+  <oj-ext-mobile-navigation-bar-drawer id="mobile-navigation-drawer" on-navigation-action="[[$listeners.navDrawerNavigation]]" selection="[[$page.currentFlow]]">
+    <div slot="header">
+      <oj-avatar role="img" size="md" initials="[[ $page.translations.app.avatar_initials ]]" id="navigation-bar-avatar"
+          :aria-label="[[ $page.translations.app.avatar_label ]]">
+      </oj-avatar>
+      <h2 style="margin-left: auto; margin-right: auto;">
+        <oj-bind-text value="[[ $page.translations.app.avatar_title ]]"></oj-bind-text>
+      </h2>
+    </div>
+
+    <oj-ext-mobile-navigation-item name="Sign" action="sign" iconclass="oj-fwk-icon oj-fwk-icon-list"></oj-ext-mobile-navigation-item>
+
+    <div slot="footer" class="oj-flex-bar oj-sm-justify-content-center">
+      <h2>
+        <oj-bind-text value="[[ $page.translations.app.nav_drawer_application_title ]]"></oj-bind-text>
+      </h2>
+    </div>
+  </oj-ext-mobile-navigation-bar-drawer>
+  <div id="page" class="oj-hybrid-applayout-page">
+    <!-- for message notifications -->
+    <oj-messages id="vbDefaultNotifier" position="{}" display="general" messages="{{$page.variables.messagesADP}}" on-oj-close="[[$listeners.onMessageClose]]"></oj-messages>
+
+    <!-- Where Visual Pages will be rendered -->
+    <oj-vb-content id="vbRouterContent" class="vbcs-pages-module" config="[[vbRouterFlow]]"></oj-vb-content>
+  </div>
+</div>
+<oj-popup id="pwaAddToHomeScreen" modality="modal" style="display:none">
+    <h2><oj-bind-text value="[[$page.translations.app.add_to_home_screen_header]]"></oj-bind-text></h2>
+    <div class="oj-flex oj-sm-flex-wrap-nowrap oj-sm-align-items-center">
+        <img class="oj-flex-item oj-sm-flex-none" :src="[[ $application.path + 'resources/icons/icon-192x192.png']]" width="32" height="32">
+        <h4 class="oj-flex-item oj-sm-margin-2x-start">
+            <oj-bind-text value="[[$page.translations.app.add_to_home_screen]]"></oj-bind-text>
+        </h4>
+    </div>
+    <div class="oj-flex oj-sm-justify-content-flex-end">
+        <oj-button on-oj-action="[[$listeners.addToHomeScreenCancel]]" chroming="full" class="oj-sm-margin-2x-end">
+            <oj-bind-text value="[[$page.translations.app.add_to_home_screen_cancel]]"></oj-bind-text>
+        </oj-button>
+        <oj-button on-oj-action="[[$listeners.addToHomeScreenConfirm]]" chroming="full" class="oj-sm-margin-2x-end">
+            <oj-bind-text value="[[$page.translations.app.add_to_home_screen_confirm]]"></oj-bind-text>
+        </oj-button>
+    </div>
+</oj-popup>

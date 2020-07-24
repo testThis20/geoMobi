@@ -1,0 +1,32 @@
+{
+    "buildProfiles": {
+        "defaultProfiles": {
+            "android": {
+                "stage": "GeoMobi_011915324465131971",
+                "publish": "GeoMobi_011915324465131971"
+            },
+            "ios": {
+                "stage": "undefined",
+                "publish": "undefined"
+            }
+        },
+        "androidProfiles": [
+
+            {
+                "OS": "android",
+                "profileId": "GeoMobi_key_09663425917190629",
+                "profileName": "GeoMobi_key",
+                "appID": "vbcs.mobigeo.geomobi.appid",
+                "buildType": "debug",
+                "versionName": "1.0.0",
+                "versionCode": 1,
+                "keystorePassword": "vb_0fd38fc1-85b9-483b-8736-5e3576b49e3a",
+                "keyAlias": "GeoMobi_KeyStore",
+                "keyPassword": "vb_70c20f6e-e780-45c8-a57a-74ecf2e16f43",
+                "keystoreFile": "vb_4e3c8277-b2e4-4702-bf84-bbeb0f1d4a12",
+                "customTemplateId": "bluetoothGeoLocation_07835527068911976"
+            }
+        ],
+        "iosProfiles": [ ]
+    }
+}

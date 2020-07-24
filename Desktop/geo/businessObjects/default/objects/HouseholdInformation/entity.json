@@ -1,0 +1,426 @@
+{
+    "displayLabel": "Data_HouseHold",
+    "name": "HouseholdInformation",
+    "oid": "2f26fabd-e79e-424f-8387-bb136570af6e",
+    "fields": [
+        {
+            "displayLabel": "Id",
+            "internal": true,
+            "key": true,
+            "name": "id",
+            "oid": "33f38a1d-dc46-4923-8875-c94f05f79049",
+            "required": true,
+            "type": "number",
+            "unique": true
+        },
+        {
+            "displayLabel": "Created",
+            "internal": true,
+            "name": "creationDate",
+            "oid": "76dd483f-754d-42bd-a4ef-ace30c5b0e97",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Last Updated",
+            "internal": true,
+            "name": "lastUpdateDate",
+            "oid": "b0f6a787-ff8b-4bff-a1e6-a85d98ea3827",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Created By",
+            "internal": true,
+            "name": "createdBy",
+            "oid": "fefabec0-382f-4bb7-ad84-d61d89e37867",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Last Updated By",
+            "internal": true,
+            "name": "lastUpdatedBy",
+            "oid": "e938ea13-f0c9-439f-ad3f-9c474a54b717",
+            "type": "string"
+        },
+        {
+            "displayLabel": "<internal>",
+            "hidden": true,
+            "internal": true,
+            "name": "abcsChangeNumber",
+            "oid": "f11e8be0-0abf-4790-a562-e765c6fc7610",
+            "type": "number"
+        },
+        {
+            "name": "HomeLanguage",
+            "oid": "f1534bad-578a-4206-92ec-a0c23237755d",
+            "displayLabel": "HomeLanguage",
+            "type": "string"
+        },
+        {
+            "name": "HouseholdIncome",
+            "oid": "74790d26-aa88-4ad5-b1e9-7a0ba7c0308d",
+            "displayLabel": "HouseholdIncome",
+            "type": "string"
+        },
+        {
+            "name": "dwellingDurationYears",
+            "oid": "ceea0a1c-8dd5-49a7-8c31-3e5d913a77b3",
+            "displayLabel": "Dwelling Duration Years",
+            "type": "number"
+        },
+        {
+            "name": "dwellingDurationMonths",
+            "oid": "89b2bc44-0f99-4fb2-9f63-8c19e4ced0d9",
+            "displayLabel": "Dwelling Duration Months",
+            "type": "number"
+        },
+        {
+            "name": "dwellingOwnership",
+            "oid": "c1ca74b4-e591-48f7-a6f8-91300a42f7c2",
+            "displayLabel": "Dwelling Ownership",
+            "type": "string"
+        },
+        {
+            "name": "rentMonthlyAmount",
+            "oid": "fe08d6c7-f071-465a-addf-5b4b9490365b",
+            "displayLabel": "Rent Monthly Amount",
+            "type": "number",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": 0
+                }
+            }
+        },
+        {
+            "name": "rentReason",
+            "oid": "14bdf046-0fcd-4a3e-8ecb-c39f0471c823",
+            "displayLabel": "Rent Reason",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            }
+        },
+        {
+            "name": "rentGovernmentHousingLi",
+            "oid": "7852f083-7ec1-42bf-80bc-3d5c29b98c76",
+            "displayLabel": "Rent - Government Housing List",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            }
+        },
+        {
+            "name": "governmentSubsidyStatusHead",
+            "oid": "fb5758ed-7c32-4ea9-afcd-ec9c728b808c",
+            "displayLabel": "Government Subsidy Status - Head Of Household",
+            "type": "string"
+        },
+        {
+            "name": "governmentSubsidyStatusSpouse",
+            "oid": "6930bc99-2079-468d-80a1-2fd4bfc01206",
+            "displayLabel": "Government Subsidy Status - Spouse",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            }
+        },
+        {
+            "name": "province",
+            "oid": "e22c173e-19f0-4295-9ffe-7dfb507151c6",
+            "displayLabel": "Province",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            }
+        },
+        {
+            "name": "town",
+            "oid": "c4b3118b-ee0c-4958-81ff-1e72a5db17f9",
+            "displayLabel": "Town",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            }
+        },
+        {
+            "name": "currentTownDurationYears",
+            "oid": "c8868309-f5b9-4f2d-b7f7-0cd8cc81de13",
+            "displayLabel": "Current Town Duration Years",
+            "type": "number"
+        },
+        {
+            "name": "currentTownDurationMonths",
+            "oid": "29723641-1553-4a39-bf18-69f839d069dc",
+            "displayLabel": "Current Town Duration Months",
+            "type": "number"
+        },
+        {
+            "name": "currentTownReason",
+            "oid": "f595f7ca-1279-4f46-b2b5-7135d3aa201a",
+            "displayLabel": "Current Town Reason",
+            "type": "string"
+        },
+        {
+            "name": "permitType",
+            "oid": "db51c76e-3614-4dcb-bc1f-633bb8edc72c",
+            "displayLabel": "Permit Type",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            }
+        },
+        {
+            "name": "permitExpiryDate",
+            "oid": "3824454f-6ef2-4d2d-b3ac-0a1b58c7809a",
+            "displayLabel": "Permit Expiry Date",
+            "type": "date"
+        },
+        {
+            "name": "permitNumber",
+            "oid": "794cf6e2-317d-409b-8c08-d17f3dcddf7a",
+            "displayLabel": "Permit Number",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            }
+        },
+        {
+            "name": "governmentPropertyDefects",
+            "oid": "27959caf-56d2-4706-aad1-f95c23ab74c8",
+            "displayLabel": "Government Property Defects",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            }
+        },
+        {
+            "name": "roofDefects",
+            "oid": "8377a829-61de-46ef-ba8b-1d7bb5ae3acf",
+            "displayLabel": "Roof Defects",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            }
+        },
+        {
+            "name": "roofDefectDetails",
+            "oid": "c28e95c9-c34b-4a23-864e-efa95dd9f425",
+            "displayLabel": "Roof Defect Details",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            }
+        },
+        {
+            "name": "wallDefects",
+            "oid": "3efaced3-ffec-42dc-8ef0-4908b7a7420f",
+            "displayLabel": "Wall Defects",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            }
+        },
+        {
+            "name": "wallDefectDetails",
+            "oid": "01599151-0c21-49fc-af7f-e80af34f6f3b",
+            "displayLabel": "Wall Defect Details",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            }
+        },
+        {
+            "name": "plumbingDefects",
+            "oid": "4293e6c8-ece2-4ee8-bb00-351da908cba1",
+            "displayLabel": "Plumbing Defects",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            }
+        },
+        {
+            "name": "plumbingDefectDetails",
+            "oid": "6fcd22b5-0078-414d-9aa1-72750bd0323d",
+            "displayLabel": "Plumbing Defect Details",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            }
+        },
+        {
+            "name": "floorDefects",
+            "oid": "f83019a6-f336-4324-be53-8c5d5ae0a154",
+            "displayLabel": "Floor Defects",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            }
+        },
+        {
+            "name": "floorDefectDetails",
+            "oid": "7b64492b-ef1c-46ea-976c-6d8a8e502927",
+            "displayLabel": "Floor Defect Details",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            }
+        },
+        {
+            "name": "doorsWindowsDefects",
+            "oid": "397d18b6-3ce4-4f66-9faa-75c05585850c",
+            "displayLabel": "Doors/Windows Defects",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            }
+        },
+        {
+            "name": "doorsWindowsDefectDetails",
+            "oid": "08005eaf-1d65-48ad-a488-fb5050a11855",
+            "displayLabel": "Doors/WindowsDefect Details",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            }
+        },
+        {
+            "name": "otherDefects",
+            "oid": "b921b683-8cb3-486b-a0cb-5f38e886ca27",
+            "displayLabel": "Other Defects",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            }
+        },
+        {
+            "name": "otherDefectDetails",
+            "oid": "152a9356-1151-4919-875a-2d0c506db1bd",
+            "displayLabel": "Other Defect Details",
+            "type": "string",
+            "defaultValue": {
+                "server": {
+                    "type": "static",
+                    "value": "NA"
+                }
+            }
+        },
+        {
+            "name": "NumberOfRooms",
+            "oid": "a69988c1-0179-481e-ba27-2042a27da98d",
+            "displayLabel": "NumberOfRooms",
+            "type": "string"
+        },
+        {
+            "name": "surveyID",
+            "oid": "a77aeb4c-dacb-492d-a226-e770df2e7432",
+            "displayLabel": "surveyID",
+            "type": "string"
+        }
+    ],
+    "description": "This BO corresponds to section B3 Household Information",
+    "security": {
+        "type": "local",
+        "acl": [
+            {
+                "roleId": "approle.anonymous.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "roleId": "approle.authenticated.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            }
+        ]
+    },
+    "pluralLabel": "Data_HouseHold"
+}

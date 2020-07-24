@@ -1,0 +1,30 @@
+{
+    "fieldValidators": [],
+    "objectFunctions": [
+        {
+            "active": "active",
+            "functionBody": "def vo = newView('PersonalData')\nvo.appendViewCriteria(\"surveyID = '\"+uniqueSurveyID+\"'\")\nvo.executeQuery()\nif (!vo.hasNext()){\n  r = vo.createRow()\n  r.PhotoMarriageCertificate=photoMarriageCertificate;\n  r.surveyID = uniqueSurveyID;\n\n  vo.insertRow(r);\n}\nwhile (vo.hasNext()) {\n  def r = vo.next();\n  r.PhotoMarriageCertificate=photoMarriageCertificate;\n}\n",
+            "functionName": "updateMarriageCerti",
+            "lastUpdate": "2020-03-21T09:02:29",
+            "oid": "43947bb3-d779-46aa-b2b3-ddc0a7203f39",
+            "parameters": [
+                {
+                    "parameterName": "uniqueSurveyID",
+                    "parameterType": "String"
+                },
+                {
+                    "parameterName": "photoMarriageCertificate",
+                    "parameterType": "String"
+                }
+            ],
+            "returnType": "void",
+            "scriptMimeType": "application/x-adf-groovy",
+            "visibility": [
+                "external"
+            ]
+        }
+      ],
+    "objectValidators": [],
+    "triggers": [],
+    "fieldTriggers": []
+}

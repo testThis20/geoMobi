@@ -1,0 +1,73 @@
+{
+    "applicationModelVersion": "19.3.1",
+    "id": "mobigeo",
+    "description": "A new VB app",
+    "defaultPage": "app",
+    "chains": {
+        "hideSpinner": {
+            "description": "Hides the application loading screen shown immediately after the splash screen is dismissed.",
+            "root": "hideSpinner",
+            "actions": {
+                "hideSpinner": {
+                    "module": "vb/action/builtin/callModuleFunctionAction",
+                    "parameters": {
+                        "module": "{{ $functions }}",
+                        "functionName": "hideSpinner"
+                    }
+                }
+            }
+        }
+    },
+    "services": {
+        "businessObjects": {
+            "path": "vb-catalog://services/businessObjects"
+        },
+        "icBuilderDesignGeoMobi1_0Data": {
+            "path": "./services/icBuilderDesignGeoMobi1_0Data/openapi3.json"
+        },
+        "ordsTestGallery": {
+            "path": "./services/ordsTestGallery/openapi3.json"
+        }
+    },
+    "translations": {
+        "app": {
+            "path": "./resources/strings/app/nls/app-strings"
+        }
+    },
+    "events": {
+        "navigateToItem": {
+            "payloadType": {
+                "item": "string"
+            }
+        }
+    },
+    "types": {},
+    "variables": {},
+    "eventListeners": {
+        "vbEnter": {
+            "chains": [
+                {
+                    "chainId": "hideSpinner"
+                }
+            ]
+        }
+    },
+    "userConfig": {
+        "type": "vb/DefaultSecurityProvider",
+        "configuration": {
+            "authentication": {
+                "type": "oraclecloud",
+                "options": {
+                    "login": "",
+                    "logout": "",
+                    "headers": {}
+                }
+            }
+        }
+    },
+    "security": {
+        "access": {
+            "requiresAuthentication": false
+        }
+    }
+}

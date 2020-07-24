@@ -1,0 +1,25 @@
+<oj-ext-mobile-page-template id="page-template" page-title="Sign In">
+ 
+  <div class="oj-flex oj-sm-flex-direction-column oj-sm-justify-content-center" style=" padding:5rem 1rem 1rem 5rem;" data-vb-layout-type="flex">
+   <h1 style="font-size:1.5rem; color:#1752a6; font-weight: bold; padding-top:4rem text-align:center" id="h1--1332266279-1">Housing Demand &amp; Community Survey</h1>
+
+  
+   </div>
+  
+  <div>
+    <oj-validation-group id="CreateForm">
+      <div class="oj-flex oj-sm-flex-direction-column oj-sm-justify-content-center" style=" padding:5rem 5rem 5rem 5rem;" id="DIV--1444192320-1">
+        <oj-label id="oj-label--1444192320-1" for="oj-input-text--1444192320-1" class="oj-flex-item" style="font-size:1.2rem; color:#3e85eb;">Username</oj-label>
+        <oj-input-text id="oj-input-text--1444192320-1" class="oj-flex-item" placeholder="Please enter your username" value="{{ $variables.username }}" on-value-changed="[[$listeners.ojInputText14441923201Value]]" required="true"></oj-input-text>
+        <oj-label id="oj-label--1444192320-2" for="oj-input-password--1444192320-1" class="oj-flex-item" style="font-size:1.2rem; color:#3e85eb;padding-top:2rem;">Password</oj-label>
+        <oj-input-password id="oj-input-password--1444192320-1" class="oj-flex-item" placeholder="Please enter your password" required="true" value="{{ $variables.password }}"></oj-input-password>
+        <div class="oj-flex-item">
+          <oj-button style="padding-top:2rem;" id="oj-button--1444192320-1" disabled="[[ $variables.showLoginButton ]]" chroming="solid" on-oj-action="[[$listeners.ojButton14441923201OjAction]]">Login</oj-button>
+        </div>
+      </div>
+    </oj-validation-group>
+  </div>
+</oj-ext-mobile-page-template>
+<div class="loader-screen" id="loaderid">
+  <div class="loader"></div>
+</div>

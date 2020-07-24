@@ -1,0 +1,40 @@
+{
+    "flowModelVersion": "19.3.1",
+    "id": "sign",
+    "description": "Flow main",
+    "defaultPage": "login",
+    "chains": {
+      },
+    "services": {},
+    "types": {},
+    "variables": {
+        "passPhoto": {
+            "type": "string"
+        },
+        "timeStamp": {
+            "type": "string"
+        },
+        "username": {
+            "type": "string"
+        },
+        "idNumber": {
+            "type": "string"
+        },
+        "XLocation": {
+            "type": "string"
+        },
+        "YLocation": {
+            "type": "string"
+        },
+        "localTime": {
+            "type": "string"
+        },
+        "userID": {
+            "type": "string"
+        },
+        "validatorIsDwellingTypeHostel": {
+            "type": "boolean",
+            "defaultValue": true
+        }
+      }
+}

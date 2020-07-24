@@ -1,0 +1,220 @@
+{
+    "displayLabel": "SpouseDetailsBO",
+    "name": "SpouseDetailsBO",
+    "oid": "489d138b-7a62-4b8e-ade5-ae92f72760e0",
+    "fields": [
+        {
+            "displayLabel": "Id",
+            "internal": true,
+            "key": true,
+            "name": "id",
+            "oid": "401125ad-7f85-4d4d-a39a-8fa1de47d73c",
+            "required": true,
+            "type": "number",
+            "unique": true
+        },
+        {
+            "displayLabel": "Created",
+            "internal": true,
+            "name": "creationDate",
+            "oid": "e5a443f3-11b5-4fa9-888c-5e8755a2b6da",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Last Updated",
+            "internal": true,
+            "name": "lastUpdateDate",
+            "oid": "acf4b22a-1088-4b0b-8c92-e587327577ae",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Created By",
+            "internal": true,
+            "name": "createdBy",
+            "oid": "f555d5a0-930e-4cb6-8f95-60f67ed7e965",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Last Updated By",
+            "internal": true,
+            "name": "lastUpdatedBy",
+            "oid": "a2c23f11-5a10-4825-855f-d6a734a0af0a",
+            "type": "string"
+        },
+        {
+            "displayLabel": "<internal>",
+            "hidden": true,
+            "internal": true,
+            "name": "abcsChangeNumber",
+            "oid": "00d40581-00d4-4569-ae3a-42667fc99c7f",
+            "type": "number"
+        },
+        {
+            "name": "name",
+            "oid": "6a75064d-bf49-4a40-b96e-187195c8ea7a",
+            "displayLabel": "name",
+            "type": "string"
+        }
+    ],
+    "objectFunctions": [
+        {
+            "definition": "def vo = newView('SpouseData')\nvo.appendViewCriteria(\"surveyID = '\"+surveyIDVar+\"'\")\nvo.executeQuery()\nif (!vo.hasNext()){\n  r = vo.createRow()\n    r.surveyID = surveyIDVar;\n\n  r.SpouseIdNumber=idNumberSpouse;\n  r.SpouseFirstName=fullNameSpouse;\n  r.SpouseSurname=surnameSpouse;\n  r.SpouseGender=genderSpouse;\n  r.SpouseAge=ageSpouse;\n  r.SpouseCitizenship=citizenshipSpouse;\n  r.SpouseCitizenshipOther=citizenshipOtherSpouse;\n  r.SpousePopGroup=popGroupSpouse;\n  r.SpouseDisability=disabilitySpouse;\n  r.SpouseDisabilityType=disabilityTypeSpouse;\n  r.SpouseDisabilityOther=disabilityTypeOtherSpouse;\n  r.SpouseHouseholdGrants=grantsSpouse;\n  r.SpouseContactDetails=contactSpouse;\n  r.SpouseHiEducation=eduSpouse;\n  r.SpouseEmpStatus=empStatusSpouse;\n  \n  r.SpouseStateOldAgeWarVet=stateOldAgeWarVetSpouse;\t\t\n  r.SpouseDisabilityGrant=disabilityGrantSpouse;\n  r.SpouseChildSupportGrant=childSupportGrantSpouse;\n  r.SpouseChildFosterCareGr=childFosterCareGrSpouse;\n  r.SpouseGrantInAid=grantInAidSpouse;\n  r.SpouseCareDependencyGra=careDependencyGraSpouse;\t\t\n  r.SpouseSocialReliefGrant=socialReliefGrantSpouse;\n  r.SpouseUnemploymentInsur=unemploymentInsurSpouse;\n\n  r.governmentSubsidyStatusSpouse=governmentSubsidyStatusSpouse;\n\n  vo.insertRow(r)\n}\nwhile (vo.hasNext()) {\n  def r = vo.next();\n  r.SpouseIdNumber=idNumberSpouse;\n  r.SpouseFirstName=fullNameSpouse;\n  r.SpouseSurname=surnameSpouse;\n  r.SpouseGender=genderSpouse;\n  r.SpouseAge=ageSpouse;\n  r.SpouseCitizenship=citizenshipSpouse;\n  r.SpouseCitizenshipOther=citizenshipOtherSpouse;\n  r.SpousePopGroup=popGroupSpouse;\n  r.SpouseDisability=disabilitySpouse;\n  r.SpouseDisabilityType=disabilityTypeSpouse;\n  r.SpouseDisabilityOther=disabilityTypeOtherSpouse;\n  r.SpouseHouseholdGrants=grantsSpouse;\n  r.SpouseContactDetails=contactSpouse;\n  r.SpouseHiEducation=eduSpouse;\n  r.SpouseEmpStatus=empStatusSpouse;\n  r.SpouseStateOldAgeWarVet=stateOldAgeWarVetSpouse;\t\t\n  r.SpouseDisabilityGrant=disabilityGrantSpouse;\n  r.SpouseChildSupportGrant=childSupportGrantSpouse;\n  r.SpouseChildFosterCareGr=childFosterCareGrSpouse;\n  r.SpouseGrantInAid=grantInAidSpouse;\n  r.SpouseCareDependencyGra=careDependencyGraSpouse;\t\t\n  r.SpouseSocialReliefGrant=socialReliefGrantSpouse;\n  r.SpouseUnemploymentInsur=unemploymentInsurSpouse;\n  r.governmentSubsidyStatusSpouse=governmentSubsidyStatusSpouse;\n}\n",
+            "name": "UpdateSpouseDetails",
+            "refId": "e747bf8e-e8dd-4b21-ab7f-be5aaf373ca3",
+            "parameters": [
+                {
+                    "name": "fullNameSpouse",
+                    "type": "String"
+                },
+                {
+                    "name": "surnameSpouse",
+                    "type": "String"
+                },
+                {
+                    "name": "genderSpouse",
+                    "type": "String"
+                },
+                {
+                    "name": "ageSpouse",
+                    "type": "String"
+                },
+                {
+                    "name": "citizenshipSpouse",
+                    "type": "String"
+                },
+                {
+                    "name": "citizenshipOtherSpouse",
+                    "type": "String"
+                },
+                {
+                    "name": "popGroupSpouse",
+                    "type": "String"
+                },
+                {
+                    "name": "disabilitySpouse",
+                    "type": "String"
+                },
+                {
+                    "name": "disabilityTypeSpouse",
+                    "type": "String"
+                },
+                {
+                    "name": "disabilityTypeOtherSpouse",
+                    "type": "String"
+                },
+                {
+                    "name": "grantsSpouse",
+                    "type": "String"
+                },
+                {
+                    "name": "contactSpouse",
+                    "type": "String"
+                },
+                {
+                    "name": "eduSpouse",
+                    "type": "String"
+                },
+                {
+                    "name": "empStatusSpouse",
+                    "type": "String"
+                },
+                {
+                    "name": "stateOldAgeWarVetSpouse",
+                    "type": "String"
+                },
+                {
+                    "name": "disabilityGrantSpouse",
+                    "type": "String"
+                },
+                {
+                    "name": "childSupportGrantSpouse",
+                    "type": "String"
+                },
+                {
+                    "name": "childFosterCareGrSpouse",
+                    "type": "String"
+                },
+                {
+                    "name": "grantInAidSpouse",
+                    "type": "String"
+                },
+                {
+                    "name": "careDependencyGraSpouse",
+                    "type": "String"
+                },
+                {
+                    "name": "socialReliefGrantSpouse",
+                    "type": "String"
+                },
+                {
+                    "name": "unemploymentInsurSpouse",
+                    "type": "String"
+                },
+                {
+                    "name": "idNumberSpouse",
+                    "type": "String"
+                },
+                {
+                    "name": "surveyIDVar",
+                    "type": "String"
+                },
+                {
+                    "name": "governmentSubsidyStatusSpouse",
+                    "type": "String"
+                }
+            ],
+            "returnType": "void",
+            "visibility": [
+                "external"
+            ]
+        }
+    ],
+    "security": {
+        "type": "local",
+        "acl": [
+            {
+                "roleId": "approle.anonymous.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "roleId": "approle.authenticated.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            }
+        ]
+    },
+    "setupData": true
+}

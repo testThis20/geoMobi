@@ -1,0 +1,436 @@
+{
+    "pageModelVersion": "19.3.1",
+    "title": "",
+    "description": "",
+    "variables": {
+        "username": {
+            "type": "string"
+        },
+        "password": {
+            "type": "string"
+        },
+        "showLoginButton": {
+            "type": "boolean",
+            "defaultValue": false
+        }
+      },
+    "metadata": {},
+    "types": {
+      },
+    "chains": {
+        "UsernameInput": {
+            "description": "",
+            "variables": {
+                "value": {
+                    "required": true,
+                    "type": "any",
+                    "input": "fromCaller"
+                },
+                "found": {
+                    "type": "boolean",
+                    "defaultValue": false
+                }
+            },
+            "root": "if3",
+            "actions": {
+                "callRestEndpoint1": {
+                    "module": "vb/action/builtin/restAction",
+                    "parameters": {
+                        "endpoint": "businessObjects/getall_Users"
+                    },
+                    "outcomes": {
+                        "success": "forEach1"
+                    }
+                },
+                "if1": {
+                    "module": "vb/action/builtin/ifAction",
+                    "parameters": {
+                        "condition": "[[ (($current.data.username==$page.variables.username)) ]]"
+                    },
+                    "outcomes": {
+                        "true": "assignVariables1"
+                    }
+                },
+                "forEach1": {
+                    "module": "vb/action/builtin/forEachAction",
+                    "parameters": {
+                        "actionId": "if1",
+                        "items": "{{ $chain.results.callRestEndpoint1.body.items }}"
+                    },
+                    "outcomes": {
+                        "success": "if2"
+                    }
+                },
+                "fireNotification1": {
+                    "module": "vb/action/builtin/fireNotificationEventAction",
+                    "parameters": {
+                        "summary": "[[ $application.translations.app.fireNotification1_summary_22bb ]]",
+                        "displayMode": "transient",
+                        "message": "[[ $application.translations.app.fireNotification1_message_7b7d ]]"
+                    }
+                },
+                "if2": {
+                    "module": "vb/action/builtin/ifAction",
+                    "outcomes": {
+                        "false": "fireNotification1"
+                    },
+                    "parameters": {
+                        "condition": "[[ $chain.variables.found==true ]]"
+                    }
+                },
+                "assignVariables1": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$chain.variables.found": {
+                            "source": true
+                        }
+                    }
+                },
+                "if3": {
+                    "module": "vb/action/builtin/ifAction",
+                    "parameters": {
+                        "condition": "navigator.online"
+                    },
+                    "outcomes": {
+                        "true": "callRestEndpoint1"
+                    }
+                }
+            }
+        },
+        "SignIn": {
+            "description": "",
+            "variables": {
+                "detail": {
+                    "required": true,
+                    "type": "any",
+                    "input": "fromCaller"
+                }
+            },
+            "root": "if4",
+            "actions": {
+                "callRestEndpoint1": {
+                    "module": "vb/action/builtin/restAction",
+                    "parameters": {
+                        "endpoint": "businessObjects/getall_Users"
+                    },
+                    "outcomes": {
+                        "success": "forEach1",
+                        "failure": "fireNotification5"
+                    }
+                },
+                "if1": {
+                    "module": "vb/action/builtin/ifAction",
+                    "parameters": {
+                        "condition": "[[ (($current.data.username==$page.variables.username)&&($current.data.password==$page.variables.password)) ]]"
+                    },
+                    "outcomes": {
+                        "true": "assignVariables1",
+                        "false": "callModuleFunction7"
+                    }
+                },
+                "navigateToPage1": {
+                    "module": "vb/action/builtin/navigateToPageAction",
+                    "parameters": {
+                        "page": "dashboard"
+                    }
+                },
+                "fireNotification1": {
+                    "module": "vb/action/builtin/fireNotificationEventAction",
+                    "parameters": {
+                        "summary": "[[ $application.translations.app.fireNotification1_summary_494d ]]",
+                        "displayMode": "transient",
+                        "message": "[[ $application.translations.app.fireNotification1_message_fd76 ]]",
+                        "type": "error"
+                    },
+                    "outcomes": {
+                        "success": "callModuleFunction5"
+                  }
+                },
+                "assignVariables1": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$flow.variables.username": {
+                            "source": "{{ $page.variables.username }}"
+                        }
+                    },
+                    "outcomes": {
+                        "success": "assignVariables7"
+                    }
+                },
+                "callModuleFunction1": {
+                    "module": "vb/action/builtin/callModuleFunctionAction",
+                    "parameters": {
+                        "module": "[[ $page.functions ]]",
+                        "functionName": "createDir"
+                    },
+                    "outcomes": {
+                        "success": "navigateToPage1"
+                    }
+                },
+                "forEach1": {
+                    "module": "vb/action/builtin/forEachAction",
+                    "parameters": {
+                        "items": "{{ $chain.results.callRestEndpoint1.body.items }}",
+                        "actionId": "if1"
+                    },
+                    "outcomes": {
+                        "success": "fireNotification1"
+                    }
+                },
+                "if2": {
+                    "module": "vb/action/builtin/ifAction",
+                    "parameters": {
+                        "condition": "[[ (navigator.onLine) ]]"
+                    },
+                    "outcomes": {
+                        "true": "fireNotification6",
+                        "false": "fireNotification3"
+                    }
+                },
+                "fireNotification3": {
+                    "module": "vb/action/builtin/fireNotificationEventAction",
+                    "parameters": {
+                        "summary": "[[ $application.translations.app.fireNotification3_summary_9c9c ]]",
+                        "type": "info",
+                        "displayMode": "transient",
+                        "message": "[[ $application.translations.app.fireNotification3_message_c905 ]]"
+                    },
+                    "outcomes": {
+                        "success": "offlineLogin"
+                    }
+                },
+                "navigateToPage2": {
+                    "module": "vb/action/builtin/navigateToPageAction",
+                    "parameters": {
+                        "page": "dashboard"
+                    },
+                    "outcomes": {
+                        "success": "callModuleFunction5"
+                    }
+                },
+                "if3": {
+                    "module": "vb/action/builtin/ifAction",
+                    "parameters": {
+                        "condition": "[[ $chain.results.offlineLogin>0 ]]"
+                    },
+                    "outcomes": {
+                        "true": "assignVariables5",
+                        "false": "fireNotification4"
+                    }
+                },
+                "offlineLogin": {
+                    "module": "vb/action/builtin/callModuleFunctionAction",
+                    "parameters": {
+                        "module": "[[ $page.functions ]]",
+                        "functionName": "offlineLogin",
+                        "params": [
+                            "{{ $page.variables.username }}",
+                            "{{ $page.variables.password }}"
+                        ],
+                        "returnType": "number"
+                    },
+                    "outcomes": {
+                        "success": "if3"
+                    }
+                },
+                "fireNotification4": {
+                    "module": "vb/action/builtin/fireNotificationEventAction",
+                    "parameters": {
+                        "summary": "[[ $application.translations.app.fireNotification4_summary_3c99 ]]",
+                        "type": "error",
+                        "displayMode": "transient",
+                        "message": "[[ $application.translations.app.fireNotification4_message_a15a ]]"
+                    },
+                    "outcomes": {
+                        "success": "callModuleFunction5"
+                    }
+                },
+                "callModuleFunction2": {
+                    "module": "vb/action/builtin/callModuleFunctionAction",
+                    "parameters": {
+                        "module": "[[ $page.functions ]]",
+                        "functionName": "createUser",
+                        "params": [
+                            "{{ $page.variables.username }}",
+                            "{{ $page.variables.password }}",
+                            "[[$current.data.id]]"
+                        ]
+                    },
+                    "outcomes": {
+                        "success": "callModuleFunction1"
+                    }
+                },
+                "assignVariables2": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$page.variables.showLoginButton": {
+                            "source": true
+                        }
+                    },
+                    "outcomes": {
+                        "success": "callModuleFunction3"
+                    }
+                },
+                "assignVariables3": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$page.variables.showLoginButton": {
+                            "source": false
+                        }
+                    }
+                },
+                "callModuleFunction5": {
+                    "module": "vb/action/builtin/callModuleFunctionAction",
+                    "parameters": {
+                        "module": "[[ $page.functions ]]",
+                        "functionName": "hideLoader"
+                    },
+                    "outcomes": {
+                        "success": "assignVariables3"
+                    }
+                },
+                "callModuleFunction3": {
+                    "module": "vb/action/builtin/callModuleFunctionAction",
+                    "parameters": {
+                        "module": "[[ $page.functions ]]",
+                        "functionName": "showLoader"
+                    },
+                    "outcomes": {
+                        "success": "if2"
+                    }
+                },
+                "callModuleFunction7": {
+                    "module": "vb/action/builtin/callModuleFunctionAction",
+                    "parameters": {
+                        "module": "[[ $page.functions ]]",
+                        "functionName": "hideLoader"
+                    }
+                },
+                "if4": {
+                    "module": "vb/action/builtin/ifAction",
+                    "parameters": {
+                        "condition": "[[ $application.functions.isFormValid(\"CreateForm\") ]]"
+                    },
+                    "outcomes": {
+                        "true": "assignVariables2",
+                        "false": "fireNotification2"
+                    }
+                },
+                "fireNotification2": {
+                    "module": "vb/action/builtin/fireNotificationEventAction",
+                    "parameters": {
+                        "displayMode": "transient",
+                        "summary": "[[ $application.translations.app.fireNotification2_summary_d3a0 ]]",
+                        "type": "error",
+                        "message": "[[ $application.translations.app.fireNotification2_message_05e6 ]]"
+                    },
+                    "outcomes": {
+                        "success": "assignVariables3"
+                    }
+                },
+                "assignVariables5": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$flow.variables.username": {
+                            "source": "{{ $page.variables.username }}"
+                        }
+                    },
+                    "outcomes": {
+                        "success": "assignVariables6"
+                    }
+                },
+                "assignVariables6": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "parameters": {
+                        "$flow.variables.userID": {
+                            "source": "{{ $chain.results.offlineLogin }}"
+                        }
+                    },
+                    "outcomes": {
+                        "success": "navigateToPage2"
+                    }
+                },
+                "assignVariables7": {
+                    "module": "vb/action/builtin/assignVariablesAction",
+                    "outcomes": {
+                        "success": "callModuleFunction2"
+                    },
+                    "parameters": {
+                        "$flow.variables.userID": {
+                            "source": "{{ $current.data.id }}"
+                        }
+                    }
+                },
+                "fireNotification5": {
+                    "module": "vb/action/builtin/fireNotificationEventAction",
+                    "parameters": {
+                        "target": "leaf",
+                        "summary": "[[ $application.translations.app.fireNotification5_summary_6a31 ]]",
+                        "message": "[[ $application.translations.app.fireNotification5_message_cc3e ]]",
+                        "displayMode": "transient"
+                    },
+                    "outcomes": {
+                        "success": "callModuleFunction5"
+                    }
+                },
+                "fireNotification6": {
+                    "module": "vb/action/builtin/fireNotificationEventAction",
+                    "parameters": {
+                        "target": "leaf",
+                        "message": "",
+                        "displayMode": "transient",
+                        "type": "info",
+                        "summary": "[[ $application.translations.app.fireNotification6_summary_e43f ]]"
+                    },
+                    "outcomes": {
+                        "success": "callRestEndpoint1"
+                    }
+                }
+            }
+        }
+    },
+    "eventListeners": {
+        "ojInputText14441923201Value": {
+            "chains": [
+                {
+                    "chainId": "UsernameInput",
+                    "parameters": {
+                        "value": "{{ $event.detail.value }}"
+                    }
+                }
+            ]
+        },
+        "ojButton14441923201OjAction": {
+            "chains": [
+                {
+                    "chainId": "SignIn",
+                    "parameters": {
+                        "detail": "{{ $event.detail }}"
+                    }
+                }
+            ]
+        }
+    },
+    "imports": {
+        "components": {
+            "oj-ext-mobile-page-template": {
+                "path": "vb/components/mobile-page-template/loader"
+            },
+            "oj-button": {
+                "path": "ojs/ojbutton"
+            },
+            "oj-label": {
+                "path": "ojs/ojlabel"
+            },
+            "oj-input-text": {
+                "path": "ojs/ojinputtext"
+            },
+            "oj-input-password": {
+                "path": "ojs/ojinputtext"
+            },
+            "oj-validation-group": {
+                "path": "ojs/ojvalidationgroup"
+            }
+        }
+    }
+}

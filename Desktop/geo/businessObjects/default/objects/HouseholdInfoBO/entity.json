@@ -1,0 +1,244 @@
+{
+    "displayLabel": "HouseholdInfoBO",
+    "name": "HouseholdInfoBO",
+    "oid": "7c2db0d0-6178-423e-8a1f-ad4b2aa36ee0",
+    "fields": [
+        {
+            "displayLabel": "Id",
+            "internal": true,
+            "key": true,
+            "name": "id",
+            "oid": "df62246f-6b96-4f2b-93ae-70b92d8bda01",
+            "required": true,
+            "type": "number",
+            "unique": true
+        },
+        {
+            "displayLabel": "Created",
+            "internal": true,
+            "name": "creationDate",
+            "oid": "2c5de12f-a327-4d5c-9a59-6982861a9726",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Last Updated",
+            "internal": true,
+            "name": "lastUpdateDate",
+            "oid": "8149e379-becf-4402-b631-27999839f6c1",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Created By",
+            "internal": true,
+            "name": "createdBy",
+            "oid": "14fb22a8-b92c-404e-97ed-7f62c1a29429",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Last Updated By",
+            "internal": true,
+            "name": "lastUpdatedBy",
+            "oid": "4fe4e8ff-a3a2-4b76-b2a0-0b953edf794c",
+            "type": "string"
+        },
+        {
+            "displayLabel": "<internal>",
+            "hidden": true,
+            "internal": true,
+            "name": "abcsChangeNumber",
+            "oid": "96865fcc-1e2a-44df-ae2d-4961eebc95a7",
+            "type": "number"
+        },
+        {
+            "name": "name",
+            "oid": "33b30e1e-5257-44fc-ad60-e0b8279a12a3",
+            "displayLabel": "name",
+            "type": "string"
+        }
+    ],
+    "setupData": true,
+    "objectFunctions": [
+        {
+            "definition": "def vo = newView('HouseholdInformation')\nvo.appendViewCriteria(\"surveyID = '\"+surveyIDVar+\"'\")\nvo.executeQuery()\nif (!vo.hasNext()){\n  r = vo.createRow()\n  r.surveyID = surveyIDVar;\n\n  r.HomeLanguage = homeLangvar;\n  r.HouseholdIncome = householdIncomevar;\n  r.currentTownReason=reasonToMove;\n  \n  r.dwellingDurationYears = dwellingDurationYearsVar;\n  r.dwellingDurationMonths = dwellingDurationMonthsVar;\n  r.dwellingOwnership = dwellingOwnershipVar;\n  r.rentMonthlyAmount = rentMonthlyAmountVar;\n  r.rentReason = rentReasonVar;\n  r.rentGovernmentHousingLi = rentGovernmentHousingLiVar;\t\t\t\n  r.province = provinceVar;\n  r.town = townVar;\n  r.currentTownDurationYears = currentTownDurationYearsVar;\t\t\n  r.currentTownDurationMonths = currentTownDurationMonthsVar;\n  r.permitType = permitTypeVar;\t\t\n  r.permitExpiryDate = permitExpiryDateVar;\t\t\n  r.permitNumber = permitNumberVar;\n  r.NumberOfRooms = noOfRoomsVar;\n  \n  r.governmentPropertyDefects= governmentPropertyDefects;\n  r.roofDefects = roofDefects;\n  r.roofDefectDetails = roofDefectDetails;\n  r.wallDefects = wallDefects;\n  r.wallDefectDetails = wallDefectDetails;\n  r.plumbingDefects = plumbingDefects;\n  r.plumbingDefectDetails = plumbingDefectDetails;\n  r.floorDefects = floorDefects;\n  r.floorDefectDetails = floorDefectDetails;\n  r.doorsWindowsDefects = doorsWindowsDefects;\n  r.doorsWindowsDefectDetails = doorsWindowsDefectDetails;\n  r.otherDefects = otherDefects;\n  r.otherDefectDetails = otherDefectDetails;\n  \n  //r.governmentSubsidyStatusHead=governmentSubsidyStatusHead;\n  //r.governmentSubsidyStatusSpouse=governmentSubsidyStatusSpouse;\n\n  vo.insertRow(r);\n}\nwhile (vo.hasNext()) {\n  def r = vo.next();\n  \n  r.homeLanguage = homeLangvar;\n  r.householdIncome = householdIncomevar;\n  r.currentTownReason=reasonToMove;\n  \n  r.dwellingDurationYears = dwellingDurationYearsVar;\n  r.dwellingDurationMonths = dwellingDurationMonthsVar;\n  r.dwellingOwnership = dwellingOwnershipVar;\n  r.rentMonthlyAmount = rentMonthlyAmountVar;\n  r.rentReason = rentReasonVar;\n  r.rentGovernmentHousingLi = rentGovernmentHousingLiVar;\t\t\t\n  r.province = provinceVar;\n  r.town = townVar;\n  r.currentTownDurationYears = currentTownDurationYearsVar;\t\t\n  r.currentTownDurationMonths = currentTownDurationMonthsVar;\n  r.permitType = permitTypeVar;\t\t\n  r.permitExpiryDate = permitExpiryDateVar;\t\t\n  r.permitNumber = permitNumberVar;\n  r.NumberOfRooms = noOfRoomsVar;\n\n  r.governmentPropertyDefects= governmentPropertyDefects;\n  r.roofDefects = roofDefects;\n  r.roofDefectDetails = roofDefectDetails;\n  r.wallDefects = wallDefects;\n  r.wallDefectDetails = wallDefectDetails;\n  r.plumbingDefects = plumbingDefects;\n  r.plumbingDefectDetails = plumbingDefectDetails;\n  r.floorDefects = floorDefects;\n  r.floorDefectDetails = floorDefectDetails;\n  r.doorsWindowsDefects = doorsWindowsDefects;\n  r.doorsWindowsDefectDetails = doorsWindowsDefectDetails;\n  r.otherDefects = otherDefects;\n  r.otherDefectDetails = otherDefectDetails;\n  \n  //r.governmentSubsidyStatusHead=governmentSubsidyStatusHead;\n  //r.governmentSubsidyStatusSpouse=governmentSubsidyStatusSpouse;\n\n}\n",
+            "name": "updateHouseholdInfo",
+            "refId": "3043b99c-649a-4f25-8822-b8dd642c08ca",
+            "parameters": [
+                {
+                    "name": "reasonToMove",
+                    "type": "String"
+                },
+                {
+                    "name": "homeLangvar",
+                    "type": "String"
+                },
+                {
+                    "name": "householdIncomevar",
+                    "type": "String"
+                },
+                {
+                    "name": "dwellingDurationYearsVar",
+                    "type": "Long"
+                },
+                {
+                    "name": "dwellingDurationMonthsVar",
+                    "type": "Long"
+                },
+                {
+                    "name": "dwellingOwnershipVar",
+                    "type": "String"
+                },
+                {
+                    "name": "rentMonthlyAmountVar",
+                    "type": "Long"
+                },
+                {
+                    "name": "rentReasonVar",
+                    "type": "String"
+                },
+                {
+                    "name": "rentGovernmentHousingLiVar",
+                    "type": "String"
+                },
+                {
+                    "name": "provinceVar",
+                    "type": "String"
+                },
+                {
+                    "name": "townVar",
+                    "type": "String"
+                },
+                {
+                    "name": "currentTownDurationYearsVar",
+                    "type": "Long"
+                },
+                {
+                    "name": "currentTownDurationMonthsVar",
+                    "type": "Long"
+                },
+                {
+                    "name": "permitTypeVar",
+                    "type": "String"
+                },
+                {
+                    "name": "permitNumberVar",
+                    "type": "String"
+                },
+                {
+                    "name": "permitExpiryDateVar",
+                    "type": "String"
+                },
+                {
+                    "name": "noOfRoomsVar",
+                    "type": "String"
+                },
+                {
+                    "name": "surveyIDVar",
+                    "type": "String"
+                },
+                {
+                    "name": "governmentPropertyDefects",
+                    "type": "String"
+                },
+                {
+                    "name": "roofDefects",
+                    "type": "String"
+                },
+                {
+                    "name": "roofDefectDetails",
+                    "type": "String"
+                },
+                {
+                    "name": "wallDefects",
+                    "type": "String"
+                },
+                {
+                    "name": "wallDefectDetails",
+                    "type": "String"
+                },
+                {
+                    "name": "plumbingDefects",
+                    "type": "String"
+                },
+                {
+                    "name": "plumbingDefectDetails",
+                    "type": "String"
+                },
+                {
+                    "name": "floorDefects",
+                    "type": "String"
+                },
+                {
+                    "name": "floorDefectDetails",
+                    "type": "String"
+                },
+                {
+                    "name": "doorsWindowsDefects",
+                    "type": "String"
+                },
+                {
+                    "name": "doorsWindowsDefectDetails",
+                    "type": "String"
+                },
+                {
+                    "name": "otherDefects",
+                    "type": "String"
+                },
+                {
+                    "name": "otherDefectDetails",
+                    "type": "String"
+                }
+            ],
+            "returnType": "void",
+            "visibility": [
+                "external"
+            ]
+        }
+    ],
+    "security": {
+        "type": "local",
+        "acl": [
+            {
+                "roleId": "approle.anonymous.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "roleId": "approle.authenticated.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            }
+        ]
+    }
+}

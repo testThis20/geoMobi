@@ -1,0 +1,2 @@
+id,creationDate,lastUpdateDate,createdBy,lastUpdatedBy,ToiletType,WaterType,WaterLitres,WasteType,HealthAccess,TransportType,CommType,CrimeVictim,CrimeDetails,PECooking,PELighting,PEHeating,surveyID,wasteCollectionFrequenc
+1,2020-07-13T06:52:15,2020-07-13T06:52:15.11,satyam,satyam,Flush toilet (connected to sewer system) outside dwelling,No access to piped water,5,Communal collection,At a clinic (stationary),Walking,Community newspapers,Rape,testing,Electricity,Electricity,Electricity,20200713_1594621279987,Weekly
