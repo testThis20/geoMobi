@@ -373,11 +373,11 @@ Z  : Control digit calculated in the following section:
     function displayFileData(data) {}
 
     function onErrorReadFile() {
-      console.log("Create file fail...");
+      alert("Create file fail...");
     }
 
     function onErrorLoadFs() {
-      console.log("File system fail...");
+      alert("File system fail...");
     }
   }
 
