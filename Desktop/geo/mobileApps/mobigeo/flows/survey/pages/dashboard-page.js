@@ -1,5 +1,5 @@
     define([], function() {
-      'use strict';
+      "use strict";
       var PageModule = function PageModule() {};
 
       PageModule.prototype.isFormValid = function(form) {
@@ -15,7 +15,7 @@
 
       PageModule.prototype.resetFields = function() {
         document.getElementById("houseNum").value = "";
-        $("#dwellingType").val('');
+        $("#dwellingType").val("");
         $('#captureStat').val('Contact/Interview');
         document.getElementById("stickerNumber").value = ""; 
         
@@ -39,7 +39,7 @@
           validate: (newValue) => {
 
             if (isNaN(newValue) || newValue < 1) {
-              throw new Error('Invalid sticker number');
+              throw new Error("Invalid sticker number");
             } else {
               return true;
             }
@@ -210,11 +210,11 @@
       };
 
       PageModule.prototype.showLoader = function(arg1) {
-        $("#loaderid").css('display', 'block');
+        $("#loaderid").css("display", "block");
       };
 
       PageModule.prototype.hideLoader = function(arg1) {
-        $("#loaderid").css('display', 'none');
+        $("#loaderid").css("display", "none");
       };
 
       PageModule.prototype.setImageSrc = function(fileBlob) {
